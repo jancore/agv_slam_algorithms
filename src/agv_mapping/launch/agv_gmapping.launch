@@ -1,0 +1,27 @@
+<launch>
+    <arg name="scan_topic" default="nav350_scan" />
+    <arg name="base_frame" default="base_link"/>
+    <arg name="odom_frame" default="odom"/>
+    <arg name="map_frame" default="map"/>
+    <arg name="ip_nav350" default="10.67.101.36"/>
+    <arg name="ip_odom" default="10.67.101.203"/>
+
+    <node pkg="laserscan_nav350" type="nav350_node" name="nav350_node">
+        <param name="ip_nav350" value="$(arg ip_nav350)"/>
+    </node>
+
+    <node pkg="agv_tf" type="tf_broadcaster" name="tf_broadcaster" output="screen" />
+
+    <node pkg="agv_odom" type="agv_odom_node" name="agv_odom_node" output="screen">
+        <param name="ip_address" value="$(arg ip_odom)"/>
+    </node>
+
+    <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
+        <param name="base_frame" value="$(arg base_frame)"/>
+        <param name="odom_frame" value="$(arg odom_frame)"/>
+        <param name="particles" value="80"/>
+        <remap from="scan" to="$(arg scan_topic)"/>
+    </node>
+
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find agv_mapping)/cfg/mapping_config.rviz" />
+</launch>
