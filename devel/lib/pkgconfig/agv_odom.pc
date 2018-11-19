@@ -1,0 +1,8 @@
+prefix=/home/smarlogy/catkin_ws/devel
+
+Name: agv_odom
+Description: Description of agv_odom
+Version: 0.0.0
+Cflags: -I/home/smarlogy/catkin_ws/src/agv_odom/include
+Libs: -L/home/smarlogy/catkin_ws/devel/lib -lagv_odom
+Requires: 

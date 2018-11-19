@@ -1,2 +1,2 @@
-
+agv_mapping:agv_odom:agv_tf:laserscan_nav350
 -DCATKIN_DEVEL_PREFIX=/home/smarlogy/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/smarlogy/catkin_ws/install -G Unix Makefiles
