@@ -37,10 +37,9 @@ agv::Punto2d LecturaOdometria::get_vector_movimiento(long p_timeout_ms)
 		throw(std::runtime_error("No se han podido obtener datos"));
 
 	double velocidad_rueda = std::stoi(variables[0].second) / 1000.0;
-	double angulo_rueda = std::stoi(variables[1].second) / 1000.0;
-	
+	double angulo_rueda = std::stoi(variables[1].second);
 	double modulo_velocidad = velocidad_rueda * std::cos(agv::radianes(angulo_rueda));
-	double velocidad_angular_rads = -(velocidad_rueda / (m_distancia_ruedas / 1000)) * std::sin(agv::radianes(angulo_rueda));
+	double velocidad_angular_rads = (velocidad_rueda / (m_distancia_ruedas / 1000)) * std::sin(agv::radianes(angulo_rueda));
 	
 	vector_movimiento.x = modulo_velocidad;
 	vector_movimiento.y = velocidad_angular_rads;

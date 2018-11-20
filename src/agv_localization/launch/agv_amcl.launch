@@ -1,0 +1,30 @@
+<launch>
+    <arg name="scan_topic" default="nav350_scan" />
+    <arg name="base_frame" default="base_link"/>
+    <arg name="odom_frame" default="odom"/>
+    <arg name="map_frame" default="map"/>
+    <arg name="ip_nav350" default="10.67.101.36"/>
+    <arg name="ip_odom" default="10.67.101.203"/>
+    <arg name="map_file" default="/home/smarlogy/catkin_ws/maps/agv_gmapping.yaml"/>
+
+    <node pkg="map_server" type="map_server" name="map_server" args="$(arg map_file)"/>
+
+    <node pkg="laserscan_nav350" type="nav350_node" name="nav350_node">
+        <param name="ip_nav350" value="$(arg ip_nav350)"/>
+    </node>
+
+    <node pkg="agv_tf" type="tf_broadcaster" name="tf_broadcaster" output="screen" />
+
+    <node pkg="agv_odom" type="agv_odom_node" name="agv_odom_node" output="screen">
+        <param name="ip_address" value="$(arg ip_odom)"/>
+    </node>
+
+    <node pkg="amcl" type="amcl" name="amcl" output="screen">
+        <param name="base_frame" value="$(arg base_frame)"/>
+        <param name="odom_frame" value="$(arg odom_frame)"/>
+        <param name="particles" value="80"/>
+        <param name="scan" value="$(arg scan_topic)"/>
+    </node>
+
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find agv_localization)/cfg/localization_config.rviz" />
+</launch>

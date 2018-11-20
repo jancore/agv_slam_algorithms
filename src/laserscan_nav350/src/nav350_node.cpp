@@ -8,7 +8,7 @@ int main(int argc, char** argv)
 {
     ros::init(argc, argv, "laser_scan_publisher");
     ros::NodeHandle n;
-    ros::Publisher scan_pub = n.advertise<sensor_msgs::LaserScan>("nav350_scan",100);
+    ros::Publisher scan_pub = n.advertise<sensor_msgs::LaserScan>("nav350_scan",1);
 
     std::string ip_nav350;
     const double angular_resolution = 0.25; //in degrees
@@ -18,8 +18,7 @@ int main(int argc, char** argv)
     n.param<std::string>("ip_nav350", ip_nav350, "10.67.101.36");
     ROS_INFO("Got param: %s", ip_nav350.c_str());
     agv::comtcp::nav350::ComNav350 comnav350(ip_nav350);
-    agv::comtcp::nav350::NavPositionData data_laser; 
-    ros::Rate r(100.0);
+    ros::Rate r(80.0);
 
     /*populate the LaserScan message*/
     ros::Time scan_time;
@@ -35,11 +34,14 @@ int main(int argc, char** argv)
 
     while(n.ok())
     {
+        ros::spinOnce();
         scan_time = ros::Time::now();
         scan.header.stamp = scan_time;
+        ++scan.header.seq;
 
         try
         {
+            agv::comtcp::nav350::NavPositionData data_laser;
             data_laser = comnav350.get_position_data_no_disconnect(5000,1,true, false);
             scan.ranges.resize(num_readings);
             if(data_laser.contorno.size() == 0){

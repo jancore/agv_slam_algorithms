@@ -21,8 +21,6 @@ flags = [
 '-isystem',
 '/home/smarlogy/catkin_ws/devel/include',
 '-isystem',
-'/home/smarlogy/catkin_ws/src/CMakeLists.txt/include',
-'-isystem',
 '/home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/include',
 '-isystem',
 '/home/smarlogy/catkin_ws/src/agv_mapping/include',

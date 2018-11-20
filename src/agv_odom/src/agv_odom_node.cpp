@@ -12,7 +12,7 @@ int main(int argc, char** argv){
   agv::Punto2d velocity_agv;
 
   ros::NodeHandle n;
-  ros::Publisher odom_pub = n.advertise<nav_msgs::Odometry>("odom", 100);
+  ros::Publisher odom_pub = n.advertise<nav_msgs::Odometry>("odom", 50);
   tf::TransformBroadcaster odom_broadcaster;
   n.param<std::string>("ip_address", ip_address, "10.67.101.203");
   LecturaOdometria odom_agv(ip_address, 8900);
@@ -29,7 +29,7 @@ int main(int argc, char** argv){
   current_time = ros::Time::now();
   last_time = ros::Time::now();
 
-  ros::Rate r(100.0);
+  ros::Rate r(80.0);
   while(n.ok()){
 
     ros::spinOnce();               // check for incoming messages
@@ -45,15 +45,8 @@ int main(int argc, char** argv){
     }
     
     vx = velocity_agv.x;
-    //velocity_agv.x >= 0.0 ? vx = sqrt(pow(velocity_agv.x,2) + pow(velocity_agv.y,2)) : vx = -sqrt(pow(velocity_agv.x,2) + pow(velocity_agv.y,2));
     vy = 0.0;
-    // if(abs(velocity_agv.x) > 0.001){
-    //   vth = atan(velocity_agv.y/velocity_agv.x);
-    // }
-    // else{
-    //   vth = 0.0;
-    // }
-    vth = velocity_agv.y;
+    vth = velocity_agv.y; // velocity_agv.y actually is angular velocity in axis z of robot frame.
 
     //compute odometry in a typical way given the velocities of the robot
     double dt = (current_time - last_time).toSec();
