@@ -387,6 +387,56 @@ clean: gtest/gtest/CMakeFiles/gtest_main.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory agv_localization
+
+# Convenience name for "all" pass in the directory.
+agv_localization/all:
+
+.PHONY : agv_localization/all
+
+# Convenience name for "clean" pass in the directory.
+agv_localization/clean: agv_localization/CMakeFiles/_catkin_empty_exported_target.dir/clean
+
+.PHONY : agv_localization/clean
+
+# Convenience name for "preinstall" pass in the directory.
+agv_localization/preinstall:
+
+.PHONY : agv_localization/preinstall
+
+#=============================================================================
+# Target rules for target agv_localization/CMakeFiles/_catkin_empty_exported_target.dir
+
+# All Build rule for target.
+agv_localization/CMakeFiles/_catkin_empty_exported_target.dir/all:
+	$(MAKE) -f agv_localization/CMakeFiles/_catkin_empty_exported_target.dir/build.make agv_localization/CMakeFiles/_catkin_empty_exported_target.dir/depend
+	$(MAKE) -f agv_localization/CMakeFiles/_catkin_empty_exported_target.dir/build.make agv_localization/CMakeFiles/_catkin_empty_exported_target.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/smarlogy/catkin_ws/build/CMakeFiles --progress-num= "Built target _catkin_empty_exported_target"
+.PHONY : agv_localization/CMakeFiles/_catkin_empty_exported_target.dir/all
+
+# Build rule for subdir invocation for target.
+agv_localization/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/smarlogy/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 agv_localization/CMakeFiles/_catkin_empty_exported_target.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/smarlogy/catkin_ws/build/CMakeFiles 0
+.PHONY : agv_localization/CMakeFiles/_catkin_empty_exported_target.dir/rule
+
+# Convenience name for target.
+_catkin_empty_exported_target: agv_localization/CMakeFiles/_catkin_empty_exported_target.dir/rule
+
+.PHONY : _catkin_empty_exported_target
+
+# clean rule for target.
+agv_localization/CMakeFiles/_catkin_empty_exported_target.dir/clean:
+	$(MAKE) -f agv_localization/CMakeFiles/_catkin_empty_exported_target.dir/build.make agv_localization/CMakeFiles/_catkin_empty_exported_target.dir/clean
+.PHONY : agv_localization/CMakeFiles/_catkin_empty_exported_target.dir/clean
+
+# clean rule for target.
+clean: agv_localization/CMakeFiles/_catkin_empty_exported_target.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Directory level rules for directory agv_mapping
 
 # Convenience name for "all" pass in the directory.
@@ -395,7 +445,7 @@ agv_mapping/all:
 .PHONY : agv_mapping/all
 
 # Convenience name for "clean" pass in the directory.
-agv_mapping/clean: agv_mapping/CMakeFiles/_catkin_empty_exported_target.dir/clean
+agv_mapping/clean:
 
 .PHONY : agv_mapping/clean
 
@@ -403,38 +453,6 @@ agv_mapping/clean: agv_mapping/CMakeFiles/_catkin_empty_exported_target.dir/clea
 agv_mapping/preinstall:
 
 .PHONY : agv_mapping/preinstall
-
-#=============================================================================
-# Target rules for target agv_mapping/CMakeFiles/_catkin_empty_exported_target.dir
-
-# All Build rule for target.
-agv_mapping/CMakeFiles/_catkin_empty_exported_target.dir/all:
-	$(MAKE) -f agv_mapping/CMakeFiles/_catkin_empty_exported_target.dir/build.make agv_mapping/CMakeFiles/_catkin_empty_exported_target.dir/depend
-	$(MAKE) -f agv_mapping/CMakeFiles/_catkin_empty_exported_target.dir/build.make agv_mapping/CMakeFiles/_catkin_empty_exported_target.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/smarlogy/catkin_ws/build/CMakeFiles --progress-num= "Built target _catkin_empty_exported_target"
-.PHONY : agv_mapping/CMakeFiles/_catkin_empty_exported_target.dir/all
-
-# Build rule for subdir invocation for target.
-agv_mapping/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/smarlogy/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 agv_mapping/CMakeFiles/_catkin_empty_exported_target.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/smarlogy/catkin_ws/build/CMakeFiles 0
-.PHONY : agv_mapping/CMakeFiles/_catkin_empty_exported_target.dir/rule
-
-# Convenience name for target.
-_catkin_empty_exported_target: agv_mapping/CMakeFiles/_catkin_empty_exported_target.dir/rule
-
-.PHONY : _catkin_empty_exported_target
-
-# clean rule for target.
-agv_mapping/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	$(MAKE) -f agv_mapping/CMakeFiles/_catkin_empty_exported_target.dir/build.make agv_mapping/CMakeFiles/_catkin_empty_exported_target.dir/clean
-.PHONY : agv_mapping/CMakeFiles/_catkin_empty_exported_target.dir/clean
-
-# clean rule for target.
-clean: agv_mapping/CMakeFiles/_catkin_empty_exported_target.dir/clean
-
-.PHONY : clean
 
 #=============================================================================
 # Directory level rules for directory agv_odom

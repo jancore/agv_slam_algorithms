@@ -92,6 +92,13 @@ int main(int argc, char** argv){
     odom.twist.twist.linear.y = vy;
     odom.twist.twist.angular.z = vth;
 
+    odom.pose.covariance[0] = 0.01;
+    odom.pose.covariance[7] = 0.01;
+    odom.pose.covariance[14] = 0.01;
+    odom.pose.covariance[21] = 0.01;
+    odom.pose.covariance[28] = 0.01;
+    odom.pose.covariance[35] = 0.01;
+
     //publish the message
     odom_pub.publish(odom);
 
