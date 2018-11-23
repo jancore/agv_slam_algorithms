@@ -11,7 +11,7 @@
 
     <node pkg="map_server" type="map_server" name="map_server" args="$(arg map_file)" />
 
-    <!--<node pkg="laserscan_nav350" type="nav350_node" name="nav350_node">
+    <node pkg="laserscan_nav350" type="nav350_node" name="nav350_node">
         <param name="ip_nav350" value="$(arg ip_nav350)"/>
     </node>
 
@@ -19,7 +19,7 @@
 
     <node pkg="agv_odom" type="agv_odom_node" name="agv_odom_node" output="screen">
         <param name="ip_address" value="$(arg ip_odom)"/>
-    </node>-->
+    </node>
 
     <!--<node pkg="robot_pose_ekf" type="robot_pose_ekf" name="robot_pose_ekf">
         <param name="output_frame" value="$(arg odom_frame)"/>

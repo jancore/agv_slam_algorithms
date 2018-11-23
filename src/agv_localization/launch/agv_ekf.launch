@@ -1,0 +1,26 @@
+<launch>
+    <arg name="base_frame" default="base_link"/>
+    <arg name="odom_frame" default="odom"/>
+    <arg name="map_frame" default="map"/>
+    <arg name="ip_odom" default="10.67.101.203"/>
+    <arg name="map_file" default="/home/smarlogy/catkin_ws/maps/agv_nave_full.yaml"/>
+
+    <node pkg="map_server" type="map_server" name="map_server" args="$(arg map_file)" />
+
+    <node pkg="agv_odom" type="agv_odom_node" name="agv_odom_node" output="screen">
+        <param name="ip_address" value="$(arg ip_odom)"/>
+    </node>
+
+    <node pkg="robot_pose_ekf" type="robot_pose_ekf" name="robot_pose_ekf">
+        <param name="output_frame" value="base_link"/>
+        <param name="freq" value="30.0"/>
+        <param name="sensor_timeout" value="1.0"/>
+        <param name="odom_used" value="true"/>
+        <param name="imu_used" value="false"/>
+        <param name="vo_used" value="false"/>
+        <param name="debug" value="false"/>
+        <param name="self_diagnose" value="false"/>
+    </node>
+
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find agv_localization)/cfg/ekf_example.rviz" />
+</launch>

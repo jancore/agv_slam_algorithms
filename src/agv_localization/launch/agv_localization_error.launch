@@ -1,0 +1,10 @@
+<launch>
+    <arg name="ip_nav350" default="10.67.101.36"/>
+    
+    <node pkg="agv_localization" type="tf_localization" name="tf_localization"/>
+
+    <node pkg="agv_localization" type="localization_error_node" name="localization_error_node" output="screen">
+        <param name="ip_nav350" value="$(arg ip_nav350)"/>
+    </node>
+
+</launch>

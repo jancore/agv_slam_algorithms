@@ -37,7 +37,7 @@ int main(int argc, char** argv){
     try
     {
       velocity_agv = odom_agv.get_vector_movimiento(500.0);
-      ROS_INFO("vx = %lf, w = %lf", velocity_agv.x, velocity_agv.y);
+      //ROS_INFO("vx = %lf, w = %lf", velocity_agv.x, velocity_agv.y);
     }
     catch (const std::exception& e)
     {
@@ -92,13 +92,13 @@ int main(int argc, char** argv){
     odom.twist.twist.linear.y = vy;
     odom.twist.twist.angular.z = vth;
 
-    odom.pose.covariance[0] = 0.01;
-    odom.pose.covariance[7] = 0.01;
-    odom.pose.covariance[14] = 0.01;
-    odom.pose.covariance[21] = 0.01;
-    odom.pose.covariance[28] = 0.01;
-    odom.pose.covariance[35] = 0.01;
-
+    odom.pose.covariance[0] = 1.0;
+    odom.pose.covariance[7] = 1.0;
+    odom.pose.covariance[14] = 1.0;
+    odom.pose.covariance[21] = 1.0;
+    odom.pose.covariance[28] = 1.0;
+    odom.pose.covariance[35] = 1.0;
+    
     //publish the message
     odom_pub.publish(odom);
 

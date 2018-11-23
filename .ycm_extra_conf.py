@@ -23,6 +23,8 @@ flags = [
 '-isystem',
 '/home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/include',
 '-isystem',
+'/home/smarlogy/catkin_ws/src/agv_localization/include',
+'-isystem',
 '/home/smarlogy/catkin_ws/src/agv_mapping/include',
 '-isystem',
 '/home/smarlogy/catkin_ws/src/agv_odom/include',

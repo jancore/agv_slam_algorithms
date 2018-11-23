@@ -3,6 +3,7 @@ project(agv_localization)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
+set( CMAKE_CXX_FLAGS "-std=c++14 ${CMAKE_CXX_FLAGS} -I. -pthread  -lpthread -lm -Wall -lrt")
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -34,7 +35,10 @@ find_package(catkin REQUIRED)
 ##     * add a exec_depend tag for "message_runtime"
 ## * In this file (CMakeLists.txt):
 ##   * add "message_generation" and every package in MSG_DEP_SET to
-##     find_package(catkin REQUIRED COMPONENTS ...)
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  tf
+)
 ##   * add "message_runtime" and every package in MSG_DEP_SET to
 ##     catkin_package(CATKIN_DEPENDS ...)
 ##   * uncomment the add_*_files sections below as needed
@@ -112,8 +116,14 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
+  include ${catkin_INCLUDE_DIRS}
 # include
 # ${catkin_INCLUDE_DIRS}
+)
+
+include_directories(
+  "/home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/include"
+  "/home/smarlogy/catkin_ws/src/agv_localization/include"
 )
 
 ## Declare a C++ library
@@ -193,3 +203,25 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+
+add_executable(localization_error_node
+  src/localization_error_node.cpp
+  src/amcl_listener.cpp
+)
+add_dependencies(localization_error_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(localization_error_node
+  ${catkin_LIBRARIES}
+)
+
+add_executable(tf_localization
+  src/tf_localization.cpp
+)
+add_dependencies(tf_localization ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(tf_localization
+  ${catkin_LIBRARIES}
+)
+
+target_link_libraries(localization_error_node
+  "/home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/libLibreriasRobot.a"
+  )
