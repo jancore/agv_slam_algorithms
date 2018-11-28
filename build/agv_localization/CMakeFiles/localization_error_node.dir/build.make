@@ -140,7 +140,6 @@ localization_error_node_EXTERNAL_OBJECTS =
 /home/smarlogy/catkin_ws/devel/lib/agv_localization/localization_error_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
 /home/smarlogy/catkin_ws/devel/lib/agv_localization/localization_error_node: /usr/lib/x86_64-linux-gnu/libpthread.so
 /home/smarlogy/catkin_ws/devel/lib/agv_localization/localization_error_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/smarlogy/catkin_ws/devel/lib/agv_localization/localization_error_node: /home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/libLibreriasRobot.a
 /home/smarlogy/catkin_ws/devel/lib/agv_localization/localization_error_node: agv_localization/CMakeFiles/localization_error_node.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/smarlogy/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/smarlogy/catkin_ws/devel/lib/agv_localization/localization_error_node"
 	cd /home/smarlogy/catkin_ws/build/agv_localization && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/localization_error_node.dir/link.txt --verbose=$(VERBOSE)

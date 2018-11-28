@@ -1,10 +1,10 @@
 <launch>
-    <arg name="ip_nav350" default="10.67.101.36"/>
+    <arg name="custom_agv_amcl_file" default="$(find agv_localization)/launch/agv_amcl.launch"/>  
+
+    <include file="$(arg custom_agv_amcl_file)" />
     
     <node pkg="agv_localization" type="tf_localization" name="tf_localization"/>
 
-    <node pkg="agv_localization" type="localization_error_node" name="localization_error_node" output="screen">
-        <param name="ip_nav350" value="$(arg ip_nav350)"/>
-    </node>
+    <node pkg="agv_localization" type="localization_error_node" name="localization_error_node" output="screen"/>
 
 </launch>

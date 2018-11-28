@@ -1,21 +1,33 @@
 #include <ros/ros.h>
 #include <geometry_msgs/PoseWithCovarianceStamped.h>
-#include <geometry_msgs/Pose.h>
-#include "std_msgs/String.h"
-#include <comunicaciones/sensores/com_nav350.h>
+#include <geometry_msgs/PoseStamped.h>
 #include <tf/transform_listener.h>
 #include <tf/transform_datatypes.h>
 #include <fstream>
 #include "agv_localization/amcl_listener.h"
+#include <message_filters/subscriber.h>
+#include <message_filters/time_synchronizer.h>
+#include <message_filters/sync_policies/approximate_time.h>
+
+using namespace sensor_msgs;
+using namespace message_filters;
 
 int main(int argc, char** argv)
 {
     std::ofstream file;
     ros::init(argc, argv, "localization_error_node");
     ros::NodeHandle n;
-    ros::NodeHandle nh("~");
+
     Amcl_listener amcl_pose_listener;
-    ros::Subscriber sub_amcl_pose = n.subscribe("amcl_pose", 1000, &Amcl_listener::Callback, &amcl_pose_listener);
+
+    message_filters::Subscriber<geometry_msgs::PoseWithCovarianceStamped> sub_amcl_pose(n, "amcl_pose", 1);
+    message_filters::Subscriber<geometry_msgs::PoseStamped> sub_nav350_pose(n, "nav350_position", 1);
+    //typedef sync_policies::ApproximateTime<geometry_msgs::PoseWithCovarianceStamped, geometry_msgs::PoseStamped> MySyncPolicy;
+    // ApproximateTime takes a queue size as its constructor argument, hence MySyncPolicy(10)
+    //Synchronizer<MySyncPolicy> sync(MySyncPolicy(10), sub_amcl_pose, sub_nav350_pose);
+    TimeSynchronizer<geometry_msgs::PoseWithCovarianceStamped, geometry_msgs::PoseStamped> sync(sub_amcl_pose, sub_nav350_pose, 10);
+    sync.registerCallback(boost::bind(&Amcl_listener::Callback, boost::ref(amcl_pose_listener), _1, _2));
+
     tf::TransformListener listener(ros::Duration(10));
     geometry_msgs::PoseStamped initial_pose, final_pose;
     geometry_msgs::PoseWithCovarianceStamped amcl_pose;
@@ -23,12 +35,10 @@ int main(int argc, char** argv)
     double roll_n, pitch_n, yaw_n;
     double roll_a, pitch_a, yaw_a;
     double epsilon = 1.0;
-    unsigned int t_aux;
+    double x_pre = 0;
+    double y_pre = 0;
+    double th_pre = 0;
 
-    std::string ip_nav350;
-
-    nh.param<std::string>("ip_nav350", ip_nav350, "10.67.101.36");
-    agv::comtcp::nav350::ComNav350 comnav350(ip_nav350);
     ros::Rate r(10.0);
 
     try
@@ -46,34 +56,21 @@ int main(int argc, char** argv)
     while(n.ok())
     {
         ros::spinOnce();
-        t_aux = amcl_pose_listener.Getamclpose().header.stamp.nsec;
-
-        if(amcl_pose_listener.IsSameTime(t_aux)){
-            try
-            {
-                agv::comtcp::nav350::NavPositionData data_position;
-                data_position = comnav350.get_position_data_no_disconnect(5000,1,true, false);
-
-                if(data_position.contorno.size() == 0){
-                    ROS_INFO("No position data recieving...");
-                }
-                else{
-                    initial_pose.header.seq++;
-                    initial_pose.header.stamp = ros::Time();
-                    initial_pose.header.frame_id = "localization_laser_frame";
-                    initial_pose.pose.position.x = data_position.datos_pose.pose.pos_x / 1000.0;
-                    initial_pose.pose.position.y = data_position.datos_pose.pose.pos_y / 1000.0;
-                    initial_pose.pose.orientation = tf::createQuaternionMsgFromYaw(data_position.datos_pose.pose.orientacion_mgrad/1000.0 * M_PI/180.0);
-
-                    geometry_msgs::PoseStamped aux_pose;
-                    listener.transformPose("map", initial_pose, aux_pose);
-                    final_pose = aux_pose;
-                }
-            }
-            catch (const std::exception& ex)
-            {
-                ROS_ERROR("An exception ocurred trying to recieve POSITION from \"NAV350\". %s.", ex.what());
-            }
+        
+        try
+        {
+            geometry_msgs::PoseStamped aux_pose;
+            initial_pose = amcl_pose_listener.Getnav350pose();
+            // initial_pose.header.frame_id = "base_laser";
+            // listener.transformPose("base_link", initial_pose, aux_pose);
+            // initial_pose = aux_pose;
+            // initial_pose.header.frame_id = "localization_laser_frame";
+            listener.transformPose("map", initial_pose, aux_pose);
+            final_pose = aux_pose;
+        }
+        catch (const std::exception& ex)
+        {
+            ROS_ERROR("An exception ocurred trying to TRANSFORM POSITION from \"NAV350\". %s.", ex.what());
         }
         
         amcl_pose = amcl_pose_listener.Getamclpose();
@@ -95,15 +92,19 @@ int main(int argc, char** argv)
 
         if(file.is_open() && amcl_pose.pose.covariance[0] < epsilon
                           && amcl_pose.pose.covariance[7] < epsilon
-                          && amcl_pose.pose.covariance[14] < epsilon)
+                          && amcl_pose.pose.covariance[35] < epsilon)
         {
-            if(amcl_pose_listener.IsSameTime(t_aux)){
+            if(final_pose.pose.position.x != x_pre || final_pose.pose.position.y != y_pre || yaw_n != th_pre){
                 file << final_pose.pose.position.x << ", " << final_pose.pose.position.y << ", " << yaw_n << ", " << final_pose.header.stamp.sec << ", ";
                 file << amcl_pose.pose.pose.position.x << ", " << amcl_pose.pose.pose.position.y << ", " << yaw_a << ", " << amcl_pose.header.stamp.sec << ", ";
-                file << std::abs(final_pose.pose.position.x - amcl_pose.pose.pose.position.x) << ", ";
-                file << std::abs(final_pose.pose.position.y - amcl_pose.pose.pose.position.y) << ", ";
-                file << std::abs(yaw_n - yaw_a) << ", ";
-                file << std::abs(final_pose.header.stamp.nsec - amcl_pose.header.stamp.nsec) << ", \n";
+                file << final_pose.pose.position.x - amcl_pose.pose.pose.position.x << ", ";
+                file << final_pose.pose.position.y - amcl_pose.pose.pose.position.y << ", ";
+                file << yaw_n - yaw_a << ", ";
+                file << final_pose.header.stamp.sec - amcl_pose.header.stamp.sec << ", \n";
+
+                x_pre = final_pose.pose.position.x;
+                y_pre = final_pose.pose.position.y;
+                th_pre = yaw_n;
             }
         }
 

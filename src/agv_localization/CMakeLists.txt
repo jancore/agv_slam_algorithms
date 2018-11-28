@@ -221,7 +221,3 @@ add_dependencies(tf_localization ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EX
 target_link_libraries(tf_localization
   ${catkin_LIBRARIES}
 )
-
-target_link_libraries(localization_error_node
-  "/home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/libLibreriasRobot.a"
-  )

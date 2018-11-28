@@ -5,6 +5,7 @@ agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o:
 agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /home/smarlogy/catkin_ws/src/agv_localization/src/amcl_listener.cpp
 agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Point.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Pose.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseStamped.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseWithCovariance.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseWithCovarianceStamped.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Quaternion.h
@@ -68,17 +69,6 @@ agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o:
 agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
 
-agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/include/Librerias.h
-agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/include/comunicaciones/sensores/com_nav350.h
-agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/include/comunicaciones/sockets/tcp/cliente_tcp.h
-agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/include/comunicaciones/sockets/tcp/excepcion_tcp.h
-agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/include/generales/geometria.h
-agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/include/generales/geometria/funciones_matematicas.h
-agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/include/generales/geometria/matriz_transformacion.h
-agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/include/generales/geometria/poligono.h
-agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/include/generales/geometria/punto.h
-agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/include/generales/tipos_dato.h
-agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/include/rapidxml/rapidxml.hpp
 agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /home/smarlogy/catkin_ws/src/agv_localization/include/agv_localization/amcl_listener.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /home/smarlogy/catkin_ws/src/agv_localization/src/localization_error_node.cpp
 agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/boost_161_condition_variable.h
@@ -99,6 +89,17 @@ agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_n
 agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/TwistStamped.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Vector3.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Vector3Stamped.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/message_filters/connection.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/message_filters/macros.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/message_filters/null_types.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/message_filters/signal1.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/message_filters/signal9.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/message_filters/simple_filter.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/message_filters/subscriber.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/message_filters/sync_policies/approximate_time.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/message_filters/sync_policies/exact_time.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/message_filters/synchronizer.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/message_filters/time_synchronizer.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/ros/advertise_options.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/ros/advertise_service_options.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/ros/assert.h
@@ -161,7 +162,6 @@ agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_n
 agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/sensor_msgs/PointCloud.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/std_msgs/Empty.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
-agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/std_msgs/String.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/tf/FrameGraph.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/tf/FrameGraphRequest.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/tf/FrameGraphResponse.h
