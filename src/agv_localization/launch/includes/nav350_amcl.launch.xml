@@ -14,11 +14,11 @@
     <param name="odom_model_type"           value="diff-corrected"/>
     <param name="odom_alpha5"               value="0.1"/>
     <param name="gui_publish_rate"          value="100.0"/>
-    <param name="laser_max_beams"           value="1440"/>
+    <param name="laser_max_beams"           value="720"/>
     <param name="laser_max_range"           value="250.0"/>
-    <param name="min_particles"             value="500"/>
+    <param name="min_particles"             value="100"/>
     <param name="max_particles"             value="2000"/>
-    <param name="kld_err"                   value="0.05"/>
+    <param name="kld_err"                   value="0.01"/>
     <param name="kld_z"                     value="0.95"/>
     <param name="odom_alpha1"               value="0.2"/>
     <param name="odom_alpha2"               value="0.2"/>
@@ -32,8 +32,8 @@
     <param name="laser_sigma_hit"           value="0.2"/>
     <param name="laser_lambda_short"        value="0.1"/>
     <param name="laser_model_type"          value="likelihood_field"/>
-    <param name="initial_cov_xx"            value="1000"/>
-    <param name="initial_cov_yy"            value="1000"/>
+    <param name="initial_cov_xx"            value="10000"/>
+    <param name="initial_cov_yy"            value="10000"/>
     <param name="initial_cov_aa"            value="39.4760"/>
     <param name="save_pose_rate"            value="0.5"/>
     <!-- <param name="laser_model_type" value="beam"/> -->

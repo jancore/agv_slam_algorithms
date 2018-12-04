@@ -7,5 +7,8 @@
 # new environment variables
 
 # modified environment variables
-export PKG_CONFIG_PATH="/opt/ros/kinetic/lib/pkgconfig:/opt/ros/kinetic/lib/x86_64-linux-gnu/pkgconfig"
+export CMAKE_PREFIX_PATH="/home/smarlogy/catkin_ws/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/smarlogy/catkin_ws/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/smarlogy/catkin_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/smarlogy/catkin_ws/build"
+export ROS_PACKAGE_PATH="/home/smarlogy/catkin_ws/src:$ROS_PACKAGE_PATH"

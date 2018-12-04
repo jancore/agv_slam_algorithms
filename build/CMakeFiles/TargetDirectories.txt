@@ -112,11 +112,12 @@
 /home/smarlogy/catkin_ws/build/agv_tf/CMakeFiles/tf_broadcaster.dir
 /home/smarlogy/catkin_ws/build/agv_tf/CMakeFiles/install/strip.dir
 /home/smarlogy/catkin_ws/build/agv_tf/CMakeFiles/install/local.dir
-/home/smarlogy/catkin_ws/build/laserscan_nav350/CMakeFiles/list_install_components.dir
-/home/smarlogy/catkin_ws/build/laserscan_nav350/CMakeFiles/install.dir
 /home/smarlogy/catkin_ws/build/laserscan_nav350/CMakeFiles/rebuild_cache.dir
 /home/smarlogy/catkin_ws/build/laserscan_nav350/CMakeFiles/edit_cache.dir
+/home/smarlogy/catkin_ws/build/laserscan_nav350/CMakeFiles/test.dir
 /home/smarlogy/catkin_ws/build/laserscan_nav350/CMakeFiles/nav350_node.dir
+/home/smarlogy/catkin_ws/build/laserscan_nav350/CMakeFiles/list_install_components.dir
+/home/smarlogy/catkin_ws/build/laserscan_nav350/CMakeFiles/install.dir
+/home/smarlogy/catkin_ws/build/laserscan_nav350/CMakeFiles/nav350_180_node.dir
 /home/smarlogy/catkin_ws/build/laserscan_nav350/CMakeFiles/install/strip.dir
 /home/smarlogy/catkin_ws/build/laserscan_nav350/CMakeFiles/install/local.dir
-/home/smarlogy/catkin_ws/build/laserscan_nav350/CMakeFiles/test.dir

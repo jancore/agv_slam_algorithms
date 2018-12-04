@@ -12,7 +12,7 @@ int main(int argc, char** argv){
   agv::Punto2d velocity_agv;
 
   ros::NodeHandle n;
-  ros::Publisher odom_pub = n.advertise<nav_msgs::Odometry>("odom", 50);
+  ros::Publisher odom_pub = n.advertise<nav_msgs::Odometry>("odom", 1 /*50*/);
   tf::TransformBroadcaster odom_broadcaster;
   n.param<std::string>("ip_address", ip_address, "10.67.101.203");
   LecturaOdometria odom_agv(ip_address, 8900);

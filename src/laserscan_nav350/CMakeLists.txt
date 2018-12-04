@@ -213,3 +213,15 @@ target_link_libraries(nav350_node
 target_link_libraries(nav350_node
   "/home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/libLibreriasRobot.a"
   )
+
+
+add_executable(nav350_180_node
+  src/nav350_180_node.cpp
+)
+add_dependencies(nav350_180_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(nav350_180_node
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(nav350_180_node
+  "/home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/libLibreriasRobot.a"
+  )

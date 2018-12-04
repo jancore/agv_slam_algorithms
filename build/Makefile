@@ -1023,6 +1023,19 @@ nav350_node/fast:
 	$(MAKE) -f laserscan_nav350/CMakeFiles/nav350_node.dir/build.make laserscan_nav350/CMakeFiles/nav350_node.dir/build
 .PHONY : nav350_node/fast
 
+#=============================================================================
+# Target rules for targets named nav350_180_node
+
+# Build rule for target.
+nav350_180_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nav350_180_node
+.PHONY : nav350_180_node
+
+# fast build rule for target.
+nav350_180_node/fast:
+	$(MAKE) -f laserscan_nav350/CMakeFiles/nav350_180_node.dir/build.make laserscan_nav350/CMakeFiles/nav350_180_node.dir/build
+.PHONY : nav350_180_node/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1102,6 +1115,7 @@ help:
 	@echo "... tf_listener"
 	@echo "... tf_broadcaster"
 	@echo "... nav350_node"
+	@echo "... nav350_180_node"
 .PHONY : help
 
 
