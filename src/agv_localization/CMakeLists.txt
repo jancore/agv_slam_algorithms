@@ -206,6 +206,7 @@ include_directories(
 
 
 add_executable(localization_error_node
+  src/map_listener.cpp
   src/localization_error_node.cpp
   src/amcl_listener.cpp
 )
@@ -219,5 +220,29 @@ add_executable(tf_localization
 )
 add_dependencies(tf_localization ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(tf_localization
+  ${catkin_LIBRARIES}
+)
+
+add_library(map_listener
+  include/agv_localization/map_listener.h
+)
+add_dependencies(map_listener ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(map_listener
+  ${catkin_LIBRARIES}
+)
+
+add_library(agv
+  include/agv_localization/agv.h
+)
+add_dependencies(agv ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(agv
+  ${catkin_LIBRARIES}
+)
+
+add_executable(agv
+  src/agv.cpp
+)
+add_dependencies(agv ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(agv
   ${catkin_LIBRARIES}
 )
