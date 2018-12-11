@@ -283,6 +283,19 @@ gtest_main/fast:
 .PHONY : gtest_main/fast
 
 #=============================================================================
+# Target rules for targets named particle_filter_node
+
+# Build rule for target.
+particle_filter_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 particle_filter_node
+.PHONY : particle_filter_node
+
+# fast build rule for target.
+particle_filter_node/fast:
+	$(MAKE) -f agv_localization/CMakeFiles/particle_filter_node.dir/build.make agv_localization/CMakeFiles/particle_filter_node.dir/build
+.PHONY : particle_filter_node/fast
+
+#=============================================================================
 # Target rules for targets named tf_localization
 
 # Build rule for target.
@@ -1058,6 +1071,7 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... particle_filter_node"
 	@echo "... tf_localization"
 	@echo "... localization_error_node"
 	@echo "... tf2_msgs_generate_messages_nodejs"
