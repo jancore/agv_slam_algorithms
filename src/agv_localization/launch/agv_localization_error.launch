@@ -1,7 +1,7 @@
 <launch>
-    <arg name="custom_agv_amcl_file" default="$(find agv_localization)/launch/agv_amcl.launch"/>  
+    <arg name="custom_agv_localization_file" default="$(find agv_localization)/launch/agv_mrpt.launch"/>  
 
-    <include file="$(arg custom_agv_amcl_file)" />
+    <include file="$(arg custom_agv_localization_file)" />
     
     <node pkg="agv_localization" type="tf_localization" name="tf_localization"/>
 

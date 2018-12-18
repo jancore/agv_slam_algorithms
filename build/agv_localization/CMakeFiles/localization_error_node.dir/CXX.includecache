@@ -13,21 +13,19 @@ geometry_msgs/PoseWithCovarianceStamped.h
 -
 geometry_msgs/PoseStamped.h
 -
+geometry_msgs/PoseArray.h
+-
+tf/transform_datatypes.h
+-
+math.h
+-
 
 /home/smarlogy/catkin_ws/src/agv_localization/src/amcl_listener.cpp
 agv_localization/amcl_listener.h
 /home/smarlogy/catkin_ws/src/agv_localization/src/agv_localization/amcl_listener.h
 
 /home/smarlogy/catkin_ws/src/agv_localization/src/localization_error_node.cpp
-ros/ros.h
--
-geometry_msgs/PoseWithCovarianceStamped.h
--
-geometry_msgs/PoseStamped.h
--
 tf/transform_listener.h
--
-tf/transform_datatypes.h
 -
 fstream
 -
@@ -170,6 +168,26 @@ ros/message_operations.h
 geometry_msgs/Point.h
 -
 geometry_msgs/Quaternion.h
+-
+
+/opt/ros/kinetic/include/geometry_msgs/PoseArray.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+std_msgs/Header.h
+-
+geometry_msgs/Pose.h
 -
 
 /opt/ros/kinetic/include/geometry_msgs/PoseStamped.h

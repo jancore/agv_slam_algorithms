@@ -4,11 +4,18 @@
 agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /home/smarlogy/catkin_ws/src/agv_localization/include/agv_localization/amcl_listener.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /home/smarlogy/catkin_ws/src/agv_localization/src/amcl_listener.cpp
 agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Point.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PointStamped.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Pose.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseArray.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseStamped.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseWithCovariance.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseWithCovarianceStamped.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Quaternion.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/geometry_msgs/QuaternionStamped.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Transform.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/geometry_msgs/TransformStamped.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Vector3.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Vector3Stamped.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/ros/advertise_options.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/ros/advertise_service_options.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/ros/assert.h
@@ -66,6 +73,14 @@ agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o:
 agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/ros/wall_timer_options.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/tf/LinearMath/Matrix3x3.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/tf/LinearMath/MinMax.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/tf/LinearMath/QuadWord.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/tf/LinearMath/Quaternion.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/tf/LinearMath/Scalar.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/tf/LinearMath/Transform.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/tf/LinearMath/Vector3.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/tf/transform_datatypes.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
 
@@ -78,6 +93,7 @@ agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_n
 agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Point32.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PointStamped.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Pose.h
+agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseArray.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseStamped.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseWithCovariance.h
 agv_localization/CMakeFiles/localization_error_node.dir/src/localization_error_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseWithCovarianceStamped.h

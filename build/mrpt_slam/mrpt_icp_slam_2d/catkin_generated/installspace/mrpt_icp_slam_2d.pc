@@ -1,0 +1,8 @@
+prefix=/home/smarlogy/catkin_ws/install
+
+Name: mrpt_icp_slam_2d
+Description: Description of mrpt_icp_slam_2d
+Version: 0.1.5
+Cflags: 
+Libs: -L/home/smarlogy/catkin_ws/install/lib 
+Requires: nav_msgs sensor_msgs std_msgs

@@ -1,1 +1,0 @@
-/usr/bin/c++   -std=c++14  -I. -pthread  -lpthread -lm -Wall -lrt   CMakeFiles/agv.dir/src/agv.cpp.o  -o /home/smarlogy/catkin_ws/devel/lib/agv_localization/agv -rdynamic 

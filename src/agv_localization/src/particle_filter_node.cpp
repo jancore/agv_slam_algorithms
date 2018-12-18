@@ -17,7 +17,7 @@ int main(int argc, char** argv)
     nh.param<std::string>("map_topic", map_topic, "map");
     nh.param<std::string>("scan_topic", scan_topic, "nav350_scan");
     nh.param<std::string>("odom_topic", odom_topic, "odom");
-    nh.param<int>("num_particles", num_particles, 2000);
+    nh.param<int>("num_particles", num_particles, 10);
 
     MapListener mapListener;
     OdomListener odomListener;
@@ -42,53 +42,68 @@ int main(int argc, char** argv)
     double x_pre = 0.0;
     double y_pre = 0.0;
     double yaw_pre = 0.0;
-    double deltaX, deltaY, deltaYaw;
-    bool gottenLandmarks = false;
+    double deltaX, deltaY, deltaYaw, dist;
+    double dist_update = 0.20; 
+    double yaw_update = 0.26;
 
     std::vector<Agv> particles(num_particles);
-    for(int i = 0; i < num_particles; i++)
-    {   
-        try
-        {
-            Agv particle(map.info);
-            particle.SetNoise(0.05, 0.05, 5.0);
-            particles[i] = particle;
-        }
-        catch (const std::exception& e)
-        {
-            ROS_ERROR("An error ocurred trying to create the particles. %s.", e.what());
-            return 0;
-        }       
-    }
 
-    ros::Rate r(10.0);    
+    ros::Rate r(0.5);    
 
-    ROS_INFO("Particle filter initialized...");
     while(nh.ok())
     {
         ros::spinOnce();
 
-        if(!gottenLandmarks || landmarks.size() == 0)
+        if(landmarks.size() == 0)
         {
             map = mapListener.GetDataMap();
-            //std::cout << "holi";
             landmarks = GetLandmarks(map);
-            gottenLandmarks = true;
+
+            for(int i = 0; i < num_particles; i++)
+            {   
+                try
+                {
+                    Agv particle(map.info);
+                    particle.SetNoise(0.05, 0.05, 5.0);
+                    particles[i] = particle;
+
+                //ROS_INFO("x = %.2lf, y = %.2lf, yaw = %.2lf", particles[i].x, particles[i].y, particles[i].yaw);
+                }
+                catch (const std::exception& e)
+                {
+                    ROS_ERROR("An error ocurred trying to create the particles. %s.", e.what());
+                    return 0;
+                }       
+            }
+            //sub_map.shutdown();
+            ROS_INFO("Particle filter initialized...");
         }
 
-    //ROS_INFO("%d", int(landmarks.size()));
+        //ROS_INFO("%d", int(landmarks.size()));
         scan = scanListener.GetDataScan();
         odom = odomListener.GetDataOdom();
         deltaX = odom.pose.pose.position.x - x_pre;
         deltaY = odom.pose.pose.position.y - y_pre;
-        deltaYaw = tf::getYaw(odom.pose.pose.orientation) - yaw_pre;
+        if(odom.pose.pose.orientation.x == 0 && odom.pose.pose.orientation.y == 0 && odom.pose.pose.orientation.z == 0 && odom.pose.pose.orientation.w == 0)
+        {
+            odom.pose.pose.orientation.w = 1;
+            deltaYaw = tf::getYaw(odom.pose.pose.orientation) - yaw_pre;
+        }
+        else
+        {
+            deltaYaw = tf::getYaw(odom.pose.pose.orientation) - yaw_pre;
+        }
+        
+        dist = sqrt(pow(deltaX,2) + pow(deltaY,2));
 
-        particles = ParticleFilter(particles, num_particles, scan, landmarks, deltaX, deltaY, deltaYaw);
-        //ROS_INFO("deltaYaw = %.2lf, w = %.2lf", deltaYaw, particles[0].yaw);
+        if(abs(dist) > dist_update || abs(deltaYaw) > yaw_update)
+        {
+            particles = ParticleFilter(particles, num_particles, scan, landmarks, deltaX, deltaY, deltaYaw);
 
-        x_pre = odom.pose.pose.position.x;
-        y_pre = odom.pose.pose.position.y;
-        yaw_pre = tf::getYaw(odom.pose.pose.orientation);
+            x_pre = odom.pose.pose.position.x;
+            y_pre = odom.pose.pose.position.y;
+            yaw_pre = tf::getYaw(odom.pose.pose.orientation);
+        }
 
         poses.poses.clear();
         for(int i = 0; i < num_particles; i++)

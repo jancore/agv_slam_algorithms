@@ -1,0 +1,8 @@
+prefix=/home/smarlogy/catkin_ws/devel
+
+Name: mrpt_rbpf_slam
+Description: Description of mrpt_rbpf_slam
+Version: 0.1.5
+Cflags: 
+Libs: -L/home/smarlogy/catkin_ws/devel/lib 
+Requires: nav_msgs sensor_msgs std_msgs

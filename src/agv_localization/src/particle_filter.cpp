@@ -7,6 +7,7 @@ std::vector<Agv> ParticleFilter(std::vector<Agv> particles, int num_particles, s
 
     for(i = 0; i < num_particles; i++)
     {
+        //ROS_INFO("x = %.2lf, y = %.2lf, yaw = %.2lf", particles[i].x, particles[i].y, particles[i].yaw);
         particles[i].Move(deltaX, deltaY, deltaYaw);
     }
 
@@ -15,6 +16,7 @@ std::vector<Agv> ParticleFilter(std::vector<Agv> particles, int num_particles, s
         weights[i] = particles[i].MeasurementProb(scan, landmarks, landmarks.size());
     }
     //ROS_INFO("pesos: %.2lf", weights[i]);
+    ROS_INFO("deltaYaw = %.2lf, yaw = %.2lf, weight = %.2lf", deltaYaw, particles[0].yaw,  weights[0]);
 
     particles = ResamplingWheel(particles, weights, num_particles);
 

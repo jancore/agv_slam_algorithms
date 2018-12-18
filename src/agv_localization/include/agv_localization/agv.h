@@ -12,7 +12,7 @@ class Agv
         void SetNoise(float new_forward_noise, float new_turn_noise, float new_sense_noise);
         double Gaussian(double mu, double sigma, double x);
         double MeasurementProb(sensor_msgs::LaserScan scan, std::vector< std::vector<double> >& landmarks, int num_landmarks);
-        void Move(float deltaX, float deltaY, float deltaYaw);
+        void Move(double deltaX, double deltaY, double deltaYaw);
 
         double x;
         double y;

@@ -2,7 +2,7 @@
 
 std::vector<Agv> ResamplingWheel(std::vector<Agv> particles, double weights[], int num_particles)
 {
-    std::srand(std::time(nullptr));
+    //std::srand(std::time(nullptr));
     std::vector<Agv> p(num_particles);
     int i;
     float beta = 0.0;

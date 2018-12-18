@@ -14,7 +14,7 @@ int main(int argc, char** argv){
   ros::NodeHandle n;
   ros::Publisher odom_pub = n.advertise<nav_msgs::Odometry>("odom", 1 /*50*/);
   tf::TransformBroadcaster odom_broadcaster;
-  n.param<std::string>("ip_address", ip_address, "10.67.101.203");
+  n.param<std::string>("ip_address", ip_address, "192.168.1.203");
   LecturaOdometria odom_agv(ip_address, 8900);
 
   double x = 0.0;
@@ -92,12 +92,12 @@ int main(int argc, char** argv){
     odom.twist.twist.linear.y = vy;
     odom.twist.twist.angular.z = vth;
 
-    odom.pose.covariance[0] = 1.0;
-    odom.pose.covariance[7] = 1.0;
-    odom.pose.covariance[14] = 1.0;
-    odom.pose.covariance[21] = 1.0;
-    odom.pose.covariance[28] = 1.0;
-    odom.pose.covariance[35] = 1.0;
+    odom.pose.covariance[0] = 0.0;
+    odom.pose.covariance[7] = 0.0;
+    odom.pose.covariance[14] = 0.0;
+    odom.pose.covariance[21] = 0.0;
+    odom.pose.covariance[28] = 0.0;
+    odom.pose.covariance[35] = 0.0;
     
     //publish the message
     odom_pub.publish(odom);

@@ -122,6 +122,12 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/smarlogy/catkin_ws/build/agv_odom/cmake_install.cmake")
   include("/home/smarlogy/catkin_ws/build/agv_tf/cmake_install.cmake")
   include("/home/smarlogy/catkin_ws/build/laserscan_nav350/cmake_install.cmake")
+  include("/home/smarlogy/catkin_ws/build/mrpt_slam/mrpt_slam/cmake_install.cmake")
+  include("/home/smarlogy/catkin_ws/build/mrpt_bridge/cmake_install.cmake")
+  include("/home/smarlogy/catkin_ws/build/mrpt_slam/mrpt_ekf_slam_2d/cmake_install.cmake")
+  include("/home/smarlogy/catkin_ws/build/mrpt_slam/mrpt_ekf_slam_3d/cmake_install.cmake")
+  include("/home/smarlogy/catkin_ws/build/mrpt_slam/mrpt_icp_slam_2d/cmake_install.cmake")
+  include("/home/smarlogy/catkin_ws/build/mrpt_slam/mrpt_rbpf_slam/cmake_install.cmake")
 
 endif()
 

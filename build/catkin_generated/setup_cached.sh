@@ -8,3 +8,4 @@
 
 # modified environment variables
 export PWD="/home/smarlogy/catkin_ws/build"
+export PYTHONPATH="/opt/ros/kinetic/lib/python2.7/dist-packages"

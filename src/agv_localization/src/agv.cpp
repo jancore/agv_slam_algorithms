@@ -47,7 +47,7 @@ void Agv::SetNoise(float new_forward_noise, float new_turn_noise, float new_sens
 
 double Agv::Gaussian(double mu, double sigma, double x)
 {
-    return exp(-pow((mu - x), 2) / pow(sigma, 2)) / sqrt(2*M_PI*pow(sigma, 2));
+    return exp(-pow((mu - x), 2) / pow(sigma, 2) / 2.0) / sqrt(2*M_PI*pow(sigma, 2));
 }
 
 double Agv::MeasurementProb(sensor_msgs::LaserScan scan, std::vector< std::vector<double> >& landmarks, int num_landmarks)
@@ -69,9 +69,11 @@ double Agv::MeasurementProb(sensor_msgs::LaserScan scan, std::vector< std::vecto
     return prob;
 }
 
-void Agv::Move(float deltaX, float deltaY, float deltaYaw)
+void Agv::Move(double deltaX, double deltaY, double deltaYaw)
 {
+     //ROS_INFO("particle_yaw_1 = %.3lf", deltaYaw);
      this->yaw = atan2(sin(this->yaw + deltaYaw),cos(this->yaw + deltaYaw));
+     //ROS_INFO("particle_yaw_2 = %.3lf", this->yaw);
      this->x = this->x + deltaX;
      this->y = this->y + deltaY;
 }

@@ -114,7 +114,7 @@ Visualization Manager:
       Axes Length: 0.300000012
       Axes Radius: 0.00999999978
       Class: rviz/PoseArray
-      Color: 0; 255; 0
+      Color: 0; 0; 255
       Enabled: true
       Head Length: 0.0700000003
       Head Radius: 0.0299999993
@@ -199,11 +199,11 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Scale: 18.6288567
+      Scale: 17.1428986
       Target Frame: <Fixed Frame>
       Value: TopDownOrtho (rviz)
-      X: 43.5518875
-      Y: 27.4027596
+      X: 10.7713118
+      Y: -5.47160482
     Saved: ~
 Window Geometry:
   Displays:
