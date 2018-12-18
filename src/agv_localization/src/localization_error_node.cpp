@@ -16,8 +16,8 @@ int main(int argc, char** argv)
 
     Mrpt_listener estimated_pose_listener;
 
-    message_filters::Subscriber<geometry_msgs::PoseArray> sub_pose(n, "particlecloud", 10);
-    message_filters::Subscriber<geometry_msgs::PoseStamped> sub_nav350_pose(n, "nav350_position", 10);
+    message_filters::Subscriber<geometry_msgs::PoseArray> sub_pose(n, "particlecloud", 1);
+    message_filters::Subscriber<geometry_msgs::PoseStamped> sub_nav350_pose(n, "nav350_position", 1);
     typedef sync_policies::ApproximateTime<geometry_msgs::PoseArray, geometry_msgs::PoseStamped> MySyncPolicy;
     // ApproximateTime takes a queue size as its constructor argument, hence MySyncPolicy(10)
     Synchronizer<MySyncPolicy> sync(MySyncPolicy(10), sub_pose, sub_nav350_pose);
@@ -61,7 +61,7 @@ int main(int argc, char** argv)
             // listener.transformPose("base_link", initial_pose, aux_pose);
             // initial_pose = aux_pose;
             // initial_pose.header.frame_id = "localization_laser_frame";
-            listener.transformPose("base_laser", initial_pose, aux_pose);
+            listener.transformPose("map", initial_pose, aux_pose);
             final_pose = aux_pose;
         }
         catch (const std::exception& ex)

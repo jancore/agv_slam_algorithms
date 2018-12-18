@@ -48,7 +48,7 @@ geometry_msgs::PoseWithCovarianceStamped Mrpt_listener::GetPose(){
 
     for(i = 0; i < size; i++)
     {
-        array[i] = tf::getYaw(mrpt_poses.poses[i].orientation);
+        array[i] = tf::getYaw(mrpt_poses.poses[i].orientation) - M_PI;
     }
     mean = this->Mean(array);
     this->pose_final.pose.pose.orientation = tf::createQuaternionMsgFromYaw(mean);
