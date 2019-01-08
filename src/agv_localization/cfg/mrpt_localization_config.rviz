@@ -7,10 +7,10 @@ Panels:
         - /Global Options1
         - /Status1
         - /TF1
+        - /TF1/Frames1
         - /LaserScan1
-        - /PoseArray1
         - /Map1
-        - /PoseWithCovariance1
+        - /Pose_estimated1
       Splitter Ratio: 0.585132003
     Tree Height: 654
   - Class: rviz/Selection
@@ -62,6 +62,8 @@ Visualization Manager:
           Value: true
         base_link:
           Value: true
+        localization_laser_frame:
+          Value: true
         map:
           Value: true
         odom:
@@ -72,11 +74,12 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        map:
-          odom:
-            base_link:
-              base_laser:
-                {}
+        localization_laser_frame:
+          map:
+            odom:
+              base_link:
+                base_laser:
+                  {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -115,7 +118,7 @@ Visualization Manager:
       Axes Radius: 0.00999999978
       Class: rviz/PoseArray
       Color: 0; 0; 255
-      Enabled: true
+      Enabled: false
       Head Length: 0.0700000003
       Head Radius: 0.0299999993
       Name: PoseArray
@@ -124,7 +127,7 @@ Visualization Manager:
       Shape: Arrow (Flat)
       Topic: /particlecloud
       Unreliable: false
-      Value: true
+      Value: false
     - Alpha: 0.699999988
       Class: rviz/Map
       Color Scheme: map
@@ -138,31 +141,31 @@ Visualization Manager:
     - Alpha: 1
       Axes Length: 1
       Axes Radius: 0.100000001
-      Class: rviz/PoseWithCovariance
+      Class: rviz/Pose
       Color: 255; 25; 0
-      Covariance:
-        Orientation:
-          Alpha: 0.5
-          Color: 255; 255; 127
-          Color Style: Unique
-          Frame: Local
-          Offset: 1
-          Scale: 1
-          Value: true
-        Position:
-          Alpha: 0.300000012
-          Color: 204; 51; 204
-          Scale: 1
-          Value: true
-        Value: true
+      Enabled: false
+      Head Length: 0.300000012
+      Head Radius: 0.100000001
+      Name: Nav_pose
+      Shaft Length: 1
+      Shaft Radius: 0.0500000007
+      Shape: Axes
+      Topic: /nav350_position
+      Unreliable: true
+      Value: false
+    - Alpha: 1
+      Axes Length: 1
+      Axes Radius: 0.100000001
+      Class: rviz/Pose
+      Color: 255; 25; 0
       Enabled: true
       Head Length: 0.300000012
       Head Radius: 0.100000001
-      Name: PoseWithCovariance
+      Name: Pose_estimated
       Shaft Length: 1
       Shaft Radius: 0.0500000007
-      Shape: Arrow
-      Topic: /mrpt_pose
+      Shape: Axes
+      Topic: /estimated_pose
       Unreliable: false
       Value: true
   Enabled: true
@@ -199,11 +202,11 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Scale: 17.1428986
+      Scale: 5.37483168
       Target Frame: <Fixed Frame>
       Value: TopDownOrtho (rviz)
-      X: 10.7713118
-      Y: -5.47160482
+      X: 97.4621887
+      Y: 3.75809288
     Saved: ~
 Window Geometry:
   Displays:

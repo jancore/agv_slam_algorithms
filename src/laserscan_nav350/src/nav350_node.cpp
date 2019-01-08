@@ -65,7 +65,7 @@ int main(int argc, char** argv)
 
             pose.pose.position.x = data_laser.datos_pose.pose.pos_x / 1000.0;
             pose.pose.position.y = data_laser.datos_pose.pose.pos_y / 1000.0;
-            pose.pose.orientation = tf::createQuaternionMsgFromYaw(data_laser.datos_pose.pose.orientacion_mgrad/1000.0 * M_PI/180.0);
+            pose.pose.orientation = tf::createQuaternionMsgFromYaw(data_laser.datos_pose.pose.orientacion_mgrad/1000.0 * M_PI/180.0 + M_PI);
 
             scan_pub.publish(scan);
             position_pub.publish(pose);

@@ -29,7 +29,7 @@ geometry_msgs::PoseWithCovarianceStamped Mrpt_listener::GetPose(){
     int size = mrpt_poses.poses.size();
     std::vector<double> array(mrpt_poses.poses.size());
     double mean;
-    //ROS_INFO("%.2lf", mrpt_poses.poses[0].position.x);
+    
     for(i = 0; i < size; i++)
     {
         array[i] = mrpt_poses.poses[i].position.x;
@@ -38,6 +38,8 @@ geometry_msgs::PoseWithCovarianceStamped Mrpt_listener::GetPose(){
     this->pose_final.pose.pose.position.x = mean;
     this->pose_final.pose.covariance[0] = this->Variance(array, this->pose_final.pose.pose.position.x);
 
+    array.clear();
+    array.resize(size);
     for(i = 0; i < size; i++)
     {
         array[i] = mrpt_poses.poses[i].position.y;
@@ -46,15 +48,17 @@ geometry_msgs::PoseWithCovarianceStamped Mrpt_listener::GetPose(){
     this->pose_final.pose.pose.position.y = mean;
     this->pose_final.pose.covariance[7] = this->Variance(array, this->pose_final.pose.pose.position.y);
 
+    array.clear();
+    array.resize(size);
     for(i = 0; i < size; i++)
     {
-        array[i] = tf::getYaw(mrpt_poses.poses[i].orientation) - M_PI;
+        array[i] = tf::getYaw(mrpt_poses.poses[i].orientation);
     }
     mean = this->Mean(array);
     this->pose_final.pose.pose.orientation = tf::createQuaternionMsgFromYaw(mean);
     this->pose_final.pose.covariance[35] = this->Variance(array, mean);
 
-    this->pose_final.header.frame_id = "localization_laser_frame";
+    this->pose_final.header.frame_id = "map";
     this->pose_final.header.stamp = ros::Time::now();
     this->pose_final.header.seq = mrpt_poses.header.seq;
 

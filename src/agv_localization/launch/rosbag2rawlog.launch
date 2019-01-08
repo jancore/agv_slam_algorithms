@@ -1,0 +1,10 @@
+<launch>
+
+  <param name="/use_sim_time" value="true"/>
+  <node pkg="mrpt_rawlog" type="rawlog_record_node" name="rawlog_record_node" output="screen">
+    <remap from="odom" to="/odom"/> 
+    <remap from="scan" to="nav350_scan"/> 
+    <param name="raw_log_folder" value="$(find agv_localization)"/> 
+  </node>
+
+</launch>

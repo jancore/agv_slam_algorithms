@@ -1,9 +1,15 @@
 <launch>
-    <arg name="custom_agv_localization_file" default="$(find agv_localization)/launch/agv_mrpt.launch"/>  
+    <arg name="custom_map_filename" default="nave_rbpf_10"/>
 
-    <include file="$(arg custom_agv_localization_file)" />
+    <param name="origin_file" value="/home/smarlogy/catkin_ws/origins/origin_map_$(arg custom_map_filename).txt"/>
     
-    <node pkg="agv_localization" type="tf_localization" name="tf_localization"/>
+    <arg name="custom_agv_localization_file" default="$(find agv_localization)/launch/agv_mrpt.launch"/>  
+    <include file="$(arg custom_agv_localization_file)">
+        <arg name="base_frame" default="base_laser"/>
+        <arg name="map_file" default="/home/smarlogy/catkin_ws/maps/$(arg custom_map_filename).simplemap"/>
+    </include>
+    
+    <node pkg="agv_localization" type="tf_localization" name="tf_localization" output="screen"/>
 
     <node pkg="agv_localization" type="localization_error_node" name="localization_error_node" output="screen"/>
 

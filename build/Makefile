@@ -920,6 +920,19 @@ actionlib_generate_messages_py/fast:
 .PHONY : actionlib_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named get_origin_node
+
+# Build rule for target.
+get_origin_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 get_origin_node
+.PHONY : get_origin_node
+
+# fast build rule for target.
+get_origin_node/fast:
+	$(MAKE) -f agv_mapping/CMakeFiles/get_origin_node.dir/build.make agv_mapping/CMakeFiles/get_origin_node.dir/build
+.PHONY : get_origin_node/fast
+
+#=============================================================================
 # Target rules for targets named nav_msgs_generate_messages_eus
 
 # Build rule for target.
@@ -2069,6 +2082,7 @@ help:
 	@echo "... actionlib_generate_messages_lisp"
 	@echo "... actionlib_generate_messages_nodejs"
 	@echo "... actionlib_generate_messages_py"
+	@echo "... get_origin_node"
 	@echo "... nav_msgs_generate_messages_eus"
 	@echo "... nav_msgs_generate_messages_nodejs"
 	@echo "... nav_msgs_generate_messages_cpp"

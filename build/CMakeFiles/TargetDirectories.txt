@@ -85,12 +85,13 @@
 /home/smarlogy/catkin_ws/build/agv_localization/CMakeFiles/actionlib_generate_messages_nodejs.dir
 /home/smarlogy/catkin_ws/build/agv_localization/CMakeFiles/actionlib_generate_messages_py.dir
 /home/smarlogy/catkin_ws/build/agv_mapping/CMakeFiles/install.dir
-/home/smarlogy/catkin_ws/build/agv_mapping/CMakeFiles/edit_cache.dir
+/home/smarlogy/catkin_ws/build/agv_mapping/CMakeFiles/rebuild_cache.dir
 /home/smarlogy/catkin_ws/build/agv_mapping/CMakeFiles/install/strip.dir
+/home/smarlogy/catkin_ws/build/agv_mapping/CMakeFiles/get_origin_node.dir
+/home/smarlogy/catkin_ws/build/agv_mapping/CMakeFiles/edit_cache.dir
 /home/smarlogy/catkin_ws/build/agv_mapping/CMakeFiles/list_install_components.dir
 /home/smarlogy/catkin_ws/build/agv_mapping/CMakeFiles/test.dir
 /home/smarlogy/catkin_ws/build/agv_mapping/CMakeFiles/install/local.dir
-/home/smarlogy/catkin_ws/build/agv_mapping/CMakeFiles/rebuild_cache.dir
 /home/smarlogy/catkin_ws/build/agv_odom/CMakeFiles/install.dir
 /home/smarlogy/catkin_ws/build/agv_odom/CMakeFiles/rebuild_cache.dir
 /home/smarlogy/catkin_ws/build/agv_odom/CMakeFiles/install/local.dir

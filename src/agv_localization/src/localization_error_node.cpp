@@ -16,6 +16,8 @@ int main(int argc, char** argv)
 
     Mrpt_listener estimated_pose_listener;
 
+    ros::Publisher estimated_pose_pub = n.advertise<geometry_msgs::PoseStamped>("estimated_pose",10);
+    
     message_filters::Subscriber<geometry_msgs::PoseArray> sub_pose(n, "particlecloud", 1);
     message_filters::Subscriber<geometry_msgs::PoseStamped> sub_nav350_pose(n, "nav350_position", 1);
     typedef sync_policies::ApproximateTime<geometry_msgs::PoseArray, geometry_msgs::PoseStamped> MySyncPolicy;
@@ -25,7 +27,7 @@ int main(int argc, char** argv)
     sync.registerCallback(boost::bind(&Mrpt_listener::Callback, boost::ref(estimated_pose_listener), _1, _2));
 
     tf::TransformListener listener(ros::Duration(10));
-    geometry_msgs::PoseStamped initial_pose, final_pose;
+    geometry_msgs::PoseStamped initial_pose, final_pose, estimated_pose_no_cov;
     geometry_msgs::PoseWithCovarianceStamped estimated_pose;
     tf::Quaternion q_aux;
     double roll_n, pitch_n, yaw_n;
@@ -34,6 +36,7 @@ int main(int argc, char** argv)
     double x_pre = 0;
     double y_pre = 0;
     double th_pre = 0;
+    double timing;
 
     ros::Rate r(10.0);
 
@@ -52,15 +55,16 @@ int main(int argc, char** argv)
     while(n.ok())
     {
         ros::spinOnce();
+        tf::StampedTransform transform;
         
+        timing = ros::Time::now().toSec();
+        estimated_pose = estimated_pose_listener.GetPose();
+        timing = ros::Time::now().toSec() - timing;
+
         try
         {
             geometry_msgs::PoseStamped aux_pose;
             initial_pose = estimated_pose_listener.GetNav350Pose();
-            // initial_pose.header.frame_id = "base_laser";
-            // listener.transformPose("base_link", initial_pose, aux_pose);
-            // initial_pose = aux_pose;
-            // initial_pose.header.frame_id = "localization_laser_frame";
             listener.transformPose("map", initial_pose, aux_pose);
             final_pose = aux_pose;
         }
@@ -68,8 +72,8 @@ int main(int argc, char** argv)
         {
             ROS_ERROR("An exception ocurred trying to TRANSFORM POSITION from \"NAV350\". %s.", ex.what());
         }
-        
-        estimated_pose = estimated_pose_listener.GetPose();
+
+        ROS_INFO("Time for estimation: %.6lf s", timing);
 
         tf::quaternionMsgToTF(final_pose.pose.orientation, q_aux);
         tf::Matrix3x3 m_n(q_aux);
@@ -78,7 +82,9 @@ int main(int argc, char** argv)
         m_n.getRPY(roll_n, pitch_n, yaw_n);
         m_a.getRPY(roll_a, pitch_a, yaw_a); 
 
-        ROS_INFO("NAV350_pose: (%.2f, %.2f, %.2f), estimated_pose: (%.2f, %.2f, %.2f), ABS(Difference): (%.2f, %.2f. %.2f)",
+        //final_pose.pose.position.y += 0.65 - estimated_pose.pose.pose.position.x * 0.0209;
+
+        ROS_INFO("NAV350_pose: (%.3f, %.3f, %.3f), estimated_pose: (%.3f, %.3f, %.3f), ABS(Difference): (%.3f, %.3f. %.3f)",
             final_pose.pose.position.x , final_pose.pose.position.y, yaw_n,
             estimated_pose.pose.pose.position.x, estimated_pose.pose.pose.position.y, yaw_a,
             std::abs(final_pose.pose.position.x - estimated_pose.pose.pose.position.x),
@@ -104,6 +110,9 @@ int main(int argc, char** argv)
             }
         }
 
+        estimated_pose_no_cov.header = estimated_pose.header;
+        estimated_pose_no_cov.pose = estimated_pose.pose.pose;
+        estimated_pose_pub.publish(estimated_pose_no_cov);
         r.sleep();
     }
 

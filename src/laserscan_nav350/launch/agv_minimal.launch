@@ -1,0 +1,14 @@
+<launch>
+    <arg name="ip_nav350" default="10.67.101.36"/>
+    <arg name="ip_odom" default="10.67.101.203"/>
+
+    <node pkg="laserscan_nav350" type="nav350_node" name="nav350_node">
+        <param name="ip_nav350" value="$(arg ip_nav350)"/>
+    </node>
+
+    <node pkg="agv_tf" type="tf_broadcaster" name="tf_broadcaster" output="screen" />
+
+    <node pkg="agv_odom" type="agv_odom_node" name="agv_odom_node" output="screen">
+        <param name="ip_address" value="$(arg ip_odom)"/>
+    </node>
+</launch>

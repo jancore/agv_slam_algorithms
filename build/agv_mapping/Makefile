@@ -68,16 +68,16 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
 
-.PHONY : edit_cache/fast
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -89,6 +89,17 @@ install/strip: preinstall
 install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -122,17 +133,6 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # The main all target
 all: cmake_check_build_system
 	cd /home/smarlogy/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/smarlogy/catkin_ws/build/CMakeFiles /home/smarlogy/catkin_ws/build/agv_mapping/CMakeFiles/progress.marks
@@ -165,6 +165,48 @@ depend:
 	cd /home/smarlogy/catkin_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+agv_mapping/CMakeFiles/get_origin_node.dir/rule:
+	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 agv_mapping/CMakeFiles/get_origin_node.dir/rule
+.PHONY : agv_mapping/CMakeFiles/get_origin_node.dir/rule
+
+# Convenience name for target.
+get_origin_node: agv_mapping/CMakeFiles/get_origin_node.dir/rule
+
+.PHONY : get_origin_node
+
+# fast build rule for target.
+get_origin_node/fast:
+	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f agv_mapping/CMakeFiles/get_origin_node.dir/build.make agv_mapping/CMakeFiles/get_origin_node.dir/build
+.PHONY : get_origin_node/fast
+
+src/get_origin_node.o: src/get_origin_node.cpp.o
+
+.PHONY : src/get_origin_node.o
+
+# target to build an object file
+src/get_origin_node.cpp.o:
+	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f agv_mapping/CMakeFiles/get_origin_node.dir/build.make agv_mapping/CMakeFiles/get_origin_node.dir/src/get_origin_node.cpp.o
+.PHONY : src/get_origin_node.cpp.o
+
+src/get_origin_node.i: src/get_origin_node.cpp.i
+
+.PHONY : src/get_origin_node.i
+
+# target to preprocess a source file
+src/get_origin_node.cpp.i:
+	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f agv_mapping/CMakeFiles/get_origin_node.dir/build.make agv_mapping/CMakeFiles/get_origin_node.dir/src/get_origin_node.cpp.i
+.PHONY : src/get_origin_node.cpp.i
+
+src/get_origin_node.s: src/get_origin_node.cpp.s
+
+.PHONY : src/get_origin_node.s
+
+# target to generate assembly for a file
+src/get_origin_node.cpp.s:
+	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f agv_mapping/CMakeFiles/get_origin_node.dir/build.make agv_mapping/CMakeFiles/get_origin_node.dir/src/get_origin_node.cpp.s
+.PHONY : src/get_origin_node.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -172,12 +214,16 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install"
-	@echo "... edit_cache"
+	@echo "... rebuild_cache"
 	@echo "... install/strip"
+	@echo "... get_origin_node"
+	@echo "... edit_cache"
 	@echo "... list_install_components"
 	@echo "... test"
 	@echo "... install/local"
-	@echo "... rebuild_cache"
+	@echo "... src/get_origin_node.o"
+	@echo "... src/get_origin_node.i"
+	@echo "... src/get_origin_node.s"
 .PHONY : help
 
 
