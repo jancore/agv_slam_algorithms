@@ -394,6 +394,7 @@ clean: gtest/gtest/CMakeFiles/gtest_main.dir/clean
 # Directory level rules for directory agv_localization
 
 # Convenience name for "all" pass in the directory.
+agv_localization/all: agv_localization/CMakeFiles/send_position_node.dir/all
 agv_localization/all: agv_localization/CMakeFiles/particle_filter_node.dir/all
 agv_localization/all: agv_localization/CMakeFiles/tf_localization.dir/all
 agv_localization/all: agv_localization/CMakeFiles/localization_error_node.dir/all
@@ -401,6 +402,7 @@ agv_localization/all: agv_localization/CMakeFiles/localization_error_node.dir/al
 .PHONY : agv_localization/all
 
 # Convenience name for "clean" pass in the directory.
+agv_localization/clean: agv_localization/CMakeFiles/send_position_node.dir/clean
 agv_localization/clean: agv_localization/CMakeFiles/particle_filter_node.dir/clean
 agv_localization/clean: agv_localization/CMakeFiles/tf_localization.dir/clean
 agv_localization/clean: agv_localization/CMakeFiles/localization_error_node.dir/clean
@@ -457,6 +459,87 @@ agv_localization/clean: agv_localization/CMakeFiles/actionlib_generate_messages_
 agv_localization/preinstall:
 
 .PHONY : agv_localization/preinstall
+
+#=============================================================================
+# Target rules for target agv_localization/CMakeFiles/send_position_node.dir
+
+# All Build rule for target.
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/tf2_msgs_generate_messages_py.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/tf2_msgs_generate_messages_eus.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/actionlib_msgs_generate_messages_py.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/std_msgs_generate_messages_py.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/tf_generate_messages_eus.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/tf_generate_messages_cpp.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/tf_generate_messages_lisp.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/roscpp_generate_messages_py.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/roscpp_generate_messages_eus.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/tf_generate_messages_nodejs.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/actionlib_generate_messages_eus.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/tf_generate_messages_py.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+agv_localization/CMakeFiles/send_position_node.dir/all: agv_localization/CMakeFiles/actionlib_generate_messages_py.dir/all
+	$(MAKE) -f agv_localization/CMakeFiles/send_position_node.dir/build.make agv_localization/CMakeFiles/send_position_node.dir/depend
+	$(MAKE) -f agv_localization/CMakeFiles/send_position_node.dir/build.make agv_localization/CMakeFiles/send_position_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/smarlogy/catkin_ws/build/CMakeFiles --progress-num=67,68,69,70 "Built target send_position_node"
+.PHONY : agv_localization/CMakeFiles/send_position_node.dir/all
+
+# Include target in all.
+all: agv_localization/CMakeFiles/send_position_node.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+agv_localization/CMakeFiles/send_position_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/smarlogy/catkin_ws/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 agv_localization/CMakeFiles/send_position_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/smarlogy/catkin_ws/build/CMakeFiles 0
+.PHONY : agv_localization/CMakeFiles/send_position_node.dir/rule
+
+# Convenience name for target.
+send_position_node: agv_localization/CMakeFiles/send_position_node.dir/rule
+
+.PHONY : send_position_node
+
+# clean rule for target.
+agv_localization/CMakeFiles/send_position_node.dir/clean:
+	$(MAKE) -f agv_localization/CMakeFiles/send_position_node.dir/build.make agv_localization/CMakeFiles/send_position_node.dir/clean
+.PHONY : agv_localization/CMakeFiles/send_position_node.dir/clean
+
+# clean rule for target.
+clean: agv_localization/CMakeFiles/send_position_node.dir/clean
+
+.PHONY : clean
 
 #=============================================================================
 # Target rules for target agv_localization/CMakeFiles/particle_filter_node.dir
@@ -590,7 +673,7 @@ agv_localization/CMakeFiles/tf_localization.dir/all: agv_localization/CMakeFiles
 agv_localization/CMakeFiles/tf_localization.dir/all: agv_localization/CMakeFiles/actionlib_generate_messages_py.dir/all
 	$(MAKE) -f agv_localization/CMakeFiles/tf_localization.dir/build.make agv_localization/CMakeFiles/tf_localization.dir/depend
 	$(MAKE) -f agv_localization/CMakeFiles/tf_localization.dir/build.make agv_localization/CMakeFiles/tf_localization.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/smarlogy/catkin_ws/build/CMakeFiles --progress-num=73,74 "Built target tf_localization"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/smarlogy/catkin_ws/build/CMakeFiles --progress-num=77,78 "Built target tf_localization"
 .PHONY : agv_localization/CMakeFiles/tf_localization.dir/all
 
 # Include target in all.
@@ -2582,7 +2665,7 @@ agv_tf/CMakeFiles/tf_listener.dir/all: agv_localization/CMakeFiles/actionlib_gen
 agv_tf/CMakeFiles/tf_listener.dir/all: agv_localization/CMakeFiles/actionlib_generate_messages_py.dir/all
 	$(MAKE) -f agv_tf/CMakeFiles/tf_listener.dir/build.make agv_tf/CMakeFiles/tf_listener.dir/depend
 	$(MAKE) -f agv_tf/CMakeFiles/tf_listener.dir/build.make agv_tf/CMakeFiles/tf_listener.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/smarlogy/catkin_ws/build/CMakeFiles --progress-num=71,72 "Built target tf_listener"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/smarlogy/catkin_ws/build/CMakeFiles --progress-num=75,76 "Built target tf_listener"
 .PHONY : agv_tf/CMakeFiles/tf_listener.dir/all
 
 # Include target in all.
@@ -2663,7 +2746,7 @@ agv_tf/CMakeFiles/tf_broadcaster.dir/all: agv_localization/CMakeFiles/actionlib_
 agv_tf/CMakeFiles/tf_broadcaster.dir/all: agv_localization/CMakeFiles/actionlib_generate_messages_py.dir/all
 	$(MAKE) -f agv_tf/CMakeFiles/tf_broadcaster.dir/build.make agv_tf/CMakeFiles/tf_broadcaster.dir/depend
 	$(MAKE) -f agv_tf/CMakeFiles/tf_broadcaster.dir/build.make agv_tf/CMakeFiles/tf_broadcaster.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/smarlogy/catkin_ws/build/CMakeFiles --progress-num=69,70 "Built target tf_broadcaster"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/smarlogy/catkin_ws/build/CMakeFiles --progress-num=73,74 "Built target tf_broadcaster"
 .PHONY : agv_tf/CMakeFiles/tf_broadcaster.dir/all
 
 # Include target in all.
@@ -3695,7 +3778,7 @@ mrpt_bridge/CMakeFiles/test_Bridge.dir/all: mrpt_bridge/CMakeFiles/stereo_msgs_g
 mrpt_bridge/CMakeFiles/test_Bridge.dir/all: mrpt_bridge/CMakeFiles/marker_msgs_generate_messages_eus.dir/all
 	$(MAKE) -f mrpt_bridge/CMakeFiles/test_Bridge.dir/build.make mrpt_bridge/CMakeFiles/test_Bridge.dir/depend
 	$(MAKE) -f mrpt_bridge/CMakeFiles/test_Bridge.dir/build.make mrpt_bridge/CMakeFiles/test_Bridge.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/smarlogy/catkin_ws/build/CMakeFiles --progress-num=67,68 "Built target test_Bridge"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/smarlogy/catkin_ws/build/CMakeFiles --progress-num=71,72 "Built target test_Bridge"
 .PHONY : mrpt_bridge/CMakeFiles/test_Bridge.dir/all
 
 # Include target in all.

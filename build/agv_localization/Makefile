@@ -166,6 +166,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+agv_localization/CMakeFiles/send_position_node.dir/rule:
+	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 agv_localization/CMakeFiles/send_position_node.dir/rule
+.PHONY : agv_localization/CMakeFiles/send_position_node.dir/rule
+
+# Convenience name for target.
+send_position_node: agv_localization/CMakeFiles/send_position_node.dir/rule
+
+.PHONY : send_position_node
+
+# fast build rule for target.
+send_position_node/fast:
+	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f agv_localization/CMakeFiles/send_position_node.dir/build.make agv_localization/CMakeFiles/send_position_node.dir/build
+.PHONY : send_position_node/fast
+
+# Convenience name for target.
 agv_localization/CMakeFiles/particle_filter_node.dir/rule:
 	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 agv_localization/CMakeFiles/particle_filter_node.dir/rule
 .PHONY : agv_localization/CMakeFiles/particle_filter_node.dir/rule
@@ -933,6 +948,7 @@ src/amcl_listener.o: src/amcl_listener.cpp.o
 
 # target to build an object file
 src/amcl_listener.cpp.o:
+	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f agv_localization/CMakeFiles/send_position_node.dir/build.make agv_localization/CMakeFiles/send_position_node.dir/src/amcl_listener.cpp.o
 	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f agv_localization/CMakeFiles/localization_error_node.dir/build.make agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.o
 .PHONY : src/amcl_listener.cpp.o
 
@@ -942,6 +958,7 @@ src/amcl_listener.i: src/amcl_listener.cpp.i
 
 # target to preprocess a source file
 src/amcl_listener.cpp.i:
+	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f agv_localization/CMakeFiles/send_position_node.dir/build.make agv_localization/CMakeFiles/send_position_node.dir/src/amcl_listener.cpp.i
 	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f agv_localization/CMakeFiles/localization_error_node.dir/build.make agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.i
 .PHONY : src/amcl_listener.cpp.i
 
@@ -951,6 +968,7 @@ src/amcl_listener.s: src/amcl_listener.cpp.s
 
 # target to generate assembly for a file
 src/amcl_listener.cpp.s:
+	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f agv_localization/CMakeFiles/send_position_node.dir/build.make agv_localization/CMakeFiles/send_position_node.dir/src/amcl_listener.cpp.s
 	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f agv_localization/CMakeFiles/localization_error_node.dir/build.make agv_localization/CMakeFiles/localization_error_node.dir/src/amcl_listener.cpp.s
 .PHONY : src/amcl_listener.cpp.s
 
@@ -1062,6 +1080,60 @@ src/resampling_wheel.cpp.s:
 	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f agv_localization/CMakeFiles/particle_filter_node.dir/build.make agv_localization/CMakeFiles/particle_filter_node.dir/src/resampling_wheel.cpp.s
 .PHONY : src/resampling_wheel.cpp.s
 
+src/send_position.o: src/send_position.cpp.o
+
+.PHONY : src/send_position.o
+
+# target to build an object file
+src/send_position.cpp.o:
+	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f agv_localization/CMakeFiles/send_position_node.dir/build.make agv_localization/CMakeFiles/send_position_node.dir/src/send_position.cpp.o
+.PHONY : src/send_position.cpp.o
+
+src/send_position.i: src/send_position.cpp.i
+
+.PHONY : src/send_position.i
+
+# target to preprocess a source file
+src/send_position.cpp.i:
+	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f agv_localization/CMakeFiles/send_position_node.dir/build.make agv_localization/CMakeFiles/send_position_node.dir/src/send_position.cpp.i
+.PHONY : src/send_position.cpp.i
+
+src/send_position.s: src/send_position.cpp.s
+
+.PHONY : src/send_position.s
+
+# target to generate assembly for a file
+src/send_position.cpp.s:
+	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f agv_localization/CMakeFiles/send_position_node.dir/build.make agv_localization/CMakeFiles/send_position_node.dir/src/send_position.cpp.s
+.PHONY : src/send_position.cpp.s
+
+src/send_position_node.o: src/send_position_node.cpp.o
+
+.PHONY : src/send_position_node.o
+
+# target to build an object file
+src/send_position_node.cpp.o:
+	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f agv_localization/CMakeFiles/send_position_node.dir/build.make agv_localization/CMakeFiles/send_position_node.dir/src/send_position_node.cpp.o
+.PHONY : src/send_position_node.cpp.o
+
+src/send_position_node.i: src/send_position_node.cpp.i
+
+.PHONY : src/send_position_node.i
+
+# target to preprocess a source file
+src/send_position_node.cpp.i:
+	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f agv_localization/CMakeFiles/send_position_node.dir/build.make agv_localization/CMakeFiles/send_position_node.dir/src/send_position_node.cpp.i
+.PHONY : src/send_position_node.cpp.i
+
+src/send_position_node.s: src/send_position_node.cpp.s
+
+.PHONY : src/send_position_node.s
+
+# target to generate assembly for a file
+src/send_position_node.cpp.s:
+	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f agv_localization/CMakeFiles/send_position_node.dir/build.make agv_localization/CMakeFiles/send_position_node.dir/src/send_position_node.cpp.s
+.PHONY : src/send_position_node.cpp.s
+
 src/subscribers_listener.o: src/subscribers_listener.cpp.o
 
 .PHONY : src/subscribers_listener.o
@@ -1124,6 +1196,7 @@ help:
 	@echo "... depend"
 	@echo "... list_install_components"
 	@echo "... edit_cache"
+	@echo "... send_position_node"
 	@echo "... particle_filter_node"
 	@echo "... install"
 	@echo "... tf_localization"
@@ -1196,6 +1269,12 @@ help:
 	@echo "... src/resampling_wheel.o"
 	@echo "... src/resampling_wheel.i"
 	@echo "... src/resampling_wheel.s"
+	@echo "... src/send_position.o"
+	@echo "... src/send_position.i"
+	@echo "... src/send_position.s"
+	@echo "... src/send_position_node.o"
+	@echo "... src/send_position_node.i"
+	@echo "... src/send_position_node.s"
 	@echo "... src/subscribers_listener.o"
 	@echo "... src/subscribers_listener.i"
 	@echo "... src/subscribers_listener.s"

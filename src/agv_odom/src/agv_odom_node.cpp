@@ -8,14 +8,14 @@
 
 int main(int argc, char** argv){
   ros::init(argc, argv, "odom_agv_publisher");
-  std::string ip_address;
+  std::string ip_odom;
   agv::Punto2d velocity_agv;
 
   ros::NodeHandle n;
   ros::Publisher odom_pub = n.advertise<nav_msgs::Odometry>("odom", 1 /*50*/);
   tf::TransformBroadcaster odom_broadcaster;
-  n.param<std::string>("ip_address", ip_address, "10.67.101.203");
-  LecturaOdometria odom_agv(ip_address, 8900);
+  n.param<std::string>("ip_odom", ip_odom, "10.67.101.203");
+  LecturaOdometria odom_agv(ip_odom, 8900);
 
   double x = 0.0;
   double y = 0.0;
@@ -46,7 +46,7 @@ int main(int argc, char** argv){
     
     vx = velocity_agv.x;
     vy = 0.0;
-    vth = velocity_agv.y; // velocity_agv.y actually is angular velocity in axis z of robot frame.
+    vth = velocity_agv.y; // velocity_agv.y actually is angular velocity in z axis of robot frame.
 
     //compute odometry in a typical way given the velocities of the robot
     double dt = (current_time - last_time).toSec();

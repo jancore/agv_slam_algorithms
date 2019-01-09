@@ -55,7 +55,6 @@ int main(int argc, char** argv)
     while(n.ok())
     {
         ros::spinOnce();
-        tf::StampedTransform transform;
         
         timing = ros::Time::now().toSec();
         estimated_pose = estimated_pose_listener.GetPose();

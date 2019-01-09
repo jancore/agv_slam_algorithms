@@ -30,6 +30,7 @@
 /home/smarlogy/catkin_ws/build/gtest/gtest/CMakeFiles/install/strip.dir
 /home/smarlogy/catkin_ws/build/agv_localization/CMakeFiles/list_install_components.dir
 /home/smarlogy/catkin_ws/build/agv_localization/CMakeFiles/edit_cache.dir
+/home/smarlogy/catkin_ws/build/agv_localization/CMakeFiles/send_position_node.dir
 /home/smarlogy/catkin_ws/build/agv_localization/CMakeFiles/particle_filter_node.dir
 /home/smarlogy/catkin_ws/build/agv_localization/CMakeFiles/install.dir
 /home/smarlogy/catkin_ws/build/agv_localization/CMakeFiles/tf_localization.dir

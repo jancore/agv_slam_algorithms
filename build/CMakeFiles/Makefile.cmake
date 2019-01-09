@@ -505,6 +505,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "gtest/CMakeFiles/gmock.dir/DependInfo.cmake"
   "gtest/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
   "gtest/gtest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
+  "agv_localization/CMakeFiles/send_position_node.dir/DependInfo.cmake"
   "agv_localization/CMakeFiles/particle_filter_node.dir/DependInfo.cmake"
   "agv_localization/CMakeFiles/tf_localization.dir/DependInfo.cmake"
   "agv_localization/CMakeFiles/localization_error_node.dir/DependInfo.cmake"

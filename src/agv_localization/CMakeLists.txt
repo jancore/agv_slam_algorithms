@@ -233,3 +233,17 @@ add_dependencies(particle_filter_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catk
 target_link_libraries(particle_filter_node
   ${catkin_LIBRARIES}
 )
+
+add_executable(send_position_node
+  src/send_position_node.cpp
+  src/send_position.cpp
+  src/amcl_listener.cpp
+)
+add_dependencies(send_position_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(send_position_node
+  ${catkin_LIBRARIES}
+)
+
+target_link_libraries(send_position_node
+  "/home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/libLibreriasRobot.a"
+  )

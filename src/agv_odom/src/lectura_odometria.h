@@ -16,7 +16,7 @@
 class LecturaOdometria
 {
 	typedef agv::comtcp::ProtocoloRedAgv Protocolo;
-	constexpr static auto cm_nombre_red_nodo = "ROS";
+	constexpr static auto cm_nombre_red_nodo = "ROS_ODOM";
 public:
 	LecturaOdometria(const std::string& p_ip_agv, int p_puerto = 8900);
 	

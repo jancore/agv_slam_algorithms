@@ -23,6 +23,7 @@ class Mrpt_listener
     public:
         void Callback(const geometry_msgs::PoseArray::ConstPtr& poses_listener,
                       const geometry_msgs::PoseStamped::ConstPtr& nav350_pose_listener);
+        void CallbackParticleCloud(const geometry_msgs::PoseArray::ConstPtr& poses_listener);
         geometry_msgs::PoseWithCovarianceStamped GetPose();
         geometry_msgs::PoseStamped GetNav350Pose();
 

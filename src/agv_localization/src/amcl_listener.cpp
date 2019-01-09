@@ -20,6 +20,10 @@ void Mrpt_listener::Callback(const geometry_msgs::PoseArray::ConstPtr& poses_lis
     nav350_pose = *nav350_pose_listener;
 }
 
+void Mrpt_listener::CallbackParticleCloud(const geometry_msgs::PoseArray::ConstPtr& poses_listener){
+    mrpt_poses = *poses_listener;
+}
+
 geometry_msgs::PoseStamped Mrpt_listener::GetNav350Pose(){
     return nav350_pose;
 }
@@ -59,8 +63,8 @@ geometry_msgs::PoseWithCovarianceStamped Mrpt_listener::GetPose(){
     this->pose_final.pose.covariance[35] = this->Variance(array, mean);
 
     this->pose_final.header.frame_id = "map";
-    this->pose_final.header.stamp = ros::Time::now();
-    this->pose_final.header.seq = mrpt_poses.header.seq;
+    //this->pose_final.header.stamp = ros::Time::now();
+    //this->pose_final.header.seq = mrpt_poses.header.seq;
 
     return this->pose_final;
 }
