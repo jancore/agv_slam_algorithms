@@ -8,7 +8,7 @@
     <param name="global_frame_id" value="map"/>
     <param name="base_frame_id" value="base_link"/>
     <param name="ip_nav350" value="10.67.101.36"/>
-    <param name="ip_address" value="10.67.101.203"/>
+    <param name="ip_odom" value="10.67.101.203"/>
     <!--<param name="/use_sim_time" value="true"/>-->
     
     <!--for multiple sensors, place comma eg "r1/front_laser/scan,/beacon"-->

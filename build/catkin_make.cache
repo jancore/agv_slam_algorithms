@@ -1,2 +1,2 @@
-agv_localization:agv_mapping:agv_odom:agv_tf:laserscan_nav350:mrpt_bridge:mrpt_slam/mrpt_ekf_slam_2d:mrpt_slam/mrpt_ekf_slam_3d:mrpt_slam/mrpt_icp_slam_2d:mrpt_slam/mrpt_rbpf_slam:mrpt_slam/mrpt_slam
+agv_localization:agv_mapping:agv_odom:agv_tf:laserscan_nav350:mrpt_bridge:mrpt_slam/mrpt_ekf_slam_2d:mrpt_slam/mrpt_ekf_slam_3d:mrpt_slam/mrpt_icp_slam_2d:mrpt_slam/mrpt_rbpf_slam:mrpt_slam/mrpt_slam:node_controller
 -DCATKIN_DEVEL_PREFIX=/home/smarlogy/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/smarlogy/catkin_ws/install -G Unix Makefiles

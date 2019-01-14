@@ -34,7 +34,7 @@ int main(int argc, char** argv){
 
   file.close();
 
-  aux = tf::getYaw(tf::Quaternion(pose[3], pose[4], pose[5], pose[6])) + M_PI;
+  aux = tf::getYaw(tf::Quaternion(pose[3], pose[4], pose[5], pose[6])) + M_PI + 0.0061;
   offset_x = 1.154 * cos(aux);
   offset_y = 1.154 * sin(aux);
 

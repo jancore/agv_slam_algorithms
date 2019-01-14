@@ -1,22 +1,22 @@
 Determining if the pthread_create exist failed with the following output:
 Change Dir: /home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_acfec/fast"
-/usr/bin/make -f CMakeFiles/cmTC_acfec.dir/build.make CMakeFiles/cmTC_acfec.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_a439d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a439d.dir/build.make CMakeFiles/cmTC_a439d.dir/build
 make[1]: se entra en el directorio '/home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_acfec.dir/CheckSymbolExists.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_acfec.dir/CheckSymbolExists.c.o   -c /home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_acfec
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_acfec.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_acfec.dir/CheckSymbolExists.c.o  -o cmTC_acfec -rdynamic 
-CMakeFiles/cmTC_acfec.dir/CheckSymbolExists.c.o: En la función `main':
+Building C object CMakeFiles/cmTC_a439d.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_a439d.dir/CheckSymbolExists.c.o   -c /home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_a439d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a439d.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_a439d.dir/CheckSymbolExists.c.o  -o cmTC_a439d -rdynamic 
+CMakeFiles/cmTC_a439d.dir/CheckSymbolExists.c.o: En la función `main':
 CheckSymbolExists.c:(.text+0x16): referencia a `pthread_create' sin definir
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_acfec.dir/build.make:97: fallo en las instrucciones para el objetivo 'cmTC_acfec'
-make[1]: *** [cmTC_acfec] Error 1
+CMakeFiles/cmTC_a439d.dir/build.make:97: fallo en las instrucciones para el objetivo 'cmTC_a439d'
+make[1]: *** [cmTC_a439d] Error 1
 make[1]: se sale del directorio '/home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp'
-Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_acfec/fast'
-make: *** [cmTC_acfec/fast] Error 2
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_a439d/fast'
+make: *** [cmTC_a439d/fast] Error 2
 
 File /home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
@@ -36,20 +36,20 @@ int main(int argc, char** argv)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_4f44f/fast"
-/usr/bin/make -f CMakeFiles/cmTC_4f44f.dir/build.make CMakeFiles/cmTC_4f44f.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_a88ac/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a88ac.dir/build.make CMakeFiles/cmTC_a88ac.dir/build
 make[1]: se entra en el directorio '/home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_4f44f.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_4f44f.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
-Linking C executable cmTC_4f44f
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4f44f.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_4f44f.dir/CheckFunctionExists.c.o  -o cmTC_4f44f -rdynamic -lpthreads 
+Building C object CMakeFiles/cmTC_a88ac.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_a88ac.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_a88ac
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a88ac.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_a88ac.dir/CheckFunctionExists.c.o  -o cmTC_a88ac -rdynamic -lpthreads 
 /usr/bin/ld: no se puede encontrar -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_4f44f.dir/build.make:97: fallo en las instrucciones para el objetivo 'cmTC_4f44f'
-make[1]: *** [cmTC_4f44f] Error 1
+CMakeFiles/cmTC_a88ac.dir/build.make:97: fallo en las instrucciones para el objetivo 'cmTC_a88ac'
+make[1]: *** [cmTC_a88ac] Error 1
 make[1]: se sale del directorio '/home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp'
-Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_4f44f/fast'
-make: *** [cmTC_4f44f/fast] Error 2
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_a88ac/fast'
+make: *** [cmTC_a88ac/fast] Error 2
 
 

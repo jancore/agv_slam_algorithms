@@ -32,5 +32,6 @@ class Mrpt_listener
         geometry_msgs::PoseStamped nav350_pose;
         geometry_msgs::PoseWithCovarianceStamped pose_final;
         double Mean(std::vector<double> values);
+        double MeanAngle(std::vector<double> values);
         double Variance(std::vector<double> values, double mean);
 };

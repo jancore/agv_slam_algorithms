@@ -7,7 +7,7 @@
     <arg name="map_frame" default="map"/>
     <arg name="custom_map_filename" default="nave_rbpf_9"/>
     <arg name="ip_nav350" default="10.67.101.36"/>
-    <param name="ip_odom" value="10.67.101.203"/>
+    <param name="ip_odom" value="192.168.1.203"/>
 
     <param name="origin_file" value="/home/smarlogy/catkin_ws/origins/origin_map_$(arg custom_map_filename).txt"/>
     

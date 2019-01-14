@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/smarlogy/catkin_ws/src/agv_localization/src/tf_localization_2.cpp" "/home/smarlogy/catkin_ws/build/agv_localization/CMakeFiles/tf_localization_2.dir/src/tf_localization_2.cpp.o"
+  "/home/smarlogy/catkin_ws/src/node_controller/src/controller_node.cpp" "/home/smarlogy/catkin_ws/build/node_controller/CMakeFiles/controller_node.dir/src/controller_node.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -12,15 +12,14 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_TARGET_DEFINITIONS_CXX
   "ROSCONSOLE_BACKEND_LOG4CXX"
   "ROS_BUILD_SHARED_LIBS=1"
-  "ROS_PACKAGE_NAME=\"agv_localization\""
+  "ROS_PACKAGE_NAME=\"node_controller\""
   )
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/smarlogy/catkin_ws/src/agv_localization/include"
+  "/home/smarlogy/catkin_ws/src/node_controller/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
-  "/home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/include"
   )
 
 # Targets to which this target links.

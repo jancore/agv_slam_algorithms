@@ -1076,6 +1076,19 @@ nav350_node/fast:
 .PHONY : nav350_node/fast
 
 #=============================================================================
+# Target rules for targets named controller_node
+
+# Build rule for target.
+controller_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 controller_node
+.PHONY : controller_node
+
+# fast build rule for target.
+controller_node/fast:
+	$(MAKE) -f node_controller/CMakeFiles/controller_node.dir/build.make node_controller/CMakeFiles/controller_node.dir/build
+.PHONY : controller_node/fast
+
+#=============================================================================
 # Target rules for targets named pcl_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -2107,6 +2120,7 @@ help:
 	@echo "... tf_broadcaster"
 	@echo "... nav350_180_node"
 	@echo "... nav350_node"
+	@echo "... controller_node"
 	@echo "... pcl_msgs_generate_messages_nodejs"
 	@echo "... pcl_msgs_generate_messages_eus"
 	@echo "... mrpt_msgs_generate_messages_py"

@@ -58,7 +58,7 @@ geometry_msgs::PoseWithCovarianceStamped Mrpt_listener::GetPose(){
     {
         array[i] = tf::getYaw(mrpt_poses.poses[i].orientation);
     }
-    mean = this->Mean(array);
+    mean = this->MeanAngle(array);
     this->pose_final.pose.pose.orientation = tf::createQuaternionMsgFromYaw(mean);
     this->pose_final.pose.covariance[35] = this->Variance(array, mean);
 
@@ -77,6 +77,19 @@ double Mrpt_listener::Mean(std::vector<double> values){
         sum += values[i];
     }
     return sum / double(values.size());
+}
+
+double Mrpt_listener::MeanAngle(std::vector<double> values){
+    std::vector<double> cosValues;
+    std::vector<double> sinValues;
+    unsigned int i;
+
+    for(i = 0; i < values.size(); i++){
+        cosValues.push_back(cos(values[i]));
+        sinValues.push_back(sin(values[i]));
+    }
+
+    return atan2(this->Mean(sinValues), this->Mean(cosValues));
 }
 
 double Mrpt_listener::Variance(std::vector<double> values, double mean){

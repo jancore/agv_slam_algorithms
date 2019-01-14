@@ -131,6 +131,14 @@
 /home/smarlogy/catkin_ws/build/mrpt_slam/mrpt_slam/CMakeFiles/test.dir
 /home/smarlogy/catkin_ws/build/mrpt_slam/mrpt_slam/CMakeFiles/install/local.dir
 /home/smarlogy/catkin_ws/build/mrpt_slam/mrpt_slam/CMakeFiles/rebuild_cache.dir
+/home/smarlogy/catkin_ws/build/node_controller/CMakeFiles/install.dir
+/home/smarlogy/catkin_ws/build/node_controller/CMakeFiles/rebuild_cache.dir
+/home/smarlogy/catkin_ws/build/node_controller/CMakeFiles/install/strip.dir
+/home/smarlogy/catkin_ws/build/node_controller/CMakeFiles/controller_node.dir
+/home/smarlogy/catkin_ws/build/node_controller/CMakeFiles/edit_cache.dir
+/home/smarlogy/catkin_ws/build/node_controller/CMakeFiles/list_install_components.dir
+/home/smarlogy/catkin_ws/build/node_controller/CMakeFiles/test.dir
+/home/smarlogy/catkin_ws/build/node_controller/CMakeFiles/install/local.dir
 /home/smarlogy/catkin_ws/build/mrpt_bridge/CMakeFiles/pcl_msgs_generate_messages_nodejs.dir
 /home/smarlogy/catkin_ws/build/mrpt_bridge/CMakeFiles/install/local.dir
 /home/smarlogy/catkin_ws/build/mrpt_bridge/CMakeFiles/pcl_msgs_generate_messages_eus.dir
