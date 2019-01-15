@@ -1,8 +1,0 @@
-prefix=/home/smarlogy/catkin_ws/devel
-
-Name: mrpt_ekf_slam_3d
-Description: Description of mrpt_ekf_slam_3d
-Version: 0.1.5
-Cflags: 
-Libs: -L/home/smarlogy/catkin_ws/devel/lib 
-Requires: nav_msgs sensor_msgs std_msgs

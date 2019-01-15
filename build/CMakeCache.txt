@@ -427,9 +427,6 @@ agv_tf_SOURCE_DIR:STATIC=/home/smarlogy/catkin_ws/src/agv_tf
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/kinetic/share/catkin/cmake
 
-//The directory containing a CMake configuration file for cmake_modules.
-cmake_modules_DIR:PATH=/opt/ros/kinetic/share/cmake_modules/cmake
-
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/kinetic/share/cpp_common/cmake
 
@@ -532,24 +529,6 @@ mrpt_bridge_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libcv_bridge.so;gene
 
 //Value Computed by CMake
 mrpt_bridge_SOURCE_DIR:STATIC=/home/smarlogy/catkin_ws/src/mrpt_bridge
-
-//Value Computed by CMake
-mrpt_ekf_slam_2d_BINARY_DIR:STATIC=/home/smarlogy/catkin_ws/build/mrpt_slam/mrpt_ekf_slam_2d
-
-//Value Computed by CMake
-mrpt_ekf_slam_2d_SOURCE_DIR:STATIC=/home/smarlogy/catkin_ws/src/mrpt_slam/mrpt_ekf_slam_2d
-
-//Value Computed by CMake
-mrpt_ekf_slam_3d_BINARY_DIR:STATIC=/home/smarlogy/catkin_ws/build/mrpt_slam/mrpt_ekf_slam_3d
-
-//Value Computed by CMake
-mrpt_ekf_slam_3d_SOURCE_DIR:STATIC=/home/smarlogy/catkin_ws/src/mrpt_slam/mrpt_ekf_slam_3d
-
-//Value Computed by CMake
-mrpt_icp_slam_2d_BINARY_DIR:STATIC=/home/smarlogy/catkin_ws/build/mrpt_slam/mrpt_icp_slam_2d
-
-//Value Computed by CMake
-mrpt_icp_slam_2d_SOURCE_DIR:STATIC=/home/smarlogy/catkin_ws/src/mrpt_slam/mrpt_icp_slam_2d
 
 //The directory containing a CMake configuration file for mrpt_msgs.
 mrpt_msgs_DIR:PATH=/home/smarlogy/catkin_ws/devel/share/mrpt_msgs/cmake
@@ -788,7 +767,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=15
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=12
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
