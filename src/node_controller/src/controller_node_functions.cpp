@@ -69,9 +69,9 @@ void localizationArguments(std::string command, std::vector<std::string> localiz
 
     origin_map.position.x = atof(results[1].c_str());
     origin_map.position.y = atof(results[2].c_str());
-    origin_map.orientation = tf::createQuaternionMsgFromYaw(atof(results[3].c_str()));
+    origin_map.orientation = tf::createQuaternionMsgFromYaw(atof(results[3].c_str())*180.0/M_PI);
 
     origin_position.position.x = atof(results[4].c_str());
     origin_position.position.y = atof(results[5].c_str());
-    origin_position.orientation = tf::createQuaternionMsgFromYaw(atof(results[6].c_str()));
+    origin_position.orientation = tf::createQuaternionMsgFromYaw(atof(results[6].c_str())*180.0/M_PI);
 }

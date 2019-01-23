@@ -14,11 +14,11 @@
     <!--for multiple sensors, place comma eg "r1/front_laser/scan,/beacon"-->
     <param name="sensor_source" value="nav350_scan"/>
 
-    <!--<include file="$(arg minimal_file)" />-->
+    <include file="$(arg minimal_file)" />
 
     <!--SLAM RUN-->
     <env name="ROSCONSOLE_CONFIG_FILE" value="$(find mrpt_rbpf_slam)/config/rosconsole.config"/>
     <!--<node pkg="rviz" type="rviz" name="rviz_nav" output="screen" args="-d $(find mrpt_rbpf_slam)/rviz/rviz_conf.rviz"/>-->
     <node pkg="mrpt_rbpf_slam" type="mrpt_rbpf_slam" name="mrpt_rbpf_slam" output="screen" />
-    <node pkg="agv_mapping" type="get_origin_node" name="get_origin_node" output="screen" />
+    <!--<node pkg="agv_mapping" type="get_origin_node" name="get_origin_node" output="screen" />-->
 </launch>
