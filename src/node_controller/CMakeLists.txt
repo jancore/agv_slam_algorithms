@@ -121,8 +121,8 @@ include_directories(
 )
 
 include_directories(
-  "/home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/include"
-  "/home/smarlogy/catkin_ws/src/node_controller/include"
+  "~/catkin_ws/src/Libreria_Com_Nav350/include"
+  "~/catkin_ws/src/node_controller/include"
   "~/catkin_ws/src/agv_odom/src"
 )
 
@@ -208,7 +208,7 @@ include_directories(
 add_executable(controller_node
   src/controller_node.cpp
   src/controller_node_functions.cpp
-  /home/smarlogy/catkin_ws/src/agv_odom/src/lectura_odometria.cpp
+  ~/catkin_ws/src/agv_odom/src/lectura_odometria.cpp
   )
   
 add_dependencies(controller_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
@@ -216,5 +216,5 @@ target_link_libraries(controller_node
   ${catkin_LIBRARIES}
 )
 target_link_libraries(controller_node
-  "/home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/libLibreriasRobot.a"
+  "/$ENV{HOME}/catkin_ws/src/Libreria_Com_Nav350/libLibreriasRobot.a"
   )
