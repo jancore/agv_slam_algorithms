@@ -35,7 +35,7 @@ int main(int argc, char** argv)
             geometry_msgs::PoseStamped aux_pose;
             initial_pose.header = estimated_pose.header;
             initial_pose.pose = estimated_pose.pose.pose;
-            listener.transformPose("localization_laser_frame", initial_pose, aux_pose);
+            listener.transformPose("origin_map", initial_pose, aux_pose);
             final_pose = aux_pose;
         }
         catch (const std::exception& ex)
@@ -46,9 +46,6 @@ int main(int argc, char** argv)
         x_mm = int(final_pose.pose.position.x * 1000.0);
         y_mm = int(final_pose.pose.position.y * 1000.0);
         yaw_mdeg = int((tf::getYaw(final_pose.pose.orientation) < 0.0 ? 2.0*M_PI + tf::getYaw(final_pose.pose.orientation) : tf::getYaw(final_pose.pose.orientation)) * 1000.0 * RAD2DEG);
-        
-        ROS_INFO("yaw[-180, 180] = %.3lf Degrees, yaw[0, 360] = %.3lf Degrees, variance = %lf",
-            tf::getYaw(final_pose.pose.orientation) * RAD2DEG, yaw_mdeg/1000.0, estimated_pose.pose.covariance[35]);
 
         try
         {

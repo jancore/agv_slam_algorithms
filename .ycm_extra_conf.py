@@ -31,7 +31,13 @@ flags = [
 '-isystem',
 '/home/smarlogy/catkin_ws/src/agv_tf/include',
 '-isystem',
-'/home/smarlogy/catkin_ws/src/laserscan_nav350/include'
+'/home/smarlogy/catkin_ws/src/laserscan_nav350/include',
+'-isystem',
+'/home/smarlogy/catkin_ws/src/mrpt_bridge/include',
+'-isystem',
+'/home/smarlogy/catkin_ws/src/mrpt_slam/include',
+'-isystem',
+'/home/smarlogy/catkin_ws/src/node_controller/include'
 ]
 
 compilation_database_folder = ''

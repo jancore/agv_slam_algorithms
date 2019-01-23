@@ -81,14 +81,66 @@ node_controller/CMakeFiles/controller_node.dir/src/controller_node.cpp.o.provide
 node_controller/CMakeFiles/controller_node.dir/src/controller_node.cpp.o.provides.build: node_controller/CMakeFiles/controller_node.dir/src/controller_node.cpp.o
 
 
+node_controller/CMakeFiles/controller_node.dir/src/controller_node_functions.cpp.o: node_controller/CMakeFiles/controller_node.dir/flags.make
+node_controller/CMakeFiles/controller_node.dir/src/controller_node_functions.cpp.o: /home/smarlogy/catkin_ws/src/node_controller/src/controller_node_functions.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smarlogy/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object node_controller/CMakeFiles/controller_node.dir/src/controller_node_functions.cpp.o"
+	cd /home/smarlogy/catkin_ws/build/node_controller && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/controller_node.dir/src/controller_node_functions.cpp.o -c /home/smarlogy/catkin_ws/src/node_controller/src/controller_node_functions.cpp
+
+node_controller/CMakeFiles/controller_node.dir/src/controller_node_functions.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/controller_node.dir/src/controller_node_functions.cpp.i"
+	cd /home/smarlogy/catkin_ws/build/node_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/smarlogy/catkin_ws/src/node_controller/src/controller_node_functions.cpp > CMakeFiles/controller_node.dir/src/controller_node_functions.cpp.i
+
+node_controller/CMakeFiles/controller_node.dir/src/controller_node_functions.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/controller_node.dir/src/controller_node_functions.cpp.s"
+	cd /home/smarlogy/catkin_ws/build/node_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/smarlogy/catkin_ws/src/node_controller/src/controller_node_functions.cpp -o CMakeFiles/controller_node.dir/src/controller_node_functions.cpp.s
+
+node_controller/CMakeFiles/controller_node.dir/src/controller_node_functions.cpp.o.requires:
+
+.PHONY : node_controller/CMakeFiles/controller_node.dir/src/controller_node_functions.cpp.o.requires
+
+node_controller/CMakeFiles/controller_node.dir/src/controller_node_functions.cpp.o.provides: node_controller/CMakeFiles/controller_node.dir/src/controller_node_functions.cpp.o.requires
+	$(MAKE) -f node_controller/CMakeFiles/controller_node.dir/build.make node_controller/CMakeFiles/controller_node.dir/src/controller_node_functions.cpp.o.provides.build
+.PHONY : node_controller/CMakeFiles/controller_node.dir/src/controller_node_functions.cpp.o.provides
+
+node_controller/CMakeFiles/controller_node.dir/src/controller_node_functions.cpp.o.provides.build: node_controller/CMakeFiles/controller_node.dir/src/controller_node_functions.cpp.o
+
+
+node_controller/CMakeFiles/controller_node.dir/__/agv_odom/src/lectura_odometria.cpp.o: node_controller/CMakeFiles/controller_node.dir/flags.make
+node_controller/CMakeFiles/controller_node.dir/__/agv_odom/src/lectura_odometria.cpp.o: /home/smarlogy/catkin_ws/src/agv_odom/src/lectura_odometria.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smarlogy/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object node_controller/CMakeFiles/controller_node.dir/__/agv_odom/src/lectura_odometria.cpp.o"
+	cd /home/smarlogy/catkin_ws/build/node_controller && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/controller_node.dir/__/agv_odom/src/lectura_odometria.cpp.o -c /home/smarlogy/catkin_ws/src/agv_odom/src/lectura_odometria.cpp
+
+node_controller/CMakeFiles/controller_node.dir/__/agv_odom/src/lectura_odometria.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/controller_node.dir/__/agv_odom/src/lectura_odometria.cpp.i"
+	cd /home/smarlogy/catkin_ws/build/node_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/smarlogy/catkin_ws/src/agv_odom/src/lectura_odometria.cpp > CMakeFiles/controller_node.dir/__/agv_odom/src/lectura_odometria.cpp.i
+
+node_controller/CMakeFiles/controller_node.dir/__/agv_odom/src/lectura_odometria.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/controller_node.dir/__/agv_odom/src/lectura_odometria.cpp.s"
+	cd /home/smarlogy/catkin_ws/build/node_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/smarlogy/catkin_ws/src/agv_odom/src/lectura_odometria.cpp -o CMakeFiles/controller_node.dir/__/agv_odom/src/lectura_odometria.cpp.s
+
+node_controller/CMakeFiles/controller_node.dir/__/agv_odom/src/lectura_odometria.cpp.o.requires:
+
+.PHONY : node_controller/CMakeFiles/controller_node.dir/__/agv_odom/src/lectura_odometria.cpp.o.requires
+
+node_controller/CMakeFiles/controller_node.dir/__/agv_odom/src/lectura_odometria.cpp.o.provides: node_controller/CMakeFiles/controller_node.dir/__/agv_odom/src/lectura_odometria.cpp.o.requires
+	$(MAKE) -f node_controller/CMakeFiles/controller_node.dir/build.make node_controller/CMakeFiles/controller_node.dir/__/agv_odom/src/lectura_odometria.cpp.o.provides.build
+.PHONY : node_controller/CMakeFiles/controller_node.dir/__/agv_odom/src/lectura_odometria.cpp.o.provides
+
+node_controller/CMakeFiles/controller_node.dir/__/agv_odom/src/lectura_odometria.cpp.o.provides.build: node_controller/CMakeFiles/controller_node.dir/__/agv_odom/src/lectura_odometria.cpp.o
+
+
 # Object files for target controller_node
 controller_node_OBJECTS = \
-"CMakeFiles/controller_node.dir/src/controller_node.cpp.o"
+"CMakeFiles/controller_node.dir/src/controller_node.cpp.o" \
+"CMakeFiles/controller_node.dir/src/controller_node_functions.cpp.o" \
+"CMakeFiles/controller_node.dir/__/agv_odom/src/lectura_odometria.cpp.o"
 
 # External object files for target controller_node
 controller_node_EXTERNAL_OBJECTS =
 
 /home/smarlogy/catkin_ws/devel/lib/node_controller/controller_node: node_controller/CMakeFiles/controller_node.dir/src/controller_node.cpp.o
+/home/smarlogy/catkin_ws/devel/lib/node_controller/controller_node: node_controller/CMakeFiles/controller_node.dir/src/controller_node_functions.cpp.o
+/home/smarlogy/catkin_ws/devel/lib/node_controller/controller_node: node_controller/CMakeFiles/controller_node.dir/__/agv_odom/src/lectura_odometria.cpp.o
 /home/smarlogy/catkin_ws/devel/lib/node_controller/controller_node: node_controller/CMakeFiles/controller_node.dir/build.make
 /home/smarlogy/catkin_ws/devel/lib/node_controller/controller_node: /opt/ros/kinetic/lib/libroscpp.so
 /home/smarlogy/catkin_ws/devel/lib/node_controller/controller_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
@@ -109,8 +161,9 @@ controller_node_EXTERNAL_OBJECTS =
 /home/smarlogy/catkin_ws/devel/lib/node_controller/controller_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
 /home/smarlogy/catkin_ws/devel/lib/node_controller/controller_node: /usr/lib/x86_64-linux-gnu/libpthread.so
 /home/smarlogy/catkin_ws/devel/lib/node_controller/controller_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/smarlogy/catkin_ws/devel/lib/node_controller/controller_node: /home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/libLibreriasRobot.a
 /home/smarlogy/catkin_ws/devel/lib/node_controller/controller_node: node_controller/CMakeFiles/controller_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/smarlogy/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/smarlogy/catkin_ws/devel/lib/node_controller/controller_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/smarlogy/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable /home/smarlogy/catkin_ws/devel/lib/node_controller/controller_node"
 	cd /home/smarlogy/catkin_ws/build/node_controller && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/controller_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -119,6 +172,8 @@ node_controller/CMakeFiles/controller_node.dir/build: /home/smarlogy/catkin_ws/d
 .PHONY : node_controller/CMakeFiles/controller_node.dir/build
 
 node_controller/CMakeFiles/controller_node.dir/requires: node_controller/CMakeFiles/controller_node.dir/src/controller_node.cpp.o.requires
+node_controller/CMakeFiles/controller_node.dir/requires: node_controller/CMakeFiles/controller_node.dir/src/controller_node_functions.cpp.o.requires
+node_controller/CMakeFiles/controller_node.dir/requires: node_controller/CMakeFiles/controller_node.dir/__/agv_odom/src/lectura_odometria.cpp.o.requires
 
 .PHONY : node_controller/CMakeFiles/controller_node.dir/requires
 

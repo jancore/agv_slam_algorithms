@@ -180,6 +180,33 @@ controller_node/fast:
 	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f node_controller/CMakeFiles/controller_node.dir/build.make node_controller/CMakeFiles/controller_node.dir/build
 .PHONY : controller_node/fast
 
+__/agv_odom/src/lectura_odometria.o: __/agv_odom/src/lectura_odometria.cpp.o
+
+.PHONY : __/agv_odom/src/lectura_odometria.o
+
+# target to build an object file
+__/agv_odom/src/lectura_odometria.cpp.o:
+	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f node_controller/CMakeFiles/controller_node.dir/build.make node_controller/CMakeFiles/controller_node.dir/__/agv_odom/src/lectura_odometria.cpp.o
+.PHONY : __/agv_odom/src/lectura_odometria.cpp.o
+
+__/agv_odom/src/lectura_odometria.i: __/agv_odom/src/lectura_odometria.cpp.i
+
+.PHONY : __/agv_odom/src/lectura_odometria.i
+
+# target to preprocess a source file
+__/agv_odom/src/lectura_odometria.cpp.i:
+	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f node_controller/CMakeFiles/controller_node.dir/build.make node_controller/CMakeFiles/controller_node.dir/__/agv_odom/src/lectura_odometria.cpp.i
+.PHONY : __/agv_odom/src/lectura_odometria.cpp.i
+
+__/agv_odom/src/lectura_odometria.s: __/agv_odom/src/lectura_odometria.cpp.s
+
+.PHONY : __/agv_odom/src/lectura_odometria.s
+
+# target to generate assembly for a file
+__/agv_odom/src/lectura_odometria.cpp.s:
+	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f node_controller/CMakeFiles/controller_node.dir/build.make node_controller/CMakeFiles/controller_node.dir/__/agv_odom/src/lectura_odometria.cpp.s
+.PHONY : __/agv_odom/src/lectura_odometria.cpp.s
+
 src/controller_node.o: src/controller_node.cpp.o
 
 .PHONY : src/controller_node.o
@@ -207,6 +234,33 @@ src/controller_node.cpp.s:
 	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f node_controller/CMakeFiles/controller_node.dir/build.make node_controller/CMakeFiles/controller_node.dir/src/controller_node.cpp.s
 .PHONY : src/controller_node.cpp.s
 
+src/controller_node_functions.o: src/controller_node_functions.cpp.o
+
+.PHONY : src/controller_node_functions.o
+
+# target to build an object file
+src/controller_node_functions.cpp.o:
+	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f node_controller/CMakeFiles/controller_node.dir/build.make node_controller/CMakeFiles/controller_node.dir/src/controller_node_functions.cpp.o
+.PHONY : src/controller_node_functions.cpp.o
+
+src/controller_node_functions.i: src/controller_node_functions.cpp.i
+
+.PHONY : src/controller_node_functions.i
+
+# target to preprocess a source file
+src/controller_node_functions.cpp.i:
+	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f node_controller/CMakeFiles/controller_node.dir/build.make node_controller/CMakeFiles/controller_node.dir/src/controller_node_functions.cpp.i
+.PHONY : src/controller_node_functions.cpp.i
+
+src/controller_node_functions.s: src/controller_node_functions.cpp.s
+
+.PHONY : src/controller_node_functions.s
+
+# target to generate assembly for a file
+src/controller_node_functions.cpp.s:
+	cd /home/smarlogy/catkin_ws/build && $(MAKE) -f node_controller/CMakeFiles/controller_node.dir/build.make node_controller/CMakeFiles/controller_node.dir/src/controller_node_functions.cpp.s
+.PHONY : src/controller_node_functions.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -221,9 +275,15 @@ help:
 	@echo "... list_install_components"
 	@echo "... test"
 	@echo "... install/local"
+	@echo "... __/agv_odom/src/lectura_odometria.o"
+	@echo "... __/agv_odom/src/lectura_odometria.i"
+	@echo "... __/agv_odom/src/lectura_odometria.s"
 	@echo "... src/controller_node.o"
 	@echo "... src/controller_node.i"
 	@echo "... src/controller_node.s"
+	@echo "... src/controller_node_functions.o"
+	@echo "... src/controller_node_functions.i"
+	@echo "... src/controller_node_functions.s"
 .PHONY : help
 
 

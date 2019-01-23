@@ -4,7 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/smarlogy/catkin_ws/src/agv_odom/src/lectura_odometria.cpp" "/home/smarlogy/catkin_ws/build/node_controller/CMakeFiles/controller_node.dir/__/agv_odom/src/lectura_odometria.cpp.o"
   "/home/smarlogy/catkin_ws/src/node_controller/src/controller_node.cpp" "/home/smarlogy/catkin_ws/build/node_controller/CMakeFiles/controller_node.dir/src/controller_node.cpp.o"
+  "/home/smarlogy/catkin_ws/src/node_controller/src/controller_node_functions.cpp" "/home/smarlogy/catkin_ws/build/node_controller/CMakeFiles/controller_node.dir/src/controller_node_functions.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -20,6 +22,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/smarlogy/catkin_ws/src/node_controller/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
+  "/home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/include"
+  "/home/smarlogy/catkin_ws/src/agv_odom/src"
   )
 
 # Targets to which this target links.

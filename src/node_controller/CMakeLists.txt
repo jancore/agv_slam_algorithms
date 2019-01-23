@@ -3,6 +3,7 @@ project(node_controller)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
+set( CMAKE_CXX_FLAGS "-std=c++14 ${CMAKE_CXX_FLAGS} -I. -pthread  -lpthread -lm -Wall -lrt")
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -119,6 +120,12 @@ include_directories(
 # ${catkin_INCLUDE_DIRS}
 )
 
+include_directories(
+  "/home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/include"
+  "/home/smarlogy/catkin_ws/src/node_controller/include"
+  "~/catkin_ws/src/agv_odom/src"
+)
+
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/node_controller.cpp
@@ -200,8 +207,14 @@ include_directories(
 
 add_executable(controller_node
   src/controller_node.cpp
-)
+  src/controller_node_functions.cpp
+  /home/smarlogy/catkin_ws/src/agv_odom/src/lectura_odometria.cpp
+  )
+  
 add_dependencies(controller_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(controller_node
   ${catkin_LIBRARIES}
 )
+target_link_libraries(controller_node
+  "/home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/libLibreriasRobot.a"
+  )

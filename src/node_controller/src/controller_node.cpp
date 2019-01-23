@@ -1,7 +1,6 @@
-#include "ros/ros.h"
-#include "std_msgs/String.h"
-
+#include <node_controller/controller_node_functions.h>
 #include <sstream>
+
 
 int main(int argc, char *argv[])
 {
@@ -9,51 +8,122 @@ int main(int argc, char *argv[])
 	ros::init(argc, argv, "controller_node");
 	ros::NodeHandle n;
 	ros::Publisher launcher_pub = n.advertise<std_msgs::String>("launcher", 10);
+    ros::Publisher mapName_pub = n.advertise<std_msgs::String>("mapName", 1);
 
 	ros::Rate loop_rate(10);
 
-    std::size_t index_delimiter;
-    std::string delimiter = "_";
-	std::string command, action_str, node_str;
+    typedef agv::comtcp::ProtocoloRedAgv Protocolo;
+	agv::comtcp::WrapperClienteProtocolo<Protocolo> m_socket_com_agv;
+	agv::comtcp::ClienteTcp m_socket_com_detector;
 
-	while (ros::ok())
-	{
-		std_msgs::String msg;
+	std::string m_tag_red_local = "ros_comm";
+	std::string m_tag_red_agv = "AGV";
+	std::string m_ip_agv = "127.0.0.1";
+	int m_puerto_agv = 8900;
 
+    while (ros::ok())
+    {
+        std_msgs::String msg;
 		std::stringstream ss;
-		std::cout << "Command: ";
-		std::cin >> command;
 
-        index_delimiter = command.find(delimiter);
-        
-        if(index_delimiter != std::string::npos)
+        try
         {
-            action_str = command.substr(0, index_delimiter);
-            node_str = command.substr(action_str.length() + delimiter.length(), command.length() - 1);
+            std::vector<Protocolo::Paquete> paquetes_recibidos;
 
-            if(action_str == "launch" && node_str.length() > 0)
+            if (!m_socket_com_agv.esta_conectado())
             {
-                ss << "launch_" << node_str;
-                msg.data = ss.str();
-                launcher_pub.publish(msg);
+                m_socket_com_agv.establece_conexion(m_ip_agv, m_puerto_agv);
+                Protocolo::Paquete paquete_envio = Protocolo::nueva_consulta_ascii(m_tag_red_local, m_tag_red_agv, "logIn");
+                m_socket_com_agv.enviar_datos(paquete_envio);
             }
-            else if(action_str == "shutdown" && node_str.length() > 0)
+
+            if (m_socket_com_agv.listo_para_recibir(1000))
             {
-                ss << "shutdown_" << node_str;
-                msg.data = ss.str();
-                launcher_pub.publish(msg);
+                m_socket_com_agv.recibir_datos(paquetes_recibidos);
+                for (const auto& paquete_i : paquetes_recibidos)
+                {
+                    if (paquete_i.tipo == Protocolo::Paquete::Tipo_Paquete::CONSULTA)
+                    {
+                        std::istringstream comando_recibido(paquete_i.comando);
+                        std::string nombre_cmd;
+                        comando_recibido >> nombre_cmd;
+
+                        Protocolo::Paquete paquete_respuesta = paquete_i.compon_respuesta(false, "Command not available");
+                        try{
+                            if (nombre_cmd.compare("newMap") == 0)
+                            {
+                                ss << "launch_mapping";
+                                msg.data = ss.str();
+                                std_msgs::String map_name;
+                                std::string map_name_aux = "";      
+                                std::string map_name_argument = "mapName";
+                                newMapArguments(nombre_cmd, map_name_argument, map_name_aux);
+                                map_name.data = map_name_aux;
+
+                                mapName_pub.publish(map_name);
+                                launcher_pub.publish(msg);
+                                paquete_respuesta = paquete_i.compon_respuesta(true, "Comando newMap");
+                            }
+                            else if (nombre_cmd.compare("localization") == 0)
+                            {
+                                ss << "launch_localization";
+                                msg.data = ss.str();
+                                std::string map_name = "";
+                                geometry_msgs::Pose origin_map, origin_position;
+                                std::vector<std::string> localization_arguments{"mapName","xm","ym","yawm","xp","yp","yawp"};
+                                localizationArguments(nombre_cmd, localization_arguments, map_name, origin_map, origin_position);
+                                
+                                setMapParam(map_name);
+                                setPosesFile(origin_map, origin_position);
+                                launcher_pub.publish(msg);
+                                paquete_respuesta = paquete_i.compon_respuesta(true, "Comando localization");
+                            }
+                            else if (nombre_cmd.compare("stopLocalization") == 0)
+                            {
+                                ss << "shutdown_localization";
+                                msg.data = ss.str();
+                                launcher_pub.publish(msg);
+
+                                paquete_respuesta = paquete_i.compon_respuesta(true, "Comando stopLocalization");
+                            }else if (nombre_cmd.compare("saveMap") == 0)
+                            {
+                                ss << "shutdown_mapping";
+                                msg.data = ss.str();
+                                launcher_pub.publish(msg);
+
+                                paquete_respuesta = paquete_i.compon_respuesta(true, "Comando saveMap");
+                            }
+                            else if (nombre_cmd.compare("exit") == 0)
+                            {
+                                ss << "nothing";
+                                msg.data = ss.str();
+                                launcher_pub.publish(msg);
+                                paquete_respuesta = paquete_i.compon_respuesta(true, "Ningun comando");
+                            }               
+                        }
+                        catch(const std::exception& e)
+                        {
+                            paquete_respuesta = paquete_i.compon_respuesta(false, e.what());
+                        }
+                        m_socket_com_agv.enviar_datos(paquete_respuesta);
+                    }
+                    else
+                    {
+                        m_tag_red_agv = paquete_i.origen;
+                    }
+                }
             }
-            else
-            {
-                ss << "nothing";
-                msg.data = ss.str();
-                launcher_pub.publish(msg);
-            }
-        }        
-		
-		ros::spinOnce();
+
+            paquetes_recibidos.clear();
+        }
+        catch (const std::exception& e)
+        {
+            LOG_ALARM("Error al comunicar con el AGV: " << e.what());
+        }
+
+    	ros::spinOnce();
 		loop_rate.sleep();
-	}
+    }
 
 	return 0;
 }

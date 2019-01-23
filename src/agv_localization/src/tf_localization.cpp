@@ -12,16 +12,24 @@ int main(int argc, char** argv){
   n.param<std::string>("origin_file", origin_file, "/home/smarlogy/catkin_ws/origins/default.txt");
   
   std::ifstream file;
-  int i = 0;
+  int i, j;
   double aux, offset_x, offset_y;
-  double pose[7];
+  double pose[2][7];
 
   try
     {
+        i = 0;
+        std::string line;
         file.open(origin_file);
-        while(file >> aux)
+        while(std::getline(file, line))
         {
-          pose[i] = aux;
+          j = 0;
+          std::istringstream iss(line);
+          while(iss >> aux)
+          {
+            pose[i][j] = aux;
+            j++;
+          }
           i++;
         }
     }
@@ -34,7 +42,7 @@ int main(int argc, char** argv){
 
   file.close();
 
-  aux = tf::getYaw(tf::Quaternion(pose[3], pose[4], pose[5], pose[6])) + M_PI + 0.0061;
+  aux = tf::getYaw(tf::Quaternion(pose[0][3], pose[0][4], pose[0][5], pose[0][6])) + M_PI + 0.0061;
   offset_x = 1.154 * cos(aux);
   offset_y = 1.154 * sin(aux);
 
@@ -42,8 +50,15 @@ int main(int argc, char** argv){
     localization_broadcaster.sendTransform(
       tf::StampedTransform(
         tf::Transform(tf::createQuaternionFromYaw(aux),
-        tf::Vector3(pose[0] + offset_x, pose[1] + offset_y, pose[2])),
-        ros::Time::now(),"localization_laser_frame", "map"));
+        tf::Vector3(pose[0][0] + offset_x, pose[0][1] + offset_y, pose[0][2])),
+        ros::Time::now(),"origin_map", "map"));
+
+    localization_broadcaster.sendTransform(
+      tf::StampedTransform(
+        tf::Transform(tf::Quaternion(pose[1][3], pose[1][4], pose[1][5], pose[1][6]),
+        tf::Vector3(pose[1][0], pose[1][1], pose[1][2])),
+        ros::Time::now(),"origin_position", "origin_map"));
+
     r.sleep();
   }
 }

@@ -27,7 +27,7 @@ int main(int argc, char** argv)
     ros::Time scan_time;
     sensor_msgs::LaserScan scan;
     geometry_msgs::PoseStamped pose;
-    pose.header.frame_id = "localization_laser_frame";
+    pose.header.frame_id = "origin_map";
 
     scan.header.frame_id = "base_laser";
     scan.angle_min = -M_PI;
