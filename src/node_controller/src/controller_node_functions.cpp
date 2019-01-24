@@ -3,10 +3,21 @@
 void setMapParam(std::string map_name)
 {
     ros::NodeHandle n_;
+
+    std::ofstream file;
     const char* homeDir = getenv("HOME");
-    std::string directory = "/.ros";
+    std::string directory = "/.ros/";
     std::string result = homeDir + directory + map_name;
-    n_.setParam("map_file", result);
+    try
+    {
+        std::string map_directory = "/catkin_ws/src/agv_localization/launch/includes/map_directory.txt";
+        file.open(homeDir + map_directory);
+        file << result;
+    }
+    catch (const std::exception& ex)
+    {
+        ROS_ERROR("The file could not be open. %s.", ex.what());
+    }
 }
 
 void setPosesFile(geometry_msgs::Pose origin_map, geometry_msgs::Pose origin_position)
@@ -14,7 +25,7 @@ void setPosesFile(geometry_msgs::Pose origin_map, geometry_msgs::Pose origin_pos
     ros::NodeHandle n_;
     std::ofstream file;
     const char* homeDir = getenv("HOME");
-    std::string directory = "/catkin_ws/origins";
+    std::string directory = "/catkin_ws/origins/";
     std::string filename = "default.txt";
     std::string result = homeDir + directory + filename;
 
@@ -32,46 +43,49 @@ void setPosesFile(geometry_msgs::Pose origin_map, geometry_msgs::Pose origin_pos
     n_.setParam("origin_file", result);
 }
 
-std::vector<std::string> extractArguments(std::string command, std::vector<std::string> name_arguments)
+void newMapArguments(std::istream& args, const std::string& map_name_argument, std::string& map_name)
 {
-    std::vector<std::string> results;
-    std::istringstream command_(command);
-	std::stringstream ss;
+
     std::pair<std::string, std::string> argumentos;
-    int i = 0;
-    
-    while (leer_argumento_stream(command_, argumentos, false))
+    while (leer_argumento_stream(args, argumentos, false))
     {
-        if (argumentos.first.compare(name_arguments[i]) == 0){
-            ss << argumentos.second;
-            results.push_back(ss.str());
+        if(argumentos.first.compare(map_name_argument) == 0)
+        {
+            map_name = argumentos.second;
+        }
+        else
+        {
+            throw(std::runtime_error("Argumento no reconocido: " + argumentos.first));
+        }
+    }
+}
+
+void localizationArguments(std::istream& args, const std::vector<std::string>& localization_arguments, std::string& map_name,
+                            geometry_msgs::Pose& origin_map, geometry_msgs::Pose& origin_position)
+{
+    int i = 0;
+    std::vector<std::string> results;
+    std::pair<std::string, std::string> argumentos;
+    while (leer_argumento_stream(args, argumentos, false))
+    {
+        if(argumentos.first.compare(localization_arguments[i]) == 0)
+        {
+            results.push_back(argumentos.second);
+        }
+        else
+        {
+            throw(std::runtime_error("Argumento no reconocido: " + argumentos.first));
         }
         i++;
     }
-    return results;
-}
 
-void newMapArguments(std::string command, std::string map_name_argument, std::string& map_name)
-{
-    std::vector<std::string> arguments;
-    arguments.push_back(map_name_argument);
-    
-    std::vector<std::string> results;
-    results = extractArguments(command, arguments);
-    map_name = results[0];
-}
-
-void localizationArguments(std::string command, std::vector<std::string> localization_arguments, std::string& map_name,
-                            geometry_msgs::Pose& origin_map, geometry_msgs::Pose& origin_position)
-{
-    std::vector<std::string> results = extractArguments(command, localization_arguments);
     map_name = results[0];
 
     origin_map.position.x = atof(results[1].c_str());
     origin_map.position.y = atof(results[2].c_str());
-    origin_map.orientation = tf::createQuaternionMsgFromYaw(atof(results[3].c_str())*180.0/M_PI);
+    origin_map.orientation = tf::createQuaternionMsgFromYaw(atof(results[3].c_str())*M_PI/180.0);
 
     origin_position.position.x = atof(results[4].c_str());
     origin_position.position.y = atof(results[5].c_str());
-    origin_position.orientation = tf::createQuaternionMsgFromYaw(atof(results[6].c_str())*180.0/M_PI);
+    origin_position.orientation = tf::createQuaternionMsgFromYaw(atof(results[6].c_str())*M_PI/180.0);
 }

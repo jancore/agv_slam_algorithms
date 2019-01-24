@@ -15,9 +15,8 @@
 
 void setMapParam(std::string map_name);
 void setPosesFile(geometry_msgs::Pose origin_map, geometry_msgs::Pose origin_position);
-std::vector<std::string> extractArguments(std::string command, std::vector<std::string> name_arguments);
-void newMapArguments(std::string command, std::string map_name_argument, std::string& map_name);
-void localizationArguments(std::string command, std::vector<std::string> localization_arguments, std::string& map_name,
+void newMapArguments(std::istream& args, const std::string& map_name_argument, std::string& map_name);
+void localizationArguments(std::istream& args, const std::vector<std::string>& localization_arguments, std::string& map_name,
                             geometry_msgs::Pose& origin_map, geometry_msgs::Pose& origin_position);
 
 #endif

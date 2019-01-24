@@ -8,7 +8,8 @@ int main(int argc, char *argv[])
 	ros::init(argc, argv, "controller_node");
 	ros::NodeHandle n;
 	ros::Publisher launcher_pub = n.advertise<std_msgs::String>("launcher", 10);
-    ros::Publisher mapName_pub = n.advertise<std_msgs::String>("mapName", 1);
+    ros::Publisher mapName_pub = n.advertise<std_msgs::String>("mapName", 10);
+    std_msgs::String map_name;
 
 	ros::Rate loop_rate(10);
 
@@ -54,13 +55,13 @@ int main(int argc, char *argv[])
                             {
                                 ss << "launch_mapping";
                                 msg.data = ss.str();
-                                std_msgs::String map_name;
                                 std::string map_name_aux = "";      
-                                std::string map_name_argument = "mapName";
-                                newMapArguments(nombre_cmd, map_name_argument, map_name_aux);
+                                std::string map_name_argument = "map_name";
+                                newMapArguments(comando_recibido, map_name_argument, map_name_aux);
+
                                 map_name.data = map_name_aux;
 
-                                mapName_pub.publish(map_name);
+                                
                                 launcher_pub.publish(msg);
                                 paquete_respuesta = paquete_i.compon_respuesta(true, "Comando newMap");
                             }
@@ -70,8 +71,8 @@ int main(int argc, char *argv[])
                                 msg.data = ss.str();
                                 std::string map_name = "";
                                 geometry_msgs::Pose origin_map, origin_position;
-                                std::vector<std::string> localization_arguments{"mapName","xm","ym","yawm","xp","yp","yawp"};
-                                localizationArguments(nombre_cmd, localization_arguments, map_name, origin_map, origin_position);
+                                std::vector<std::string> localization_arguments{"map_name","xm","ym","yawm","xp","yp","yawp"};
+                                localizationArguments(comando_recibido, localization_arguments, map_name, origin_map, origin_position);
                                 
                                 setMapParam(map_name);
                                 setPosesFile(origin_map, origin_position);
@@ -121,6 +122,7 @@ int main(int argc, char *argv[])
             LOG_ALARM("Error al comunicar con el AGV: " << e.what());
         }
 
+        mapName_pub.publish(map_name);
     	ros::spinOnce();
 		loop_rate.sleep();
     }

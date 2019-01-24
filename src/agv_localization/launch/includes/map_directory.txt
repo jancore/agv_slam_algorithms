@@ -1,0 +1,1 @@
+/home/smarlogy/.ros/nave_rbpf_9.simplemap

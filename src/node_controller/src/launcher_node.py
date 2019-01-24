@@ -3,6 +3,7 @@
 import rospy
 import roslaunch
 from std_msgs.msg import String
+from os.path import expanduser
 msg = ""
 
 def callback(data):
@@ -19,7 +20,7 @@ def listener():
     rate = rospy.Rate(10)
     files = {'mapping': 'agv_mapping/launch/agv_mrpt_rbpf.launch',
             'localization': 'agv_localization/launch/agv_mrpt.launch'}
-    directory = "/home/smarlogy/catkin_ws/src/"
+    directory = expanduser("~") + "/catkin_ws/src/"
     actualNode = ""
     isLaunched = False
 

@@ -9,7 +9,7 @@ int main(int argc, char** argv){
   tf::TransformBroadcaster localization_broadcaster;
 
   std::string origin_file;
-  n.param<std::string>("origin_file", origin_file, "/home/smarlogy/catkin_ws/origins/default.txt");
+  n.param<std::string>("origin_file", origin_file, "/home/smarlogy/catkin_ws/origins/defaaault.txt");
   
   std::ifstream file;
   int i, j;

@@ -122,8 +122,8 @@ include_directories(
 )
 
 include_directories(
-  "/home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/include"
-  "/home/smarlogy/catkin_ws/src/agv_localization/include"
+  "~/catkin_ws/src/Libreria_Com_Nav350/include"
+  "~/catkin_ws/src/agv_localization/include"
 )
 
 ## Declare a C++ library
@@ -245,5 +245,5 @@ target_link_libraries(send_position_node
 )
 
 target_link_libraries(send_position_node
-  "/home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/libLibreriasRobot.a"
+  "/$ENV{HOME}/catkin_ws/src/Libreria_Com_Nav350/libLibreriasRobot.a"
   )
