@@ -1,5 +1,5 @@
 <launch>    
-    <node pkg="node_controller" type="controller_node" name="controller_node" output="screen"/>
+    <node pkg="node_controller" type="controller_node" name="controller_node" respawn="true" output="screen"/>
 
-    <node pkg="node_controller" type="launcher_node.py" name="launcher_node" output="screen"  launch-prefix="xterm -e" />
+    <node pkg="node_controller" type="launcher_node.py" name="launcher_node" respawn="true" output="screen" />
 </launch>

@@ -36,6 +36,8 @@ int main(int argc, char** argv)
             initial_pose.header = estimated_pose.header;
             initial_pose.pose = estimated_pose.pose.pose;
             listener.transformPose("origin_map", initial_pose, aux_pose);
+			initial_pose = aux_pose;
+            listener.transformPose("origin_position", initial_pose, aux_pose);
             final_pose = aux_pose;
         }
         catch (const std::exception& ex)

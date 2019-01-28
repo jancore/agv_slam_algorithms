@@ -23,14 +23,15 @@ int main(int argc, char** argv)
 
     time(&rawtime);
     now = localtime(&rawtime);
-    std::string directory = "/home/smarlogy/catkin_ws/origins/";
+    const char* homeDir = getenv("HOME");
+    std::string directory = "/catkin_ws/origins/default.txt";
     std::string filename = "origin_map_" + 
         std::to_string(1900 + now->tm_year) + "-" + std::to_string(now->tm_mon + 1) + "-" + std::to_string(now->tm_mday) + "-" + 
         std::to_string(now->tm_hour) + "h" + std::to_string(now->tm_min) + "m" + std::to_string(now->tm_sec) + "s";
 
     try
     {
-        file.open(directory + filename + ".txt");
+        file.open(homeDir + directory + filename + ".txt");
     }
     catch (const std::exception& ex)
     {

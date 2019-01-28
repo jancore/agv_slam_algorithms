@@ -8,16 +8,7 @@ void setMapParam(std::string map_name)
     const char* homeDir = getenv("HOME");
     std::string directory = "/.ros/";
     std::string result = homeDir + directory + map_name;
-    try
-    {
-        std::string map_directory = "/catkin_ws/src/agv_localization/launch/includes/map_directory.txt";
-        file.open(homeDir + map_directory);
-        file << result;
-    }
-    catch (const std::exception& ex)
-    {
-        ROS_ERROR("The file could not be open. %s.", ex.what());
-    }
+    n_.setParam("/mrpt_localization_node/map_file", result);
 }
 
 void setPosesFile(geometry_msgs::Pose origin_map, geometry_msgs::Pose origin_position)
