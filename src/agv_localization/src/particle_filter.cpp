@@ -12,7 +12,7 @@ std::vector<Agv> ParticleFilter(std::vector<Agv> particles, int num_particles, s
 
     for(i = 0; i < num_particles; i++)
     {
-        weights[i] = particles[i].MeasurementProb(scan, landmarks, landmarks.size());
+        weights[i] = particles[i].MeasurementProb2(scan, landmarks, landmarks.size());
     }
 
     ROS_INFO("deltaYaw = %.2lf, yaw = %.2lf, weight = %.2lf", deltaYaw, particles[0].yaw,  weights[0]);
@@ -37,8 +37,27 @@ std::vector< std::vector<double> > GetLandmarks(nav_msgs::OccupancyGrid map)
         if(map.data[i] > 0)
         {
             landmark[0] = (i % width)*resolution + map.info.origin.position.x;
-            landmark[1] = (i / width)*resolution + map.info.origin.position.y;
+            landmark[1] = (i % height)*resolution + map.info.origin.position.y;
             landmarks.push_back(landmark);
+        }
+    }
+
+    return landmarks;
+}
+
+std::vector< std::vector<double> > GetLandmarks2(nav_msgs::OccupancyGrid map)
+{
+    int i, j;
+    int width = map.info.width;
+    int height = map.info.height;
+    std::vector<double> landmark(width);
+    std::vector< std::vector<double> > landmarks(height);
+
+    for(i = 0; i < height; i++)
+    {
+        for(j = 0; j < width; j++)
+        {
+            landmarks[i][j] = double(map.data[i * width + j]);
         }
     }
 

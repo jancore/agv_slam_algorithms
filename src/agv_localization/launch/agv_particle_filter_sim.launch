@@ -1,0 +1,23 @@
+<launch>
+
+    <arg name="scan_topic" default="nav350_scan" />
+    <arg name="base_frame" default="base_link"/>
+    <arg name="odom_frame" default="odom"/>
+    <arg name="map_frame" default="map"/>
+    <arg name="map_file" default="/$(env HOME)/catkin_ws/maps/agv_nave_full_bag.yaml"/>
+    <arg name="ip_nav350" default="10.67.101.36"/>
+    <param name="ip_odom" value="192.168.1.203"/>
+    
+    <param name="/use_sim_time" value="true"/>
+
+    <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+    <node pkg="rosbag" type="play" name="simulation" output="screen" args="--clock /$(env HOME)/catkin_ws/bags/exp_error_localization.bag"/>
+
+    <!--<node pkg="agv_localization" type="tf_localization" name="tf_localization" output="screen"/>-->
+
+    <!--<node pkg="agv_localization" type="particle_filter_node" name="particle_filter_node" output="screen" />-->
+
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find agv_localization)/cfg/mrpt_localization_config.rviz" />
+
+</launch>

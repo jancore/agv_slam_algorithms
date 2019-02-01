@@ -2,6 +2,7 @@
 #include <sensor_msgs/LaserScan.h>
 #include "nav_msgs/MapMetaData.h"
 #include <vector>
+#include <Eigen/Dense>
 
 class Agv
 {
@@ -26,4 +27,6 @@ class Agv
         float map_resolution;
         float width_map;
         float height_map;
+        float x_origin_map;
+        float y_origin_map;
 };

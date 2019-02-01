@@ -32,8 +32,13 @@ def listener():
             uuid = roslaunch.rlutil.get_or_generate_uuid(None, False)
             roslaunch.configure_logging(uuid)
             launch = roslaunch.parent.ROSLaunchParent(uuid, [directory + files[actualNode]])
-            launch.start()
-            rospy.loginfo("started")
+
+            try:
+                launch.start()
+            except:
+                raise NameError("Error! Launch directory is wrong or not exist.", files[actualNode])
+            
+            rospy.loginfo("started" + actualNode)
         elif words[0] == "shutdown" and actualNode == words[1] and isLaunched:
             isLaunched = False
             actualNode = ""
@@ -42,4 +47,9 @@ def listener():
         rate.sleep()
 
 if __name__ == '__main__':
-    listener()
+    try:
+        listener()
+    except rospy.ROSInterruptException:
+        pass
+    except NameError as err:
+        print("Error in listener(): {0}".format(err))

@@ -7,8 +7,10 @@ Panels:
         - /Global Options1
         - /Status1
         - /TF1
+        - /TF1/Status1
         - /TF1/Frames1
         - /LaserScan1
+        - /PoseArray1
         - /Map1
         - /Pose_estimated1
       Splitter Ratio: 0.585132003
@@ -31,7 +33,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: LaserScan
+    SyncSource: ""
 Visualization Manager:
   Class: ""
   Displays:
@@ -62,10 +64,6 @@ Visualization Manager:
           Value: true
         base_link:
           Value: true
-        localization_laser_frame:
-          Value: true
-        map:
-          Value: true
         odom:
           Value: true
       Marker Scale: 1
@@ -74,12 +72,7 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        localization_laser_frame:
-          map:
-            odom:
-              base_link:
-                base_laser:
-                  {}
+        {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -117,8 +110,8 @@ Visualization Manager:
       Axes Length: 0.300000012
       Axes Radius: 0.00999999978
       Class: rviz/PoseArray
-      Color: 0; 0; 255
-      Enabled: false
+      Color: 0; 255; 0
+      Enabled: true
       Head Length: 0.0700000003
       Head Radius: 0.0299999993
       Name: PoseArray
@@ -127,7 +120,7 @@ Visualization Manager:
       Shape: Arrow (Flat)
       Topic: /particlecloud
       Unreliable: false
-      Value: false
+      Value: true
     - Alpha: 0.699999988
       Class: rviz/Map
       Color Scheme: map
@@ -202,11 +195,11 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Scale: 5.37483168
+      Scale: 4.54675579
       Target Frame: <Fixed Frame>
       Value: TopDownOrtho (rviz)
-      X: 97.4621887
-      Y: 3.75809288
+      X: 18.1673203
+      Y: -71.1638947
     Saved: ~
 Window Geometry:
   Displays:

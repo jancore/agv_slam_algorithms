@@ -17,7 +17,7 @@ int main(int argc, char** argv)
     nh.param<std::string>("map_topic", map_topic, "map");
     nh.param<std::string>("scan_topic", scan_topic, "nav350_scan");
     nh.param<std::string>("odom_topic", odom_topic, "odom");
-    nh.param<int>("num_particles", num_particles, 10);
+    nh.param<int>("num_particles", num_particles, 1);
 
     MapListener mapListener;
     OdomListener odomListener;
@@ -37,7 +37,7 @@ int main(int argc, char** argv)
 
     std::vector< std::vector<double> > landmarks;
 
-    poses.header.frame_id = "base_laser";
+    poses.header.frame_id = "map";
 
     double x_pre = 0.0;
     double y_pre = 0.0;
@@ -57,7 +57,7 @@ int main(int argc, char** argv)
         if(landmarks.size() == 0)
         {
             map = mapListener.GetDataMap();
-            landmarks = GetLandmarks(map);
+            landmarks = GetLandmarks2(map);
 
             for(int i = 0; i < num_particles; i++)
             {   
