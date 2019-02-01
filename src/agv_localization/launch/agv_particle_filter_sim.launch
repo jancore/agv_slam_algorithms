@@ -16,7 +16,7 @@
 
     <!--<node pkg="agv_localization" type="tf_localization" name="tf_localization" output="screen"/>-->
 
-    <!--<node pkg="agv_localization" type="particle_filter_node" name="particle_filter_node" output="screen" />-->
+    <node pkg="agv_localization" type="particle_filter_node" name="particle_filter_node" output="screen" />
 
   <node type="rviz" name="rviz" pkg="rviz" args="-d $(find agv_localization)/cfg/mrpt_localization_config.rviz" />
 

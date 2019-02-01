@@ -1,6 +1,7 @@
 #include "agv_localization/particle_filter.h"
+#include <fstream>
 
-std::vector<Agv> ParticleFilter(std::vector<Agv> particles, int num_particles, sensor_msgs::LaserScan scan, std::vector< std::vector<double> >& landmarks, double deltaX, double deltaY, double deltaYaw)
+std::vector<Agv> ParticleFilter(std::vector<Agv> particles, int num_particles, sensor_msgs::LaserScan scan, std::vector<double>& landmarks, double deltaX, double deltaY, double deltaYaw)
 {
     int i;
     double weights[num_particles];
@@ -12,10 +13,11 @@ std::vector<Agv> ParticleFilter(std::vector<Agv> particles, int num_particles, s
 
     for(i = 0; i < num_particles; i++)
     {
-        weights[i] = particles[i].MeasurementProb2(scan, landmarks, landmarks.size());
+        weights[i] = particles[i].MeasurementProb3(scan, landmarks, landmarks.size());
+        ROS_INFO("weight = %.2lf", weights[i]);
     }
 
-    ROS_INFO("deltaYaw = %.2lf, yaw = %.2lf, weight = %.2lf", deltaYaw, particles[0].yaw,  weights[0]);
+   
 
     particles = ResamplingWheel(particles, weights, num_particles);
 
@@ -47,19 +49,38 @@ std::vector< std::vector<double> > GetLandmarks(nav_msgs::OccupancyGrid map)
 
 std::vector< std::vector<double> > GetLandmarks2(nav_msgs::OccupancyGrid map)
 {
+    std::ofstream file;
     int i, j;
     int width = map.info.width;
     int height = map.info.height;
-    std::vector<double> landmark(width);
-    std::vector< std::vector<double> > landmarks(height);
+    std::vector< std::vector<double> > landmarks(width, std::vector<double>(height));
 
+    file.open("/home/smarlogy/catkin_ws/maps/map.txt");
     for(i = 0; i < height; i++)
     {
         for(j = 0; j < width; j++)
         {
-            landmarks[i][j] = double(map.data[i * width + j]);
+            landmarks[width - 1 -i][height -1 -j] = double(map.data[i * width + j]);
+            if(map.data[i * width + j] == 100) file << "8";
+            else if (map.data[i * width + j] == -1) file << "_";
+            else file << " ";                    
         }
+        file << "\n";
     }
+    file.close();
+    return landmarks;
+}
 
+std::vector<double> GetLandmarks3(nav_msgs::OccupancyGrid map)
+{
+    int i;
+    int width = map.info.width;
+    int height = map.info.height;
+    std::vector<double> landmarks(width*height);
+
+    for(i = 0; i < width*height; i++)
+    {
+        landmarks[i] = double(map.data[i]);       
+    }
     return landmarks;
 }

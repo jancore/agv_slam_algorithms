@@ -11,7 +11,7 @@ class SendPosition
 	constexpr static auto cm_nombre_red_nodo = "ROS_POSE";
 public:
 	SendPosition(const std::string& p_ip_agv, int p_puerto = 8900);
-    void Envia_posicion(int p_pos_x_mm, int p_pos_y_mm, int p_orientacion_mgrad, long p_timeout_ms);
+    void Envia_posicion(int p_pos_x_mm, int p_pos_y_mm, int p_orientacion_mgrad, int p_error_mm, long p_timeout_ms);
 	
 	bool get_esta_conectado() const;
 

@@ -7,7 +7,6 @@ Panels:
         - /Global Options1
         - /Status1
         - /TF1
-        - /TF1/Status1
         - /TF1/Frames1
         - /LaserScan1
         - /PoseArray1
@@ -106,11 +105,11 @@ Visualization Manager:
       Use rainbow: true
       Value: true
     - Alpha: 1
-      Arrow Length: 0.100000001
+      Arrow Length: 1
       Axes Length: 0.300000012
       Axes Radius: 0.00999999978
       Class: rviz/PoseArray
-      Color: 0; 255; 0
+      Color: 255; 0; 0
       Enabled: true
       Head Length: 0.0700000003
       Head Radius: 0.0299999993
@@ -118,13 +117,13 @@ Visualization Manager:
       Shaft Length: 0.230000004
       Shaft Radius: 0.00999999978
       Shape: Arrow (Flat)
-      Topic: /particlecloud
+      Topic: /pf_poses
       Unreliable: false
       Value: true
     - Alpha: 0.699999988
       Class: rviz/Map
       Color Scheme: map
-      Draw Behind: false
+      Draw Behind: true
       Enabled: true
       Name: Map
       Topic: map
@@ -195,11 +194,11 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Scale: 4.54675579
+      Scale: 7.13203955
       Target Frame: <Fixed Frame>
       Value: TopDownOrtho (rviz)
-      X: 18.1673203
-      Y: -71.1638947
+      X: 111.69101
+      Y: 113.468483
     Saved: ~
 Window Geometry:
   Displays:

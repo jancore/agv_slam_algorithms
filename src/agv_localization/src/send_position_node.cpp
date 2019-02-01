@@ -15,8 +15,8 @@ int main(int argc, char** argv)
     Mrpt_listener estimated_pose_listener;
     geometry_msgs::PoseWithCovarianceStamped estimated_pose;
     geometry_msgs::PoseStamped initial_pose, final_pose;
-    double x_mm, y_mm;
-    double yaw_mdeg = 0.0;
+    int x_mm, y_mm, error_mm;
+    int yaw_mdeg = 0;
 
     tf::TransformListener listener(ros::Duration(10));
     ros::Subscriber poses_sub = n.subscribe<geometry_msgs::PoseArray>("particlecloud", 10, boost::bind(&Mrpt_listener::CallbackParticleCloud, boost::ref(estimated_pose_listener), _1));
@@ -48,10 +48,11 @@ int main(int argc, char** argv)
         x_mm = int(final_pose.pose.position.x * 1000.0);
         y_mm = int(final_pose.pose.position.y * 1000.0);
         yaw_mdeg = int((tf::getYaw(final_pose.pose.orientation) < 0.0 ? 2.0*M_PI + tf::getYaw(final_pose.pose.orientation) : tf::getYaw(final_pose.pose.orientation)) * 1000.0 * RAD2DEG);
+        error_mm = int(sqrt(estimated_pose.pose.covariance[0]*1000 + estimated_pose.pose.covariance[6]*1000));
 
         try
         {
-            setPosition.Envia_posicion(x_mm, y_mm, yaw_mdeg, 1000);
+            setPosition.Envia_posicion(x_mm, y_mm, yaw_mdeg, error_mm, 1000);
         }
         catch (const std::exception& e)
         {

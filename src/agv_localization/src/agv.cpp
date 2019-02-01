@@ -1,26 +1,31 @@
 #include "agv_localization/agv.h"
-#include "math.h"
 
 Agv::Agv(){}
 
 Agv::Agv(nav_msgs::MapMetaData mapMetaData)
 {   
+    float r;
     map_resolution = mapMetaData.resolution;
     width_map = float(mapMetaData.width)*map_resolution;
     height_map = float(mapMetaData.height)*map_resolution;
     x_origin_map = mapMetaData.origin.position.x;
     y_origin_map = mapMetaData.origin.position.y;
 
-    float r = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
-    x = r*double(width_map);
-    r = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
-    y = r*double(height_map);
-    r = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
-    yaw = -M_PI + 2*M_PI*r;
+    //srand(time(NULL));
+    r = float(rand()) / float(RAND_MAX);
+    this->x = r*width_map + x_origin_map;
+    
+    //srand(time(NULL));
+    r = float(rand()) / float(RAND_MAX);
+    this->y = r*height_map + y_origin_map;
 
-    forward_noise = 0.0;
-    turn_noise = 0.0;
-    sense_noise = 0.0;
+    //srand(time(NULL));
+    r = float(rand()) / float(RAND_MAX);
+    this->yaw = -M_PI + 2*M_PI*r;
+
+    this->forward_noise = 0.0;
+    this->turn_noise = 0.0;
+    this->sense_noise = 0.0;
 }
 
 void Agv::SetPose(double new_x, double new_y, double new_yaw)
@@ -73,10 +78,12 @@ double Agv::MeasurementProb(sensor_msgs::LaserScan scan, std::vector< std::vecto
 
 double Agv::MeasurementProb2(sensor_msgs::LaserScan scan, std::vector< std::vector<double> >& landmarks, int num_landmarks)
 {
-    int i;
+    using namespace Eigen;
+
+    int i, y_cell, x_cell;
     Eigen::Matrix3f TF = Eigen::Matrix3f::Constant(0.0); 
-    Eigen::MatrixXf pose_map_frame;
-    Eigen::VectorXf pose_agv_frame(3);
+    Eigen::Vector3f pose_map_frame;
+    Eigen::Vector3f pose_agv_frame;
     float prob = 0.0;
     float num_readings = (scan.angle_max - scan.angle_min) / scan.angle_increment;
 
@@ -94,15 +101,61 @@ double Agv::MeasurementProb2(sensor_msgs::LaserScan scan, std::vector< std::vect
         TF(1,1) = cos(this->yaw);
         TF(1,2) = this->y;
 
-        pose_map_frame = TF * pose_agv_frame;
+        pose_map_frame = TF*pose_agv_frame;
+        y_cell = int((pose_map_frame(0) + x_origin_map)/map_resolution);
+        x_cell = int((pose_map_frame(1) + y_origin_map)/map_resolution);
 
-        if(landmarks[int((pose_map_frame(0,0) - x_origin_map)/map_resolution)][int((pose_map_frame(1,0) - y_origin_map)/map_resolution)] > 50.0)
+        if(y_cell >= 0 && y_cell < height_map/map_resolution && x_cell >= 0 && x_cell < width_map/map_resolution)
         {
-            prob++;
-        }        
+            if(landmarks[y_cell][x_cell] > 50.0)
+            {
+                prob++;
+            }  
+        }      
     }
 
     return prob/num_readings;
+}
+
+double Agv::MeasurementProb3(sensor_msgs::LaserScan scan, std::vector<double>& landmarks, int num_landmarks)
+{
+    using namespace Eigen;
+
+    int i, y_cell, x_cell;
+    Eigen::Matrix3f TF = Eigen::Matrix3f::Constant(0.0); 
+    Eigen::Vector3f pose_map_frame;
+    Eigen::Vector3f pose_agv_frame;
+    float prob = 0.0;
+    float num_readings = (scan.angle_max - scan.angle_min) / scan.angle_increment;
+
+    TF(2,2) = 1.0;
+    pose_agv_frame(2) = 1.0;
+    
+    for(i = 0; i < num_readings; i++)
+    {
+        pose_agv_frame(0) = scan.ranges[i] * cos(i * scan.angle_increment);
+        pose_agv_frame(1) = scan.ranges[i] * sin(i * scan.angle_increment);
+        TF(0,0) = cos(this->yaw);
+        TF(0,1) = sin(this->yaw);
+        TF(0,2) = this->x;
+        TF(1,0) = -sin(this->yaw);
+        TF(1,1) = cos(this->yaw);
+        TF(1,2) = this->y;
+
+        pose_map_frame = TF*pose_agv_frame;
+        y_cell = int((pose_map_frame(0) + x_origin_map)/map_resolution);
+        x_cell = int((pose_map_frame(1) + y_origin_map)/map_resolution);
+
+        if(y_cell >= 0 && y_cell < width_map/map_resolution && x_cell >= 0 && x_cell < height_map/map_resolution)
+        {
+            if(landmarks[x_cell + y_cell] > 50.0)
+            {
+                prob++;
+            }  
+        }      
+    }
+
+    return prob;
 }
 
 void Agv::Move(double deltaX, double deltaY, double deltaYaw)

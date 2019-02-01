@@ -1,7 +1,9 @@
 #include <ros/ros.h>
 #include <sensor_msgs/LaserScan.h>
 #include "nav_msgs/MapMetaData.h"
+#include <time.h>  
 #include <vector>
+#include "math.h"
 #include <Eigen/Dense>
 
 class Agv
@@ -14,6 +16,7 @@ class Agv
         double Gaussian(double mu, double sigma, double x);
         double MeasurementProb(sensor_msgs::LaserScan scan, std::vector< std::vector<double> >& landmarks, int num_landmarks);
         double MeasurementProb2(sensor_msgs::LaserScan scan, std::vector< std::vector<double> >& landmarks, int num_landmarks);
+        double MeasurementProb3(sensor_msgs::LaserScan scan, std::vector<double>& landmarks, int num_landmarks);
         void Move(double deltaX, double deltaY, double deltaYaw);
 
         double x;
