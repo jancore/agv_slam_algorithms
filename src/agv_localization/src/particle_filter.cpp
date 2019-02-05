@@ -84,3 +84,26 @@ std::vector<double> GetLandmarks3(nav_msgs::OccupancyGrid map)
     }
     return landmarks;
 }
+
+double Mean(std::vector<double> values){
+    unsigned int i;
+    double sum = 0;
+    for(i = 0; i < values.size(); i++)
+    {
+        sum += values[i];
+    }
+    return sum / double(values.size());
+}
+
+double MeanAngle(std::vector<double> values){
+    std::vector<double> cosValues;
+    std::vector<double> sinValues;
+    unsigned int i;
+
+    for(i = 0; i < values.size(); i++){
+        cosValues.push_back(cos(values[i]));
+        sinValues.push_back(sin(values[i]));
+    }
+
+    return atan2(Mean(sinValues), Mean(cosValues));
+}

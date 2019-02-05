@@ -131,14 +131,14 @@ double Agv::MeasurementProb3(sensor_msgs::LaserScan scan, std::vector<double>& l
     TF(2,2) = 1.0;
     pose_agv_frame(2) = 1.0;
     
-    for(i = 0; i < num_readings; i++)
+    for(i = 0; i < num_readings; i=i+20)
     {
         pose_agv_frame(0) = scan.ranges[i] * cos(i * scan.angle_increment);
         pose_agv_frame(1) = scan.ranges[i] * sin(i * scan.angle_increment);
         TF(0,0) = cos(this->yaw);
-        TF(0,1) = sin(this->yaw);
+        TF(0,1) = -sin(this->yaw);
         TF(0,2) = this->x;
-        TF(1,0) = -sin(this->yaw);
+        TF(1,0) = sin(this->yaw);
         TF(1,1) = cos(this->yaw);
         TF(1,2) = this->y;
 

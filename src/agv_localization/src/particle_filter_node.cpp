@@ -3,6 +3,8 @@
 #include "agv_localization/subscribers_listener.h"
 #include "geometry_msgs/Pose.h"
 #include "geometry_msgs/PoseArray.h"
+#include <tf/transform_broadcaster.h>
+#include <tf/transform_listener.h>
 
 int main(int argc, char** argv)
 {
@@ -17,7 +19,7 @@ int main(int argc, char** argv)
     nh.param<std::string>("map_topic", map_topic, "map");
     nh.param<std::string>("scan_topic", scan_topic, "nav350_scan");
     nh.param<std::string>("odom_topic", odom_topic, "odom");
-    nh.param<int>("num_particles", num_particles, 1000);
+    nh.param<int>("num_particles", num_particles, 10);
 
     MapListener mapListener;
     OdomListener odomListener;
@@ -34,6 +36,10 @@ int main(int argc, char** argv)
     sensor_msgs::LaserScan scan;
     geometry_msgs::PoseArray poses;
     geometry_msgs::Pose pose;
+    geometry_msgs::PoseStamped final_pose;
+
+    tf::TransformListener listener(ros::Duration(10));
+    tf::TransformBroadcaster pf_broadcaster;
 
     //std::vector< std::vector<double> > landmarks;
     std::vector<double> landmarks;
@@ -46,6 +52,7 @@ int main(int argc, char** argv)
     double deltaX, deltaY, deltaYaw, dist;
     double dist_update = 0.20; 
     double yaw_update = 0.26;
+    std::vector<double> x_base_link, y_base_link, yaw_base_link;
 
     std::vector<Agv> particles(num_particles);
 
@@ -84,6 +91,12 @@ int main(int argc, char** argv)
         //ROS_INFO("%d", int(landmarks.size()));
         scan = scanListener.GetDataScan();
         odom = odomListener.GetDataOdom();
+        pf_broadcaster.sendTransform(
+            tf::StampedTransform(
+            tf::Transform(tf::Quaternion(odom.pose.pose.orientation.x, odom.pose.pose.orientation.y, odom.pose.pose.orientation.z, odom.pose.pose.orientation.w),
+            tf::Vector3(odom.pose.pose.position.x, odom.pose.pose.position.y, odom.pose.pose.position.z)),
+            ros::Time::now(),"map", "odom"));
+
         deltaX = odom.pose.pose.position.x - x_pre;
         deltaY = odom.pose.pose.position.y - y_pre;
         if(odom.pose.pose.orientation.x == 0 && odom.pose.pose.orientation.y == 0 && odom.pose.pose.orientation.z == 0 && odom.pose.pose.orientation.w == 0)
@@ -111,8 +124,11 @@ int main(int argc, char** argv)
         for(int i = 0; i < num_particles; i++)
         {
             pose.position.x = particles[i].x;
+            x_base_link.push_back(particles[i].x);
             pose.position.y = particles[i].y;
+            y_base_link.push_back(particles[i].y);
             pose.orientation = tf::createQuaternionMsgFromYaw(particles[i].yaw);
+            yaw_base_link.push_back(particles[i].yaw);
             poses.poses.push_back(pose);
         }
 
@@ -120,6 +136,29 @@ int main(int argc, char** argv)
         poses.header.stamp = ros::Time::now();
 
         poses_pub.publish(poses);
+
+        // try
+        // {
+        //     geometry_msgs::PoseStamped aux_pose;
+        //     geometry_msgs::PoseStamped initial_pose;
+        //     initial_pose.header.frame_id = "map";
+        //     initial_pose.pose.position.x = Mean(x_base_link);
+        //     initial_pose.pose.position.y = Mean(y_base_link);
+        //     initial_pose.pose.orientation = tf::createQuaternionMsgFromYaw(MeanAngle(yaw_base_link));
+        //     listener.transformPose("odom", initial_pose, aux_pose);
+        //     final_pose = aux_pose;
+        // }
+        // catch (const std::exception& ex)
+        // {
+        //     ROS_ERROR("An exception ocurred trying to TRANSFORM ESTIMATED POSITION. %s.", ex.what());
+        // }
+
+        // pf_broadcaster.sendTransform(
+        //     tf::StampedTransform(
+        //     tf::Transform(tf::createQuaternionFromYaw(MeanAngle(yaw_base_link)),
+        //     tf::Vector3(Mean(x_base_link), Mean(y_base_link), 0.0)),
+        //     ros::Time::now(),"map", "base_link"));
+
         r.sleep();
     }
 
