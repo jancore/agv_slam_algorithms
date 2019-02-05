@@ -76,11 +76,13 @@ double Agv::MeasurementProb(sensor_msgs::LaserScan scan, std::vector< std::vecto
     return prob;
 }
 
-double Agv::MeasurementProb2(sensor_msgs::LaserScan scan, std::vector< std::vector<double> >& landmarks, int num_landmarks)
+double Agv::MeasurementProb3(sensor_msgs::LaserScan scan, std::vector<double>& landmarks, int num_landmarks)
 {
     using namespace Eigen;
 
-    int i, y_cell, x_cell;
+    int i, array_pose;
+    double y_cell, x_cell;
+    double Escalado = 10.0;
     Eigen::Matrix3f TF = Eigen::Matrix3f::Constant(0.0); 
     Eigen::Vector3f pose_map_frame;
     Eigen::Vector3f pose_agv_frame;
@@ -92,49 +94,11 @@ double Agv::MeasurementProb2(sensor_msgs::LaserScan scan, std::vector< std::vect
     
     for(i = 0; i < num_readings; i++)
     {
-        pose_agv_frame(0) = scan.ranges[i] * cos(i * num_readings);
-        pose_agv_frame(1) = scan.ranges[i] * sin(i * num_readings);
-        TF(0,0) = cos(this->yaw);
-        TF(0,1) = sin(this->yaw);
-        TF(0,2) = this->x;
-        TF(1,0) = -sin(this->yaw);
-        TF(1,1) = cos(this->yaw);
-        TF(1,2) = this->y;
+        double r = double(rand()) / double(RAND_MAX);
 
-        pose_map_frame = TF*pose_agv_frame;
-        y_cell = int((pose_map_frame(0) + x_origin_map)/map_resolution);
-        x_cell = int((pose_map_frame(1) + y_origin_map)/map_resolution);
+        pose_agv_frame(0) = (scan.ranges[i] +  this->Gaussian(0.0, this->sense_noise, r)) * cos(i * scan.angle_increment);
+        pose_agv_frame(1) = (scan.ranges[i] +  this->Gaussian(0.0, this->sense_noise, r)) * sin(i * scan.angle_increment);
 
-        if(y_cell >= 0 && y_cell < height_map/map_resolution && x_cell >= 0 && x_cell < width_map/map_resolution)
-        {
-            if(landmarks[y_cell][x_cell] > 50.0)
-            {
-                prob++;
-            }  
-        }      
-    }
-
-    return prob/num_readings;
-}
-
-double Agv::MeasurementProb3(sensor_msgs::LaserScan scan, std::vector<double>& landmarks, int num_landmarks)
-{
-    using namespace Eigen;
-
-    int i, y_cell, x_cell;
-    Eigen::Matrix3f TF = Eigen::Matrix3f::Constant(0.0); 
-    Eigen::Vector3f pose_map_frame;
-    Eigen::Vector3f pose_agv_frame;
-    float prob = 0.0;
-    float num_readings = (scan.angle_max - scan.angle_min) / scan.angle_increment;
-
-    TF(2,2) = 1.0;
-    pose_agv_frame(2) = 1.0;
-    
-    for(i = 0; i < num_readings; i=i+20)
-    {
-        pose_agv_frame(0) = scan.ranges[i] * cos(i * scan.angle_increment);
-        pose_agv_frame(1) = scan.ranges[i] * sin(i * scan.angle_increment);
         TF(0,0) = cos(this->yaw);
         TF(0,1) = -sin(this->yaw);
         TF(0,2) = this->x;
@@ -143,26 +107,32 @@ double Agv::MeasurementProb3(sensor_msgs::LaserScan scan, std::vector<double>& l
         TF(1,2) = this->y;
 
         pose_map_frame = TF*pose_agv_frame;
-        y_cell = int((pose_map_frame(0) + x_origin_map)/map_resolution);
-        x_cell = int((pose_map_frame(1) + y_origin_map)/map_resolution);
-
-        if(y_cell >= 0 && y_cell < width_map/map_resolution && x_cell >= 0 && x_cell < height_map/map_resolution)
-        {
-            if(landmarks[x_cell + y_cell] > 50.0)
+        y_cell = (pose_map_frame(1) + x_origin_map)/map_resolution;
+        x_cell = (pose_map_frame(0) + y_origin_map)/map_resolution;
+        array_pose = int(x_cell + y_cell * width_map/map_resolution);
+        
+        if(array_pose < num_landmarks && array_pose > 0)
+        //if(y_cell >= 0.0 && y_cell < width_map/map_resolution && x_cell >= 0.0 && x_cell < height_map/map_resolution)
+        {            
+            if(landmarks[array_pose] > 50.0)
             {
                 prob++;
             }  
         }      
     }
 
-    return prob;
+    return prob * Escalado;
 }
 
 void Agv::Move(double deltaX, double deltaY, double deltaYaw)
 {
-     //ROS_INFO("particle_yaw_1 = %.3lf", deltaYaw);
-     this->yaw = atan2(sin(this->yaw + deltaYaw),cos(this->yaw + deltaYaw));
-     //ROS_INFO("particle_yaw_2 = %.3lf", this->yaw);
-     this->x = this->x + deltaX;
-     this->y = this->y + deltaY;
+     double r = double(rand()) / double(RAND_MAX);
+     double s = sin(this->yaw + deltaYaw + this->Gaussian(0.0, this->turn_noise, r));
+     double c = cos(this->yaw + deltaYaw + this->Gaussian(0.0, this->turn_noise, r));
+     this->yaw = atan2(s,c);
+
+     double x_new = this->x + deltaX + this->Gaussian(0.0, this->forward_noise, r)*cos(this->yaw);
+     double y_new = this->y + deltaY + this->Gaussian(0.0, this->forward_noise, r)*sin(this->yaw);
+     this->x = std::fmod(x_new,  width_map);
+     this->y = std::fmod(y_new, height_map);
 }

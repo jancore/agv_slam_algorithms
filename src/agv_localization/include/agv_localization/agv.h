@@ -3,7 +3,7 @@
 #include "nav_msgs/MapMetaData.h"
 #include <time.h>  
 #include <vector>
-#include "math.h"
+#include <cmath>
 #include <Eigen/Dense>
 
 class Agv
@@ -15,7 +15,6 @@ class Agv
         void SetNoise(float new_forward_noise, float new_turn_noise, float new_sense_noise);
         double Gaussian(double mu, double sigma, double x);
         double MeasurementProb(sensor_msgs::LaserScan scan, std::vector< std::vector<double> >& landmarks, int num_landmarks);
-        double MeasurementProb2(sensor_msgs::LaserScan scan, std::vector< std::vector<double> >& landmarks, int num_landmarks);
         double MeasurementProb3(sensor_msgs::LaserScan scan, std::vector<double>& landmarks, int num_landmarks);
         void Move(double deltaX, double deltaY, double deltaYaw);
 
@@ -28,8 +27,8 @@ class Agv
         float turn_noise;
         float sense_noise;
         float map_resolution;
-        float width_map;
-        float height_map;
+        double width_map;
+        double height_map;
         float x_origin_map;
         float y_origin_map;
 };
