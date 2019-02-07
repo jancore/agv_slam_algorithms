@@ -14,7 +14,7 @@ std::vector<Agv> ResamplingWheel(std::vector<Agv> particles, double weights[], i
     {
         r = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
         beta += r * 2.0 * maxWeight;
-        while (beta > weights[i])
+        while (beta > weights[index])
         {
             beta -= weights[index];
             index = (index + 1) % num_particles;

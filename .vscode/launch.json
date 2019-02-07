@@ -6,7 +6,8 @@
 			"type": "gdb",
 			"request": "launch",
 			"target": "${file}",
-			"cwd": "${workspaceRoot}"
+			"cwd": "${workspaceRoot}",
+			"arguments": "~/.ros/ORBvoc.txt ~/.ros/camera_info/RealSenseMono.yaml"
 		},
 		{
 			"name": "C++ (remote)",

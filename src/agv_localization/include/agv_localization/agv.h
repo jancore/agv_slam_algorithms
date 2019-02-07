@@ -17,6 +17,7 @@ class Agv
         double MeasurementProb(sensor_msgs::LaserScan scan, std::vector< std::vector<double> >& landmarks, int num_landmarks);
         double MeasurementProb3(sensor_msgs::LaserScan scan, std::vector<double>& landmarks, int num_landmarks);
         void Move(double deltaX, double deltaY, double deltaYaw);
+        bool IsFreeSpace(std::vector<double>& landmarks);
 
         double x;
         double y;

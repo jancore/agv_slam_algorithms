@@ -1,0 +1,5 @@
+{
+	"args": [
+		"~/.ros/ORBvoc.txt ~/.ros/camera_info/RealSenseMono.yaml"
+	]
+}

@@ -7,4 +7,5 @@
 # new environment variables
 
 # modified environment variables
+export PATH="/opt/ros/kinetic/bin:/home/smarlogy/bin:/home/smarlogy/.local/bin:/home/smarlogy/bin:/home/smarlogy/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 export PWD="/home/smarlogy/catkin_ws/build"

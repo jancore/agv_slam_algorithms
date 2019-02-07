@@ -47,30 +47,6 @@ std::vector< std::vector<double> > GetLandmarks(nav_msgs::OccupancyGrid map)
     return landmarks;
 }
 
-std::vector< std::vector<double> > GetLandmarks2(nav_msgs::OccupancyGrid map)
-{
-    std::ofstream file;
-    int i, j;
-    int width = map.info.width;
-    int height = map.info.height;
-    std::vector< std::vector<double> > landmarks(width, std::vector<double>(height));
-
-    file.open("/home/smarlogy/catkin_ws/maps/map.txt");
-    for(i = 0; i < height; i++)
-    {
-        for(j = 0; j < width; j++)
-        {
-            landmarks[width - 1 -i][height -1 -j] = double(map.data[i * width + j]);
-            if(map.data[i * width + j] == 100) file << "8";
-            else if (map.data[i * width + j] == -1) file << "_";
-            else file << " ";                    
-        }
-        file << "\n";
-    }
-    file.close();
-    return landmarks;
-}
-
 std::vector<double> GetLandmarks3(nav_msgs::OccupancyGrid map)
 {
     int i;
@@ -107,3 +83,4 @@ double MeanAngle(std::vector<double> values){
 
     return atan2(Mean(sinValues), Mean(cosValues));
 }
+

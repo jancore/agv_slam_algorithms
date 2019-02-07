@@ -78,8 +78,14 @@ int main(int argc, char** argv)
                 try
                 {
                     Agv particle(map.info);
-                    particle.SetNoise(0.05, 0.05, 5.0);
-                    particles[i] = particle;
+                    // if(particle.IsFreeSpace(landmarks))
+                    // {
+                        particle.SetNoise(0.05, 0.05, 5.0);
+                        particles[i] = particle;
+                    // }
+                    // else{
+                    //     i--;
+                    // }                    
                 }
                 catch (const std::exception& e)
                 {

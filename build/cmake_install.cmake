@@ -125,7 +125,9 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/smarlogy/catkin_ws/build/mrpt_slam/mrpt_slam/cmake_install.cmake")
   include("/home/smarlogy/catkin_ws/build/node_controller/cmake_install.cmake")
   include("/home/smarlogy/catkin_ws/build/mrpt_bridge/cmake_install.cmake")
+  include("/home/smarlogy/catkin_ws/build/orb_slam_2_ros/cmake_install.cmake")
   include("/home/smarlogy/catkin_ws/build/mrpt_slam/mrpt_rbpf_slam/cmake_install.cmake")
+  include("/home/smarlogy/catkin_ws/build/usb_cam/cmake_install.cmake")
 
 endif()
 

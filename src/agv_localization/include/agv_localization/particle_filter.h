@@ -8,8 +8,6 @@ std::vector<Agv> ParticleFilter(std::vector<Agv> particles, int num_particles, s
 
 std::vector< std::vector<double> > GetLandmarks(nav_msgs::OccupancyGrid map);
 
-std::vector< std::vector<double> > GetLandmarks2(nav_msgs::OccupancyGrid map);
-
 std::vector<double> GetLandmarks3(nav_msgs::OccupancyGrid map);
 
 double Mean(std::vector<double> values);
