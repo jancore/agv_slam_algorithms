@@ -60,8 +60,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "realsense-2.1.4/realsense2_camera/cmake/realsense2_camera-genmsg.cmake"
   "rsl_445xl_node/catkin_generated/ordered_paths.cmake"
   "rsl_445xl_node/catkin_generated/package.cmake"
-  "usb_cam/catkin_generated/ordered_paths.cmake"
-  "usb_cam/catkin_generated/package.cmake"
   "/home/smarlogy/catkin_ws/devel/share/ddynamic_reconfigure/cmake/ddynamic_reconfigure-msg-extras.cmake"
   "/home/smarlogy/catkin_ws/devel/share/ddynamic_reconfigure/cmake/ddynamic_reconfigure-msg-paths.cmake"
   "/home/smarlogy/catkin_ws/devel/share/ddynamic_reconfigure/cmake/ddynamic_reconfigureConfig-version.cmake"
@@ -132,8 +130,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/smarlogy/catkin_ws/src/realsense-2.1.4/realsense2_camera/package.xml"
   "/home/smarlogy/catkin_ws/src/rsl_445xl_node/CMakeLists.txt"
   "/home/smarlogy/catkin_ws/src/rsl_445xl_node/package.xml"
-  "/home/smarlogy/catkin_ws/src/usb_cam/CMakeLists.txt"
-  "/home/smarlogy/catkin_ws/src/usb_cam/package.xml"
   "/opt/ros/kinetic/share/OpenCV-3.3.1-dev/OpenCVConfig-version.cmake"
   "/opt/ros/kinetic/share/OpenCV-3.3.1-dev/OpenCVConfig.cmake"
   "/opt/ros/kinetic/share/OpenCV-3.3.1-dev/OpenCVModules-release.cmake"
@@ -150,10 +146,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/opt/ros/kinetic/share/bond/cmake/bondConfig.cmake"
   "/opt/ros/kinetic/share/bondcpp/cmake/bondcppConfig-version.cmake"
   "/opt/ros/kinetic/share/bondcpp/cmake/bondcppConfig.cmake"
-  "/opt/ros/kinetic/share/camera_calibration_parsers/cmake/camera_calibration_parsersConfig-version.cmake"
-  "/opt/ros/kinetic/share/camera_calibration_parsers/cmake/camera_calibration_parsersConfig.cmake"
-  "/opt/ros/kinetic/share/camera_info_manager/cmake/camera_info_managerConfig-version.cmake"
-  "/opt/ros/kinetic/share/camera_info_manager/cmake/camera_info_managerConfig.cmake"
   "/opt/ros/kinetic/share/catkin/cmake/../package.xml"
   "/opt/ros/kinetic/share/catkin/cmake/all.cmake"
   "/opt/ros/kinetic/share/catkin/cmake/assert.cmake"
@@ -657,7 +649,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "dvo_slam/dvo_slam/CMakeFiles/CMakeDirectoryInformation.cmake"
   "dvo_slam/dvo_benchmark/CMakeFiles/CMakeDirectoryInformation.cmake"
   "mrpt_slam/mrpt_rbpf_slam/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "usb_cam/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -900,6 +891,4 @@ set(CMAKE_DEPEND_INFO_FILES
   "dvo_slam/dvo_slam/CMakeFiles/dvo_slam_geneus.dir/DependInfo.cmake"
   "dvo_slam/dvo_benchmark/CMakeFiles/benchmark.dir/DependInfo.cmake"
   "mrpt_slam/mrpt_rbpf_slam/CMakeFiles/mrpt_rbpf_slam.dir/DependInfo.cmake"
-  "usb_cam/CMakeFiles/usb_cam_node.dir/DependInfo.cmake"
-  "usb_cam/CMakeFiles/usb_cam.dir/DependInfo.cmake"
   )

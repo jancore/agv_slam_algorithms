@@ -5,10 +5,6 @@ lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameDisplay.o: /home/smar
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameDisplay.o: /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/src/KeyFrameDisplay.cpp
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameDisplay.o: /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/src/KeyFrameDisplay.h
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameDisplay.o: /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/src/settings.h
-lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameDisplay.o: /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/rxso3.hpp
-lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameDisplay.o: /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/sim3.hpp
-lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameDisplay.o: /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/so3.hpp
-lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameDisplay.o: /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/sophus.hpp
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameDisplay.o: /opt/ros/kinetic/include/ros/builtin_message_traits.h
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameDisplay.o: /opt/ros/kinetic/include/ros/datatypes.h
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameDisplay.o: /opt/ros/kinetic/include/ros/duration.h
@@ -25,6 +21,10 @@ lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameDisplay.o: /opt/ros/k
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameDisplay.o: /opt/ros/kinetic/include/ros/serialized_message.h
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameDisplay.o: /opt/ros/kinetic/include/ros/time.h
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameDisplay.o: /opt/ros/kinetic/include/ros/types.h
+lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameDisplay.o: /opt/ros/kinetic/include/sophus/rxso3.hpp
+lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameDisplay.o: /opt/ros/kinetic/include/sophus/sim3.hpp
+lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameDisplay.o: /opt/ros/kinetic/include/sophus/so3.hpp
+lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameDisplay.o: /opt/ros/kinetic/include/sophus/sophus.hpp
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameDisplay.o: /usr/include/eigen3/Eigen/Cholesky
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameDisplay.o: /usr/include/eigen3/Eigen/Core
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameDisplay.o: /usr/include/eigen3/Eigen/Dense
@@ -296,10 +296,6 @@ lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameGraphDisplay.o: /home
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameGraphDisplay.o: /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/src/KeyFrameGraphDisplay.cpp
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameGraphDisplay.o: /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/src/KeyFrameGraphDisplay.h
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameGraphDisplay.o: /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/src/settings.h
-lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameGraphDisplay.o: /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/rxso3.hpp
-lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameGraphDisplay.o: /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/sim3.hpp
-lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameGraphDisplay.o: /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/so3.hpp
-lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameGraphDisplay.o: /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/sophus.hpp
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameGraphDisplay.o: /opt/ros/kinetic/include/ros/builtin_message_traits.h
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameGraphDisplay.o: /opt/ros/kinetic/include/ros/datatypes.h
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameGraphDisplay.o: /opt/ros/kinetic/include/ros/duration.h
@@ -316,6 +312,10 @@ lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameGraphDisplay.o: /opt/
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameGraphDisplay.o: /opt/ros/kinetic/include/ros/serialized_message.h
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameGraphDisplay.o: /opt/ros/kinetic/include/ros/time.h
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameGraphDisplay.o: /opt/ros/kinetic/include/ros/types.h
+lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameGraphDisplay.o: /opt/ros/kinetic/include/sophus/rxso3.hpp
+lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameGraphDisplay.o: /opt/ros/kinetic/include/sophus/sim3.hpp
+lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameGraphDisplay.o: /opt/ros/kinetic/include/sophus/so3.hpp
+lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameGraphDisplay.o: /opt/ros/kinetic/include/sophus/sophus.hpp
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameGraphDisplay.o: /usr/include/eigen3/Eigen/Cholesky
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameGraphDisplay.o: /usr/include/eigen3/Eigen/Core
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameGraphDisplay.o: /usr/include/eigen3/Eigen/Dense
@@ -588,10 +588,6 @@ lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/PointCloudViewer.o: /home/sma
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/PointCloudViewer.o: /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/src/PointCloudViewer.cpp
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/PointCloudViewer.o: /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/src/PointCloudViewer.h
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/PointCloudViewer.o: /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/src/settings.h
-lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/PointCloudViewer.o: /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/rxso3.hpp
-lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/PointCloudViewer.o: /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/sim3.hpp
-lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/PointCloudViewer.o: /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/so3.hpp
-lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/PointCloudViewer.o: /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/sophus.hpp
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/PointCloudViewer.o: /opt/ros/kinetic/include/ros/builtin_message_traits.h
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/PointCloudViewer.o: /opt/ros/kinetic/include/ros/datatypes.h
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/PointCloudViewer.o: /opt/ros/kinetic/include/ros/duration.h
@@ -608,6 +604,10 @@ lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/PointCloudViewer.o: /opt/ros/
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/PointCloudViewer.o: /opt/ros/kinetic/include/ros/serialized_message.h
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/PointCloudViewer.o: /opt/ros/kinetic/include/ros/time.h
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/PointCloudViewer.o: /opt/ros/kinetic/include/ros/types.h
+lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/PointCloudViewer.o: /opt/ros/kinetic/include/sophus/rxso3.hpp
+lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/PointCloudViewer.o: /opt/ros/kinetic/include/sophus/sim3.hpp
+lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/PointCloudViewer.o: /opt/ros/kinetic/include/sophus/so3.hpp
+lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/PointCloudViewer.o: /opt/ros/kinetic/include/sophus/sophus.hpp
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/PointCloudViewer.o: /usr/include/eigen3/Eigen/Cholesky
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/PointCloudViewer.o: /usr/include/eigen3/Eigen/Core
 lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/PointCloudViewer.o: /usr/include/eigen3/Eigen/Dense

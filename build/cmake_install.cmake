@@ -137,7 +137,6 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/smarlogy/catkin_ws/build/dvo_slam/dvo_slam/cmake_install.cmake")
   include("/home/smarlogy/catkin_ws/build/dvo_slam/dvo_benchmark/cmake_install.cmake")
   include("/home/smarlogy/catkin_ws/build/mrpt_slam/mrpt_rbpf_slam/cmake_install.cmake")
-  include("/home/smarlogy/catkin_ws/build/usb_cam/cmake_install.cmake")
 
 endif()
 

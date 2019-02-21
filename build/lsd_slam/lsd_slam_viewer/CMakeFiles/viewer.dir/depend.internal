@@ -6,10 +6,6 @@ lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameDisplay.o
  /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/src/KeyFrameDisplay.cpp
  /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/src/KeyFrameDisplay.h
  /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/src/settings.h
- /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/rxso3.hpp
- /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/sim3.hpp
- /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/so3.hpp
- /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/sophus.hpp
  /opt/ros/kinetic/include/ros/builtin_message_traits.h
  /opt/ros/kinetic/include/ros/datatypes.h
  /opt/ros/kinetic/include/ros/duration.h
@@ -26,6 +22,10 @@ lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameDisplay.o
  /opt/ros/kinetic/include/ros/serialized_message.h
  /opt/ros/kinetic/include/ros/time.h
  /opt/ros/kinetic/include/ros/types.h
+ /opt/ros/kinetic/include/sophus/rxso3.hpp
+ /opt/ros/kinetic/include/sophus/sim3.hpp
+ /opt/ros/kinetic/include/sophus/so3.hpp
+ /opt/ros/kinetic/include/sophus/sophus.hpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -297,10 +297,6 @@ lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameGraphDisplay.o
  /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/src/KeyFrameGraphDisplay.cpp
  /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/src/KeyFrameGraphDisplay.h
  /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/src/settings.h
- /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/rxso3.hpp
- /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/sim3.hpp
- /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/so3.hpp
- /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/sophus.hpp
  /opt/ros/kinetic/include/ros/builtin_message_traits.h
  /opt/ros/kinetic/include/ros/datatypes.h
  /opt/ros/kinetic/include/ros/duration.h
@@ -317,6 +313,10 @@ lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/KeyFrameGraphDisplay.o
  /opt/ros/kinetic/include/ros/serialized_message.h
  /opt/ros/kinetic/include/ros/time.h
  /opt/ros/kinetic/include/ros/types.h
+ /opt/ros/kinetic/include/sophus/rxso3.hpp
+ /opt/ros/kinetic/include/sophus/sim3.hpp
+ /opt/ros/kinetic/include/sophus/so3.hpp
+ /opt/ros/kinetic/include/sophus/sophus.hpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -589,10 +589,6 @@ lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/PointCloudViewer.o
  /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/src/PointCloudViewer.cpp
  /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/src/PointCloudViewer.h
  /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/src/settings.h
- /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/rxso3.hpp
- /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/sim3.hpp
- /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/so3.hpp
- /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/sophus.hpp
  /opt/ros/kinetic/include/ros/builtin_message_traits.h
  /opt/ros/kinetic/include/ros/datatypes.h
  /opt/ros/kinetic/include/ros/duration.h
@@ -609,6 +605,10 @@ lsd_slam/lsd_slam_viewer/CMakeFiles/viewer.dir/src/PointCloudViewer.o
  /opt/ros/kinetic/include/ros/serialized_message.h
  /opt/ros/kinetic/include/ros/time.h
  /opt/ros/kinetic/include/ros/types.h
+ /opt/ros/kinetic/include/sophus/rxso3.hpp
+ /opt/ros/kinetic/include/sophus/sim3.hpp
+ /opt/ros/kinetic/include/sophus/so3.hpp
+ /opt/ros/kinetic/include/sophus/sophus.hpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense

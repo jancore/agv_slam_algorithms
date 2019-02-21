@@ -194,30 +194,6 @@ settings.h
 
 /home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/src/settings.h
 
-/home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/rxso3.hpp
-sophus.hpp
-/home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/sophus.hpp
-so3.hpp
-/home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/so3.hpp
-
-/home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/sim3.hpp
-rxso3.hpp
-/home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/rxso3.hpp
-
-/home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/so3.hpp
-sophus.hpp
-/home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/sophus.hpp
-
-/home/smarlogy/catkin_ws/src/lsd_slam/lsd_slam_viewer/thirdparty/Sophus/sophus/sophus.hpp
-stdexcept
--
-cmath
--
-Eigen/Eigen
--
-Eigen/Geometry
--
-
 /opt/ros/kinetic/include/dynamic_reconfigure/BoolParameter.h
 string
 -
@@ -1282,6 +1258,28 @@ rosbag/structures.h
 
 /opt/ros/kinetic/include/roslz4/lz4s.h
 lz4.h
+-
+
+/opt/ros/kinetic/include/sophus/rxso3.hpp
+sophus.hpp
+/opt/ros/kinetic/include/sophus/sophus.hpp
+so3.hpp
+/opt/ros/kinetic/include/sophus/so3.hpp
+
+/opt/ros/kinetic/include/sophus/sim3.hpp
+rxso3.hpp
+/opt/ros/kinetic/include/sophus/rxso3.hpp
+
+/opt/ros/kinetic/include/sophus/so3.hpp
+sophus.hpp
+/opt/ros/kinetic/include/sophus/sophus.hpp
+
+/opt/ros/kinetic/include/sophus/sophus.hpp
+stdexcept
+-
+Eigen/Eigen
+-
+Eigen/Geometry
 -
 
 /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h

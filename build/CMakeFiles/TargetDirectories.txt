@@ -404,12 +404,3 @@
 /home/smarlogy/catkin_ws/build/mrpt_slam/mrpt_rbpf_slam/CMakeFiles/list_install_components.dir
 /home/smarlogy/catkin_ws/build/mrpt_slam/mrpt_rbpf_slam/CMakeFiles/test.dir
 /home/smarlogy/catkin_ws/build/mrpt_slam/mrpt_rbpf_slam/CMakeFiles/install/local.dir
-/home/smarlogy/catkin_ws/build/usb_cam/CMakeFiles/install.dir
-/home/smarlogy/catkin_ws/build/usb_cam/CMakeFiles/rebuild_cache.dir
-/home/smarlogy/catkin_ws/build/usb_cam/CMakeFiles/usb_cam_node.dir
-/home/smarlogy/catkin_ws/build/usb_cam/CMakeFiles/install/strip.dir
-/home/smarlogy/catkin_ws/build/usb_cam/CMakeFiles/edit_cache.dir
-/home/smarlogy/catkin_ws/build/usb_cam/CMakeFiles/list_install_components.dir
-/home/smarlogy/catkin_ws/build/usb_cam/CMakeFiles/install/local.dir
-/home/smarlogy/catkin_ws/build/usb_cam/CMakeFiles/usb_cam.dir
-/home/smarlogy/catkin_ws/build/usb_cam/CMakeFiles/test.dir
