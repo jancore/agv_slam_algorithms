@@ -1,0 +1,9 @@
+\subsubsection usage Usage
+\verbatim
+<node name="dvo" pkg="dvo_slam" type="dvo">
+  <param name="visible" type="double" value="1.0" />
+  <param name="editable" type="bool" value="False" />
+  <param name="graph_opt_final" type="bool" value="False" />
+</node>
+\endverbatim
+

@@ -1,0 +1,8 @@
+prefix=/home/smarlogy/catkin_ws/devel
+
+Name: dvo_benchmark
+Description: Description of dvo_benchmark
+Version: 0.1.0
+Cflags: -I/home/smarlogy/catkin_ws/src/dvo_slam/dvo_benchmark/include
+Libs: -L/home/smarlogy/catkin_ws/devel/lib -ldvo_benchmark
+Requires: 

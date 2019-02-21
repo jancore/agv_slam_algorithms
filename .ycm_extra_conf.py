@@ -23,6 +23,8 @@ flags = [
 '-isystem',
 '/home/smarlogy/catkin_ws/src/Libreria_Com_Nav350/include',
 '-isystem',
+'/home/smarlogy/catkin_ws/src/ORB_SLAM2/include',
+'-isystem',
 '/home/smarlogy/catkin_ws/src/agv_localization/include',
 '-isystem',
 '/home/smarlogy/catkin_ws/src/agv_mapping/include',
@@ -31,13 +33,25 @@ flags = [
 '-isystem',
 '/home/smarlogy/catkin_ws/src/agv_tf/include',
 '-isystem',
+'/home/smarlogy/catkin_ws/src/dvo_slam/include',
+'-isystem',
 '/home/smarlogy/catkin_ws/src/laserscan_nav350/include',
+'-isystem',
+'/home/smarlogy/catkin_ws/src/lsd_slam/include',
 '-isystem',
 '/home/smarlogy/catkin_ws/src/mrpt_bridge/include',
 '-isystem',
 '/home/smarlogy/catkin_ws/src/mrpt_slam/include',
 '-isystem',
-'/home/smarlogy/catkin_ws/src/node_controller/include'
+'/home/smarlogy/catkin_ws/src/node_controller/include',
+'-isystem',
+'/home/smarlogy/catkin_ws/src/orb_slam_2/include',
+'-isystem',
+'/home/smarlogy/catkin_ws/src/realsense-2.1.4/include',
+'-isystem',
+'/home/smarlogy/catkin_ws/src/rsl_445xl_node/include',
+'-isystem',
+'/home/smarlogy/catkin_ws/src/usb_cam/include'
 ]
 
 compilation_database_folder = ''

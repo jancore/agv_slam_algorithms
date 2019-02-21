@@ -1,0 +1,22 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~run_dense_tracking" : \b [bool]  min: False, default: False, max: True
+- \b "~use_dense_tracking_estimate" : \b [bool]  min: False, default: False, max: True
+- \b "~coarsest_level" : \b [int]  min: 0, default: 3, max: 5
+- \b "~finest_level" : \b [int]  min: 0, default: 1, max: 5
+- \b "~max_iterations" : \b [int]  min: 1, default: 50, max: 500
+- \b "~precision" : \b [double]  min: 0.0, default: 0.0001, max: 1.0
+- \b "~use_initial_estimate" : \b [bool]  min: False, default: True, max: True
+- \b "~use_weighting" : \b [bool]  min: False, default: False, max: True
+- \b "~scale_estimator" : \b [int]  min: 0, default: 2, max: 20
+- \b "~scale_estimator_param" : \b [double]  min: 0.0, default: 5.0, max: 100.0
+- \b "~influence_function" : \b [int]  min: 0, default: 2, max: 20
+- \b "~influence_function_param" : \b [double]  min: 0.0, default: 5.0, max: 100.0
+- \b "~min_intensity_deriv" : \b [double]  min: 0.0, default: 0.0, max: 255.0
+- \b "~min_depth_deriv" : \b [double]  min: 0.0, default: 0.0, max: 10.0
+- \b "~lambda" : \b [double]  min: 0.0, default: 0.0, max: 10.0
+- \b "~mu" : \b [double]  min: 0.0, default: 0.0, max: 10.0
+- \b "~reconstruction" : \b [bool]  min: False, default: True, max: True
+

@@ -1,0 +1,8 @@
+prefix=/home/smarlogy/catkin_ws/install
+
+Name: dvo_slam
+Description: Description of dvo_slam
+Version: 0.1.0
+Cflags: -I/home/smarlogy/catkin_ws/install/include
+Libs: -L/home/smarlogy/catkin_ws/install/lib -ldvo_slam
+Requires: message_runtime

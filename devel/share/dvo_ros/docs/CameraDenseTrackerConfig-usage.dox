@@ -1,0 +1,23 @@
+\subsubsection usage Usage
+\verbatim
+<node name="dvo" pkg="dvo_ros" type="dvo">
+  <param name="run_dense_tracking" type="bool" value="False" />
+  <param name="use_dense_tracking_estimate" type="bool" value="False" />
+  <param name="coarsest_level" type="int" value="3" />
+  <param name="finest_level" type="int" value="1" />
+  <param name="max_iterations" type="int" value="50" />
+  <param name="precision" type="double" value="0.0001" />
+  <param name="use_initial_estimate" type="bool" value="True" />
+  <param name="use_weighting" type="bool" value="False" />
+  <param name="scale_estimator" type="int" value="2" />
+  <param name="scale_estimator_param" type="double" value="5.0" />
+  <param name="influence_function" type="int" value="2" />
+  <param name="influence_function_param" type="double" value="5.0" />
+  <param name="min_intensity_deriv" type="double" value="0.0" />
+  <param name="min_depth_deriv" type="double" value="0.0" />
+  <param name="lambda" type="double" value="0.0" />
+  <param name="mu" type="double" value="0.0" />
+  <param name="reconstruction" type="bool" value="True" />
+</node>
+\endverbatim
+

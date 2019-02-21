@@ -31,3 +31,9 @@ void SendPosition::Envia_posicion(int p_pos_x_mm, int p_pos_y_mm, int p_orientac
 	Protocolo::Paquete envio_posicion = Protocolo::nueva_consulta_ascii(cm_nombre_red_nodo, m_nombre_red_agv, posicion_str);
 	m_com_agv.enviar_datos(envio_posicion, p_timeout_ms);
 }
+
+bool mapfileExist(std::string mapfile)
+{
+	std::ifstream f(mapfile.c_str());
+    return f.good();
+}

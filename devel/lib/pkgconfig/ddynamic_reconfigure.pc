@@ -1,0 +1,8 @@
+prefix=/home/smarlogy/catkin_ws/devel
+
+Name: ddynamic_reconfigure
+Description: Description of ddynamic_reconfigure
+Version: 0.0.6
+Cflags: -I/home/smarlogy/catkin_ws/devel/include -I/home/smarlogy/catkin_ws/src/realsense-2.1.4/ddynamic_reconfigure/include
+Libs: -L/home/smarlogy/catkin_ws/devel/lib -lddynamic_reconfigure
+Requires: 

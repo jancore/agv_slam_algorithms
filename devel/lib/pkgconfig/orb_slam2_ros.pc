@@ -1,8 +1,0 @@
-prefix=/home/smarlogy/catkin_ws/devel
-
-Name: orb_slam2_ros
-Description: Description of orb_slam2_ros
-Version: 0.0.1
-Cflags: 
-Libs: -L/home/smarlogy/catkin_ws/devel/lib -l{PROJECT_NAME} -llibDBoW2 -llibg2o
-Requires: roscpp std_msgs cv_bridge image_transport tf sensor_msgs

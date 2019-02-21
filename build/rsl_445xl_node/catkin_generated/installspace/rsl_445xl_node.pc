@@ -1,0 +1,8 @@
+prefix=/home/smarlogy/catkin_ws/install
+
+Name: rsl_445xl_node
+Description: Description of rsl_445xl_node
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/smarlogy/catkin_ws/install/lib 
+Requires: 

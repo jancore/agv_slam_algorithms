@@ -1,0 +1,25 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~max_translational_distance" : \b [double]  min: 0.0, default: 0.3, max: 10.0
+- \b "~max_rotational_distance" : \b [double]  min: 0.0, default: 0.0, max: 10.0
+- \b "~min_entropy_ratio" : \b [double]  min: 0.0, default: 0.4, max: 1.2
+- \b "~min_eq_sys_constraint_ratio" : \b [double]  min: 0.0, default: 0.3, max: 1.2
+- \b "~constraint_search_radius" : \b [double]  min: 0.0, default: 0.75, max: 10.0
+- \b "~constraint_min_entropy_ratio_coarse" : \b [double]  min: 0.0, default: 0.7, max: 2.0
+- \b "~constraint_min_entropy_ratio_fine" : \b [double]  min: 0.0, default: 0.9, max: 2.0
+- \b "~constraint_min_eq_sys_constraint_ratio" : \b [double]  min: 0.0, default: 0.3, max: 1.2
+- \b "~graph_opt_robust" : \b [bool]  min: False, default: False, max: True
+- \b "~graph_opt_iterations" : \b [int]  min: 0, default: 20, max: 500
+- \b "~graph_opt_dense_graph" : \b [bool]  min: False, default: False, max: True
+- \b "~graph_opt_remove_outliers" : \b [bool]  min: False, default: False, max: True
+- \b "~graph_opt_outlier_weight_threshold" : \b [double]  min: 0.0, default: 0.0, max: 1.0
+- \b "~graph_opt_min_distance" : \b [int]  min: 0, default: 0, max: 500
+- \b "~graph_opt_final" : \b [bool]  min: False, default: False, max: True
+- \b "~graph_opt_final_iterations" : \b [int]  min: 0, default: 1000, max: 5000
+- \b "~graph_opt_final_dense_graph" : \b [bool]  min: False, default: True, max: True
+- \b "~graph_opt_final_remove_outliers" : \b [bool]  min: False, default: False, max: True
+- \b "~graph_opt_final_outlier_weight_threshold" : \b [double]  min: 0.0, default: 0.0, max: 1.0
+- \b "~use_multithreading" : \b [bool]  min: False, default: True, max: True
+

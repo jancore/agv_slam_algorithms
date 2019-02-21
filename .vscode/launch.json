@@ -7,7 +7,7 @@
 			"request": "launch",
 			"target": "${file}",
 			"cwd": "${workspaceRoot}",
-			"arguments": "~/.ros/ORBvoc.txt ~/.ros/camera_info/RealSenseMono.yaml"
+			"arguments": "~/.ros/camera_info/ORBvoc.txt ~/.ros/camera_info/RealSenseMono.yaml"
 		},
 		{
 			"name": "C++ (remote)",

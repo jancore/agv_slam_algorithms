@@ -24,6 +24,9 @@ def listener():
     actualNode = ""
     isLaunched = False
 
+    words[0] = "launch"
+    words[1] = "localization"
+
     while not rospy.is_shutdown():
         words = msg.split('_', 1)
         if words[0] == "launch" and not isLaunched:

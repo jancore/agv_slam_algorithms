@@ -1,0 +1,8 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~visible" : \b [double]  min: 0.0, default: 1.0, max: 1.0
+- \b "~editable" : \b [bool]  min: False, default: False, max: True
+- \b "~graph_opt_final" : \b [bool]  min: False, default: False, max: True
+

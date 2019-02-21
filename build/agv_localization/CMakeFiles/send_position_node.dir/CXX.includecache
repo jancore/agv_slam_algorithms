@@ -217,6 +217,8 @@ comunicaciones/sockets/tcp/tramas/protocolo_red_agv.h
 -
 string
 -
+fstream
+-
 
 /home/smarlogy/catkin_ws/src/agv_localization/src/amcl_listener.cpp
 agv_localization/amcl_listener.h

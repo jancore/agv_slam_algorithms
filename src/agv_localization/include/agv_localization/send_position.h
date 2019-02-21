@@ -3,7 +3,7 @@
 #include <generales/geometria/punto.h>
 #include <comunicaciones/sockets/tcp/tramas/protocolo_red_agv.h>
 #include <string>
-
+#include <fstream>
 
 class SendPosition
 {
@@ -22,3 +22,5 @@ private:
 
 	agv::comtcp::WrapperClienteProtocolo<Protocolo> m_com_agv;
 };
+
+bool mapfileExist(std::string mapfile);

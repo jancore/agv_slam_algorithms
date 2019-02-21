@@ -1,22 +1,22 @@
 Determining if the pthread_create exist failed with the following output:
 Change Dir: /home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_bc118/fast"
-/usr/bin/make -f CMakeFiles/cmTC_bc118.dir/build.make CMakeFiles/cmTC_bc118.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_1cfbd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1cfbd.dir/build.make CMakeFiles/cmTC_1cfbd.dir/build
 make[1]: se entra en el directorio '/home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_bc118.dir/CheckSymbolExists.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_bc118.dir/CheckSymbolExists.c.o   -c /home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_bc118
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bc118.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_bc118.dir/CheckSymbolExists.c.o  -o cmTC_bc118 -rdynamic 
-CMakeFiles/cmTC_bc118.dir/CheckSymbolExists.c.o: En la función `main':
+Building C object CMakeFiles/cmTC_1cfbd.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_1cfbd.dir/CheckSymbolExists.c.o   -c /home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_1cfbd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1cfbd.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_1cfbd.dir/CheckSymbolExists.c.o  -o cmTC_1cfbd -rdynamic 
+CMakeFiles/cmTC_1cfbd.dir/CheckSymbolExists.c.o: En la función `main':
 CheckSymbolExists.c:(.text+0x16): referencia a `pthread_create' sin definir
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_bc118.dir/build.make:97: fallo en las instrucciones para el objetivo 'cmTC_bc118'
-make[1]: *** [cmTC_bc118] Error 1
+CMakeFiles/cmTC_1cfbd.dir/build.make:97: fallo en las instrucciones para el objetivo 'cmTC_1cfbd'
+make[1]: *** [cmTC_1cfbd] Error 1
 make[1]: se sale del directorio '/home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp'
-Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_bc118/fast'
-make: *** [cmTC_bc118/fast] Error 2
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_1cfbd/fast'
+make: *** [cmTC_1cfbd/fast] Error 2
 
 File /home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
@@ -36,20 +36,131 @@ int main(int argc, char** argv)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_39c9f/fast"
-/usr/bin/make -f CMakeFiles/cmTC_39c9f.dir/build.make CMakeFiles/cmTC_39c9f.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_c6de5/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c6de5.dir/build.make CMakeFiles/cmTC_c6de5.dir/build
 make[1]: se entra en el directorio '/home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_39c9f.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_39c9f.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
-Linking C executable cmTC_39c9f
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_39c9f.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_39c9f.dir/CheckFunctionExists.c.o  -o cmTC_39c9f -rdynamic -lpthreads 
+Building C object CMakeFiles/cmTC_c6de5.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_c6de5.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c6de5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c6de5.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_c6de5.dir/CheckFunctionExists.c.o  -o cmTC_c6de5 -rdynamic -lpthreads 
 /usr/bin/ld: no se puede encontrar -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_39c9f.dir/build.make:97: fallo en las instrucciones para el objetivo 'cmTC_39c9f'
-make[1]: *** [cmTC_39c9f] Error 1
+CMakeFiles/cmTC_c6de5.dir/build.make:97: fallo en las instrucciones para el objetivo 'cmTC_c6de5'
+make[1]: *** [cmTC_c6de5] Error 1
 make[1]: se sale del directorio '/home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp'
-Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_39c9f/fast'
-make: *** [cmTC_39c9f/fast] Error 2
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_c6de5/fast'
+make: *** [cmTC_c6de5/fast] Error 2
 
+
+Determining if the Q_WS_WIN exist failed with the following output:
+Change Dir: /home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_1da32/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1da32.dir/build.make CMakeFiles/cmTC_1da32.dir/build
+make[1]: se entra en el directorio '/home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_1da32.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_1da32.dir/CheckSymbolExists.cxx.o -c /home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_WIN’ was not declared in this scope
+   return ((int*)(&Q_WS_WIN))[argc];
+                   ^~~~~~~~
+/home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: note: suggested alternative: ‘Q_WS_X11’
+   return ((int*)(&Q_WS_WIN))[argc];
+                   ^~~~~~~~
+                   Q_WS_X11
+CMakeFiles/cmTC_1da32.dir/build.make:65: fallo en las instrucciones para el objetivo 'CMakeFiles/cmTC_1da32.dir/CheckSymbolExists.cxx.o'
+make[1]: *** [CMakeFiles/cmTC_1da32.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: se sale del directorio '/home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_1da32/fast'
+make: *** [cmTC_1da32/fast] Error 2
+
+File /home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_WIN
+  return ((int*)(&Q_WS_WIN))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_QWS exist failed with the following output:
+Change Dir: /home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8d16b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8d16b.dir/build.make CMakeFiles/cmTC_8d16b.dir/build
+make[1]: se entra en el directorio '/home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_8d16b.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_8d16b.dir/CheckSymbolExists.cxx.o -c /home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_QWS’ was not declared in this scope
+   return ((int*)(&Q_WS_QWS))[argc];
+                   ^~~~~~~~
+/home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: note: suggested alternative: ‘Q_WS_X11’
+   return ((int*)(&Q_WS_QWS))[argc];
+                   ^~~~~~~~
+                   Q_WS_X11
+CMakeFiles/cmTC_8d16b.dir/build.make:65: fallo en las instrucciones para el objetivo 'CMakeFiles/cmTC_8d16b.dir/CheckSymbolExists.cxx.o'
+make[1]: *** [CMakeFiles/cmTC_8d16b.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: se sale del directorio '/home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_8d16b/fast'
+make: *** [cmTC_8d16b/fast] Error 2
+
+File /home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_QWS
+  return ((int*)(&Q_WS_QWS))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_MAC exist failed with the following output:
+Change Dir: /home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_73a11/fast"
+/usr/bin/make -f CMakeFiles/cmTC_73a11.dir/build.make CMakeFiles/cmTC_73a11.dir/build
+make[1]: se entra en el directorio '/home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_73a11.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_73a11.dir/CheckSymbolExists.cxx.o -c /home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_MAC’ was not declared in this scope
+   return ((int*)(&Q_WS_MAC))[argc];
+                   ^~~~~~~~
+/home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: note: suggested alternative: ‘Q_WS_X11’
+   return ((int*)(&Q_WS_MAC))[argc];
+                   ^~~~~~~~
+                   Q_WS_X11
+CMakeFiles/cmTC_73a11.dir/build.make:65: fallo en las instrucciones para el objetivo 'CMakeFiles/cmTC_73a11.dir/CheckSymbolExists.cxx.o'
+make[1]: *** [CMakeFiles/cmTC_73a11.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: se sale del directorio '/home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_73a11/fast'
+make: *** [cmTC_73a11/fast] Error 2
+
+File /home/smarlogy/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_MAC
+  return ((int*)(&Q_WS_MAC))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
 

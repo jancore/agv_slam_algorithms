@@ -1,0 +1,8 @@
+prefix=/home/smarlogy/catkin_ws/install
+
+Name: ddynamic_reconfigure
+Description: Description of ddynamic_reconfigure
+Version: 0.0.6
+Cflags: -I/home/smarlogy/catkin_ws/install/include
+Libs: -L/home/smarlogy/catkin_ws/install/lib -lddynamic_reconfigure
+Requires: 
